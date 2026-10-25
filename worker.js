@@ -36,6 +36,10 @@ async function routeRequest(request, env, url) {
     return handleFavicon(request, env);
   }
 
+  if (url.pathname === '/googlef9839239885b1951.html') {
+    return handleGoogleSiteVerification();
+  }
+
   if (url.pathname === '/.well-known/security.txt') {
     return handleSecurityTxt();
   }
@@ -136,6 +140,14 @@ async function handleFavicon(request, env) {
   }
 }
 
+function handleGoogleSiteVerification() {
+  return new Response('google-site-verification: googlef9839239885b1951.html', {
+    headers: {
+      'content-type': 'text/html; charset=utf-8'
+    }
+  });
+}
+
 function handleSecurityTxt() {
   const body = [
     'Contact: mailto:security@bytestreams.ai',
@@ -152,7 +164,7 @@ function handleSecurityTxt() {
 }
 
 function handleSitemap(url) {
-  const pages = ['/', '/privacy.html', '/terms.html', '/hippa.html'];
+  const pages = ['/', '/pricing', '/privacy', '/terms', '/hippa'];
   const body = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

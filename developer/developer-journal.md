@@ -1,5 +1,38 @@
 # Developer Journal
 
+## 2026-10-24
+- Added the Google Search Console verification file and routed its exact `.html` URL through the Worker so Cloudflare Static Assets does not redirect it to an extensionless route during verification.
+
+## 2026-10-24
+- Completed the baseline SEO pass: added Organization/WebSite structured data on the homepage, Service structured data plus Open Graph/Twitter metadata on Pricing, and canonical URLs on the Pricing and legal pages.
+- Updated sitemap entries to their canonical extensionless routes; the existing 404 page remains excluded from indexing.
+- Updated the active homepage billing capability from questions to management, covering balances, statements, and payments.
+
+## 2026-10-24
+- Added `public/pricing.html`, a standalone pricing page with an accessible interactive revenue-risk calculator, plan comparison, request-a-quote CTAs, and the approved $599/month implementation floor.
+- Added `/pricing.html` to the dynamic sitemap in `worker.js`.
+- Kept terminology aligned with the refreshed homepage by describing patient-call handling and management rather than routing.
+- Added the Pricing destination to the refreshed homepage navigation.
+- Simplified the pricing-page implementation floor statement to "Professional implementation packages start at $599/month."
+- Added an Implementation header-nav link to the pricing-page cost guardrail.
+- Added an explicit Contact destination to every site header, linking supporting pages back to the homepage contact form.
+- Fixed responsive legal and utility-page headers so Contact remains visible without compressing the document label and navigation on mobile.
+- Refined the pricing-page implementation cost callout with smaller sans-serif type and centered alignment for a cleaner reading rhythm.
+
+## 2026-10-24
+- Rebuilt the visible homepage in `public/index.html` around the approved clinical-console direction: a responsive inbound-routing hero, evidence-labeled missed-call telemetry panels, four simulated capability modules, and an infrastructure diagram.
+- Kept MedBlue/SignalTeal-derived accents within the darker console treatment and added JetBrains Mono for telemetry, system labels, and values.
+- Marked hero and capability system states as illustrative/simulated, retained only documented security claims (TLS 1.2+, role-based access, MFA, audit logging, EHR/practice-management integrations), and excluded unverified latency, PII-sanitization, and real-time copay claims.
+- Preserved the existing `/api/contact` contract and repointed the existing client-side form behavior to the refreshed visible contact form.
+- Updated homepage SEO and social metadata to reflect the infrastructure positioning.
+- Corrected the refreshed homepage positioning to describe DialTone.Med as answering and managing patient requests rather than routing calls.
+- Updated the simulated hero status from signal detection to "Patient call answered" to better reflect the product experience.
+- Reframed the hero animation copy from numbered workflow states to patient support, managed routine work, and accurate HIPAA-aligned practice operations.
+- Reordered the hero operation sequence so Trusted Operations sits between Patient Support and Routine Work, with directional indicators on both sides.
+- Removed the "Illustrative operations view" qualifier from the hero animation note.
+- Replaced the Dental Console's generic research-reference copy with a direct explanation of the voicemail drop-off graph.
+- Removed visible numeric section prefixes and module identifiers from the refreshed homepage.
+
 ## 2026-04-28
 - Added a new on-brand THE PROBLEM section to the marketing page.
 - Implemented the exact required headline copy: "Missing calls is bigger problem than you think." and "Frustrated patients and lost revenue".

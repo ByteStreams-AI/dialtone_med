@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pricing | DialTone.Med</title>
+  <meta name="description" content="Explore DialTone.Med communication infrastructure plans and estimate the hidden revenue risk from unanswered patient calls.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dialtone.med/pricing">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DialTone.Med">
+  <meta property="og:title" content="Pricing | DialTone.Med">
+  <meta property="og:description" content="Estimate the revenue risk of unanswered patient calls and explore practice-tailored DialTone.Med plans.">
+  <meta property="og:url" content="https://dialtone.med/pricing">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Pricing | DialTone.Med">
+  <meta name="twitter:description" content="Estimate the revenue risk of unanswered patient calls and explore practice-tailored DialTone.Med plans.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "DialTone.Med healthcare communication infrastructure",
+    "url": "https://dialtone.med/pricing",
+    "provider": { "@type": "Organization", "name": "DialTone.Med", "url": "https://dialtone.med/" },
+    "description": "HIPAA-aligned patient-call management for appointments, billing questions, prescription refill requests, and insurance verification."
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=20260427">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --ink: #10181d;
+      --panel: #162229;
+      --panel-raised: #1b2b33;
+      --line: rgba(226, 245, 243, 0.18);
+      --muted: #a8babd;
+      --mint: #2ec4b6;
+      --cyan: #63d8ed;
+      --amber: #f3b34c;
+      --white: #f5fbfa;
+      --blue: #0a2463;
+      --font-display: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background-color: var(--ink); background-image: linear-gradient(rgba(99,216,237,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(99,216,237,0.035) 1px, transparent 1px); background-size: 28px 28px; color: var(--white); font-family: var(--font-display); line-height: 1.5; }
+    a { color: inherit; }
+    .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .nav { min-height: 70px; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 20px; font-weight: 700; text-decoration: none; }
+    .brand span { color: var(--mint); font-weight: 500; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .nav-links a:hover { color: var(--mint); }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 18px; border: 1px solid var(--mint); background: var(--mint); border-radius: 0; color: #071918; cursor: pointer; font: 700 13px var(--font-display); text-decoration: none; transition: background-color 160ms ease, border-color 160ms ease; }
+    .button:hover { background: #65d9cd; border-color: #65d9cd; }
+    .button-outline { background: transparent; border-color: var(--line); color: var(--white); }
+    .button-outline:hover { background: rgba(99,216,237,0.1); border-color: var(--cyan); }
+    .eyebrow, .metric-label, .plan-tag, .calculator-meta { color: var(--mint); font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+    .hero { padding: 84px 0 72px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr); align-items: end; gap: 48px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 800px; margin: 14px 0 18px; font-size: clamp(40px, 5vw, 68px); letter-spacing: 0; line-height: 1.04; }
+    h1 strong { color: var(--cyan); font-weight: inherit; }
+    .hero-copy { max-width: 660px; color: var(--muted); font-size: 18px; line-height: 1.65; }
+    .hero-side { border-left: 1px solid var(--line); padding-left: 25px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .hero-side strong { color: var(--white); }
+    .section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr); gap: 40px; align-items: end; margin-bottom: 34px; }
+    h2 { margin: 12px 0 0; font-size: clamp(30px, 4vw, 48px); line-height: 1.1; }
+    .section-head > p { color: var(--muted); margin-bottom: 0; }
+    .calculator { display: grid; grid-template-columns: minmax(0, 1fr) minmax(350px, 0.85fr); border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
+    .calculator-controls, .calculator-results { padding: 30px; }
+    .calculator-controls { border-right: 1px solid var(--line); }
+    .calculator-results { background: rgba(7,25,24,0.42); }
+    .control { margin-bottom: 31px; }
+    .control:last-child { margin-bottom: 0; }
+    .control-top { display: flex; justify-content: space-between; gap: 16px; align-items: baseline; }
+    .control label { color: var(--white); font-size: 16px; font-weight: 600; }
+    output { color: var(--cyan); font: 700 15px var(--font-mono); white-space: nowrap; }
+    .range-hint { margin: 7px 0 12px; color: var(--muted); font-size: 13px; }
+    input[type='range'] { width: 100%; accent-color: var(--mint); cursor: pointer; }
+    .practice-choice { display: flex; gap: 8px; margin-bottom: 10px; }
+    .practice-choice button { flex: 1; min-height: 36px; border: 1px solid var(--line); border-radius: 0; background: transparent; color: var(--muted); cursor: pointer; font: 600 12px var(--font-mono); }
+    .practice-choice button[aria-pressed='true'] { border-color: var(--mint); background: rgba(46,196,182,0.12); color: var(--mint); }
+    .results-title { margin: 0 0 24px; color: var(--white); font-size: 19px; }
+    .result-list { display: grid; gap: 16px; margin-bottom: 27px; }
+    .result { border-left: 2px solid var(--line); padding: 3px 0 3px 14px; }
+    .result-risk { border-color: var(--amber); }
+    .result-value { display: block; color: var(--white); font: 700 clamp(24px, 3vw, 34px) var(--font-mono); line-height: 1.15; }
+    .result-risk .result-value { color: var(--amber); }
+    .result-label { margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .method-note { margin: 24px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
+    .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .plan { display: flex; flex-direction: column; min-height: 500px; padding: 26px; border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
+    .plan-featured { border-color: var(--mint); box-shadow: inset 0 3px 0 var(--mint); }
+    .plan-tag { min-height: 17px; color: var(--mint); }
+    .plan h3 { margin: 18px 0 12px; font-size: 25px; line-height: 1.15; }
+    .plan-intro { min-height: 88px; color: var(--muted); font-size: 14px; }
+    .best-for { margin: 20px 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--white); font-size: 14px; }
+    .best-for span { color: var(--muted); }
+    .feature-label { margin-bottom: 10px; color: var(--muted); font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+    .features { flex: 1; margin: 0 0 24px; padding: 0; list-style: none; }
+    .features li { position: relative; margin-bottom: 12px; padding-left: 15px; color: #d7e7e5; font-size: 14px; line-height: 1.5; }
+    .features li::before { position: absolute; left: 0; color: var(--mint); content: '+'; }
+    .features .included { color: var(--cyan); font-style: italic; }
+    .guardrail { padding: 64px 0; background: #f4fbfa; color: #172126; }
+    .guardrail-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.65fr); gap: 50px; align-items: center; }
+    .guardrail .eyebrow { color: #1b998b; }
+    .guardrail h2 { color: var(--blue); font-size: clamp(28px, 3vw, 42px); }
+    .guardrail p { color: #4e6167; line-height: 1.65; }
+    .floor { align-self: stretch; display: flex; align-items: center; padding: 26px; border-left: 3px solid #1b998b; background: #e5f5f2; color: var(--blue); font: 600 clamp(18px, 2vw, 22px) var(--font-display); line-height: 1.45; }
+    .footer { padding: 32px 0; color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    .footer a { margin-left: 16px; color: var(--mint); text-decoration: none; }
+    @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } .plan { min-height: auto; } .plan-intro { min-height: auto; } }
+    @media (max-width: 760px) { .container { width: min(100% - 32px, 1180px); } .nav-links { display: none; } .hero { padding: 58px 0; } .hero-grid, .section-head, .calculator, .guardrail-grid { grid-template-columns: 1fr; gap: 26px; } .hero-side { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; } .calculator-controls { border-right: 0; border-bottom: 1px solid var(--line); } .calculator-controls, .calculator-results { padding: 23px; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation"><div class="container nav-inner"><a class="brand" href="/" aria-label="DialTone.Med home">DialTone<span>.Med</span></a><div class="nav-links"><a href="/">Platform</a><a href="#calculator">ROI calculator</a><a href="#plans">Plans</a><a href="#implementation">Implementation</a></div><a class="button" href="/#contact">Contact</a></div></nav>
+  <main>
+    <section class="hero"><div class="container hero-grid"><div><p class="eyebrow">Practice-tailored pricing</p><h1>Invest in better patient care. <strong>Never miss a high-value call.</strong></h1><p class="hero-copy">Flexible, HIPAA-aligned communication infrastructure tailored to your practice's volume, workflow, and EHR integration needs.</p></div><aside class="hero-side"><strong>Quote-based plans</strong><br>Implementation, integrations, and call volume are scoped around the operations your team needs DialTone.Med to manage.</aside></div></section>
+
+    <section class="section" id="calculator" aria-labelledby="calculator-title"><div class="container"><div class="section-head"><div><p class="eyebrow">ROI calculator</p><h2 id="calculator-title">Calculate your practice's hidden revenue leak.</h2></div><p>Most practices do not realize that 30% to 42% of inbound patient calls go unanswered during business hours. Estimate what your front desk could be recovering.</p></div>
+      <div class="calculator">
+        <div class="calculator-controls">
+          <div class="control"><div class="control-top"><label for="calls">Average inbound calls per month</label><output id="callsOutput" for="calls">500 calls</output></div><p class="range-hint">Select between 100 and 2,000 calls.</p><input id="calls" type="range" min="100" max="2000" step="25" value="500"></div>
+          <div class="control"><div class="control-top"><label>Practice type</label></div><div class="practice-choice" role="group" aria-label="Practice type"><button type="button" data-type="dental" aria-pressed="true">Dental</button><button type="button" data-type="medical" aria-pressed="false">Medical</button></div><div class="control-top"><label for="ltv">Average patient lifetime value</label><output id="ltvOutput" for="ltv">$5,400</output></div><p class="range-hint">Select between $1,000 and $10,000. Defaults: Dental $5,400; Medical $3,500.</p><input id="ltv" type="range" min="1000" max="10000" step="100" value="5400"></div>
+        </div>
+        <div class="calculator-results" aria-live="polite"><p class="calculator-meta">Your estimated ROI analysis</p><h3 class="results-title">The cost of unanswered calls</h3><div class="result-list"><div class="result"><output class="result-value" id="unanswered">175</output><div class="result-label">Estimated monthly unanswered calls</div></div><div class="result"><output class="result-value" id="lost">9</output><div class="result-label">Estimated patients lost to competitors</div></div><div class="result result-risk"><output class="result-value" id="revenue">$48,600</output><div class="result-label">Total monthly revenue risk</div></div></div><a class="button" href="/#contact">Stop the leak. Book an ROI audit demo.</a><p class="method-note">Estimate uses a 35% missed-call rate, 80% voicemail drop-off, and 67% competitor defection rate with a conservative 10% new-patient conversion assumption. It is not a guarantee of results.</p></div>
+      </div>
+    </div></section>
+
+    <section class="section" id="plans" aria-labelledby="plans-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Plan structure</p><h2 id="plans-title">Built around how your practice operates.</h2></div><p>Every plan begins with a scoped conversation about the workflows, integrations, volume, and implementation support your team requires.</p></div><div class="plans">
+      <article class="plan"><p class="plan-tag">Independent practice</p><h3>Standard Practice Plan</h3><p class="plan-intro">For independent, single-location practices eliminating peak-hour and after-hours call overflow.</p><p class="best-for"><span>Best for:</span> 1-3 providers</p><p class="feature-label">Core capabilities</p><ul class="features"><li>After-hours and overflow patient-call handling</li><li>Basic appointment scheduling and rescheduling</li><li>Secure, encrypted billing-inquiry handling</li><li>HIPAA-aligned architecture</li></ul><a class="button button-outline" href="/#contact">Request Standard Quote</a></article>
+      <article class="plan plan-featured"><p class="plan-tag">High-volume clinic</p><h3>High-Volume Clinic Plan</h3><p class="plan-intro">For busy, multi-provider clinics requiring synchronized clinical workflows.</p><p class="best-for"><span>Best for:</span> 4-9 providers / high-volume specialties</p><p class="feature-label">Core capabilities</p><ul class="features"><li class="included">Everything in Standard, plus:</li><li>Bi-directional EHR / practice-management system sync</li><li>Insurance verification and co-pay checks</li><li>Provider-approved prescription refill workflows</li><li>Advanced custom front-desk workflows</li></ul><a class="button" href="/#contact">Request Clinic Quote</a></article>
+      <article class="plan"><p class="plan-tag">Multi-site scale</p><h3>Enterprise / DSO Plan</h3><p class="plan-intro">For large healthcare networks and Dental Service Organizations requiring multi-site architecture.</p><p class="best-for"><span>Best for:</span> 10+ providers / multi-location groups</p><p class="feature-label">Core capabilities</p><ul class="features"><li class="included">Everything in Clinic, plus:</li><li>Multi-site centralized call management</li><li>Custom volume-band pricing models</li><li>Dedicated implementation engineering team</li><li>SOC 2 Type 2 roadmap compliance reporting</li></ul><a class="button button-outline" href="/#contact">Contact Enterprise Sales</a></article>
+    </div></div></section>
+
+    <section class="guardrail" id="implementation" aria-labelledby="guardrail-title"><div class="container guardrail-grid"><div><p class="eyebrow">Implementation guardrail</p><h2 id="guardrail-title">Enterprise infrastructure built for medical compliance.</h2><p>To maintain HIPAA-aligned architecture, secure encrypted telephony, and dedicated provider integrations, every engagement is scoped to the practice before a final quote is provided.</p></div><div class="floor">Professional implementation packages start at $599/month.</div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>&copy; 2026 DialTone.Med. All rights reserved.</span><span><a href="/hippa.html">HIPAA</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></span></div></footer>
+  <script>
+    (() => {
+      const calls = document.getElementById('calls');
+      const ltv = document.getElementById('ltv');
+      const callsOutput = document.getElementById('callsOutput');
+      const ltvOutput = document.getElementById('ltvOutput');
+      const unansweredOutput = document.getElementById('unanswered');
+      const lostOutput = document.getElementById('lost');
+      const revenueOutput = document.getElementById('revenue');
+      const practiceButtons = Array.from(document.querySelectorAll('[data-type]'));
+      const formatCurrency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      const update = () => {
+        const monthlyCalls = Number(calls.value);
+        const patientLtv = Number(ltv.value);
+        const unansweredCalls = Math.round(monthlyCalls * 0.35);
+        const abandonedCalls = unansweredCalls * 0.8;
+        const lostPatients = Math.round(abandonedCalls * 0.67 * 0.1);
+        const monthlyRevenueRisk = lostPatients * patientLtv;
+        callsOutput.value = `${monthlyCalls.toLocaleString()} calls`;
+        ltvOutput.value = formatCurrency.format(patientLtv);
+        unansweredOutput.value = unansweredCalls.toLocaleString();
+        lostOutput.value = lostPatients.toLocaleString();
+        revenueOutput.value = formatCurrency.format(monthlyRevenueRisk);
+      };
+      calls.addEventListener('input', update);
+      ltv.addEventListener('input', update);
+      practiceButtons.forEach((button) => button.addEventListener('click', () => {
+        const isDental = button.dataset.type === 'dental';
+        practiceButtons.forEach((choice) => choice.setAttribute('aria-pressed', String(choice === button)));
+        ltv.value = isDental ? '5400' : '3500';
+        update();
+      }));
+      update();
+    })();
+  </script>
+</body>
+</html>

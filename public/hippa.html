@@ -6,6 +6,7 @@
   <title>HIPAA Compliance Policy — DialTone.Med</title>
   <meta name="description" content="HIPAA Compliance Policy for ByteStreams LLC (d/b/a DialTone.Med)." />
   <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dialtone.med/hippa" />
 
   <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=20260427" />
 
@@ -90,6 +91,17 @@
       opacity: 0.7;
     }
     .nav-home:hover { opacity: 1; }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    @media (max-width: 480px) {
+      .nav-inner { padding: 1rem; gap: 0.75rem; }
+      .nav-meta { display: none; }
+      .nav-actions { margin-left: auto; gap: 0.65rem; }
+      .nav-home { font-size: 0.78rem; }
+    }
 
     main { flex: 1; }
     .container {
@@ -263,7 +275,7 @@
     <div class="nav-inner">
       <a class="logo" href="/" aria-label="DialTone.Med home">DialTone<span class="med">.Med</span></a>
       <span class="nav-meta">HIPAA</span>
-      <a class="nav-home" href="/">&larr; Home</a>
+      <span class="nav-actions"><a class="nav-home" href="/#contact">Contact</a><a class="nav-home" href="/">&larr; Home</a></span>
     </div>
   </nav>
 
