@@ -1,5 +1,14 @@
 # Developer Journal
 
+## 2026-10-25
+
+- Created `feat/engineering-console-refresh` from the successful `30bdb4f` homepage refresh so the new visual work can be reviewed or rolled back without moving `main`.
+- Updated the live homepage to the specified obsidian, sterile-panel, surgical-mint, and alert-crimson color system.
+- Replaced the hero's static workflow diagram with a looping inbound-call terminal and four practice workflow paths.
+- Converted the capability modules to an asymmetric 12-column control-plane grid and expanded the dual leakage consoles with the 42% business-hour miss rate and 75%-85% voicemail drop-off meters.
+- Restyled the trust and contact layers as one continuous technical console and fixed the retained legacy navbar handler so it no longer throws during page scroll.
+- Verified the Worker-served page at desktop and 390px mobile widths with no layout overflow, failed local resources, editor diagnostics, or browser console errors.
+
 ## 2026-10-24
 - Added the Google Search Console verification file and routed its exact `.html` URL through the Worker so Cloudflare Static Assets does not redirect it to an extensionless route during verification.
 

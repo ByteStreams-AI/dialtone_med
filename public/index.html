@@ -852,15 +852,22 @@
 
     /* ── CLINICAL CONSOLE REFRESH ── */
     :root {
-      --console-ink: #10181d;
-      --console-panel: #162229;
-      --console-panel-raised: #1b2b33;
-      --console-line: rgba(226, 245, 243, 0.18);
-      --console-muted: #a8babd;
-      --console-mint: #2ec4b6;
-      --console-cyan: #63d8ed;
-      --console-amber: #f3b34c;
-      --console-red: #e85d60;
+      --bg-prime: #0B0E14;
+      --surface-panel: #131A22;
+      --border-sterile: #222F3E;
+      --text-clinical: #F1F5F9;
+      --text-muted: #64748B;
+      --accent-telemetry: #00F5D4;
+      --accent-alert: #EF4444;
+      --console-ink: var(--bg-prime);
+      --console-panel: var(--surface-panel);
+      --console-panel-raised: #18212b;
+      --console-line: var(--border-sterile);
+      --console-muted: var(--text-muted);
+      --console-mint: var(--accent-telemetry);
+      --console-cyan: #67E8F9;
+      --console-amber: var(--accent-alert);
+      --console-red: var(--accent-alert);
       --console-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       --console-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
     }
@@ -883,7 +890,12 @@
     .console-panel {
       border: 1px solid var(--console-line);
       border-radius: 0;
-      background: rgba(22, 34, 41, 0.92);
+      background: rgba(19, 26, 34, 0.96);
+      transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .console-panel:hover {
+      border-color: var(--accent-telemetry);
+      box-shadow: 0 0 15px rgba(0, 245, 212, 0.05);
     }
     .console-status {
       display: inline-flex;
@@ -936,40 +948,52 @@
     .clinical-nav-links a { color: var(--console-muted); font-size: 13px; text-decoration: none; }
     .clinical-nav-links a:hover { color: var(--console-mint); }
     .console-hero { padding: 82px 0 78px; }
-    .console-hero-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(420px, 1.1fr); gap: 56px; align-items: center; }
+    .console-hero-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 56px; align-items: center; }
     .console-hero h1, .console-section-title { margin: 16px 0; color: #f5fbfa; font-family: var(--console-display); font-size: clamp(38px, 5vw, 68px); font-weight: 700; letter-spacing: 0; line-height: 1.04; }
     .console-hero h1 strong { color: var(--console-cyan); font-weight: inherit; }
     .console-lead { max-width: 570px; color: var(--console-muted); font-size: 18px; line-height: 1.65; }
     .console-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
     .console-outline { border: 1px solid var(--console-line); border-radius: 0; color: #f5fbfa; }
     .console-outline:hover { background: rgba(99,216,237,0.1); }
-    .engine-panel { padding: 20px; position: relative; overflow: hidden; }
+    .engine-panel { min-height: 430px; padding: 22px; position: relative; overflow: hidden; }
     .engine-panel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 45%, rgba(46,196,182,0.08), transparent 55%); animation: scan 5s linear infinite; }
     .engine-header, .module-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: relative; }
     .engine-id, .module-id { color: var(--console-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.08em; }
-    .signal-area { height: 160px; margin: 26px 0 22px; display: flex; align-items: center; overflow: hidden; position: relative; }
-    .signal-line { width: 100%; height: 78px; background: linear-gradient(90deg, transparent 0 2%, var(--console-mint) 2% 4%, transparent 4% 6%, var(--console-cyan) 6% 9%, transparent 9% 11%, var(--console-mint) 11% 14%, transparent 14% 16%, var(--console-cyan) 16% 20%, transparent 20% 22%, var(--console-mint) 22% 25%, transparent 25% 27%, var(--console-cyan) 27% 31%, transparent 31% 33%, var(--console-mint) 33% 36%, transparent 36% 38%, var(--console-cyan) 38% 42%, transparent 42% 44%, var(--console-mint) 44% 48%, transparent 48% 50%, var(--console-cyan) 50% 54%, transparent 54% 56%, var(--console-mint) 56% 60%, transparent 60% 62%, var(--console-cyan) 62% 66%, transparent 66% 68%, var(--console-mint) 68% 72%, transparent 72% 74%, var(--console-cyan) 74% 78%, transparent 78% 80%, var(--console-mint) 80% 84%, transparent 84% 86%, var(--console-cyan) 86% 90%, transparent 90% 92%, var(--console-mint) 92% 96%, transparent 96%); clip-path: polygon(0 48%, 4% 48%, 6% 15%, 8% 85%, 10% 35%, 12% 60%, 14% 46%, 17% 48%, 19% 28%, 21% 70%, 23% 43%, 26% 54%, 29% 48%, 32% 48%, 34% 8%, 36% 92%, 38% 30%, 40% 65%, 42% 48%, 50% 48%, 52% 25%, 54% 72%, 56% 42%, 58% 53%, 60% 48%, 67% 48%, 69% 18%, 71% 82%, 73% 37%, 75% 58%, 77% 48%, 84% 48%, 86% 27%, 88% 70%, 90% 42%, 92% 53%, 94% 48%, 100% 48%, 100% 52%, 94% 52%, 92% 47%, 90% 58%, 88% 30%, 86% 73%, 84% 52%, 77% 52%, 75% 42%, 73% 63%, 71% 18%, 69% 82%, 67% 52%, 60% 52%, 58% 47%, 56% 58%, 54% 28%, 52% 75%, 50% 52%, 42% 52%, 40% 35%, 38% 70%, 36% 8%, 34% 92%, 32% 52%, 29% 52%, 26% 46%, 23% 57%, 21% 30%, 19% 72%, 17% 52%, 14% 52%, 12% 40%, 10% 65%, 8% 15%, 6% 85%, 4% 52%, 0 52%); animation: pulse-signal 3s ease-in-out infinite; }
-    .engine-route { display: grid; grid-template-columns: minmax(0, 0.82fr) auto minmax(0, 1.12fr) auto minmax(0, 1.28fr); gap: 6px; align-items: center; position: relative; }
-    .route-node { border: 1px solid var(--console-line); padding: 11px; color: #eaf6f5; font-family: var(--console-mono); font-size: 11px; line-height: 1.45; }
-    .route-arrow { color: var(--console-mint); font-family: var(--console-mono); }
+    .sim-header, .console-label { color: var(--text-muted); font-family: var(--console-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .sim-stream { min-height: 238px; margin: 28px 0 24px; padding: 22px 0; border-top: 1px solid var(--console-line); border-bottom: 1px solid var(--console-line); position: relative; }
+    .sim-log { margin: 0 0 15px; color: #CBD5E1; font-family: var(--console-mono); font-size: 12px; line-height: 1.5; animation: log-cycle 8s ease-in-out infinite; }
+    .sim-log:nth-child(2) { animation-delay: 0.6s; }
+    .sim-log:nth-child(3) { animation-delay: 1.2s; }
+    .sim-log:nth-child(4) { animation-delay: 1.8s; }
+    .sim-log:nth-child(5) { animation-delay: 2.4s; }
+    .route-success, .mint-text { color: var(--accent-telemetry); }
+    .route-paths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; position: relative; }
+    .route-path { padding: 10px 8px; border: 1px solid var(--console-line); color: var(--text-clinical); font-family: var(--console-mono); font-size: 9px; line-height: 1.4; text-align: center; text-transform: uppercase; }
     .console-note { margin-top: 15px; color: var(--console-muted); font-size: 11px; font-family: var(--console-mono); }
     .console-section { padding: 82px 0; border-top: 1px solid var(--console-line); }
     .console-section-heading { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr); gap: 40px; align-items: end; margin-bottom: 32px; }
     .console-section-title { font-size: clamp(30px, 4vw, 48px); }
     .console-section-heading p { margin: 0; color: var(--console-muted); line-height: 1.6; }
     .leak-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .leak-panel { padding: 22px; }
+    .leak-panel { padding: 24px; position: relative; overflow: hidden; }
+    .leak-panel::after { content: ''; position: absolute; right: 0; bottom: 0; left: 0; height: 45%; background: linear-gradient(180deg, transparent, rgba(239, 68, 68, 0.035)); pointer-events: none; }
     .leak-title { margin: 22px 0 7px; color: #f5fbfa; font-size: 22px; }
     .leak-description { min-height: 46px; margin: 0; color: var(--console-muted); font-size: 14px; }
-    .leak-visual { height: 96px; display: flex; align-items: end; gap: 7px; margin: 24px 0; border-bottom: 1px solid var(--console-line); background: linear-gradient(180deg, rgba(232,93,96,0.08), transparent); }
+    .leak-visual { height: 76px; display: flex; align-items: end; gap: 7px; margin: 24px 0; border-bottom: 1px solid var(--console-line); background: linear-gradient(180deg, rgba(239,68,68,0.08), transparent); }
     .leak-visual span { display: block; flex: 1; background: var(--console-red); }
     .leak-visual span:nth-child(1) { height: 90%; } .leak-visual span:nth-child(2) { height: 70%; } .leak-visual span:nth-child(3) { height: 46%; } .leak-visual span:nth-child(4) { height: 27%; } .leak-visual span:nth-child(5) { height: 15%; }
-    .leak-stat { color: var(--console-amber); font-family: var(--console-mono); font-size: clamp(24px, 4vw, 38px); font-weight: 700; }
+    .leak-stat { color: var(--accent-alert); font-family: var(--console-mono); font-size: clamp(34px, 5vw, 56px); font-weight: 700; letter-spacing: 0; line-height: 1; position: relative; z-index: 1; }
     .leak-label { margin-top: 5px; color: var(--console-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
+    .metric-meter { height: 5px; margin: 18px 0 10px; background: var(--border-sterile); overflow: hidden; }
+    .metric-meter-fill { display: block; width: var(--meter-value); height: 100%; background: var(--accent-alert); animation: meter-load 1.2s ease-out both; }
+    .metric-diagnostic { display: flex; justify-content: space-between; gap: 16px; color: var(--text-muted); font-family: var(--console-mono); font-size: 10px; line-height: 1.5; text-transform: uppercase; }
+    .metric-diagnostic strong { color: var(--accent-alert); font-weight: 700; }
     .leak-source { display: block; margin-top: 20px; color: var(--console-muted); font-size: 12px; }
     .leak-source a { color: var(--console-cyan); }
-    .bento-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .bento-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
     .bento-module { min-height: 260px; padding: 22px; display: flex; flex-direction: column; }
+    .card-appointments, .card-billing { grid-column: span 5; }
+    .card-eligibility, .card-refills { grid-column: span 7; }
     .bento-module h3 { margin: 28px 0 8px; color: #f5fbfa; font-size: 24px; }
     .bento-module p { margin: 0; color: var(--console-muted); font-size: 14px; line-height: 1.6; }
     .terminal { margin-top: auto; padding: 14px; border-left: 2px solid var(--console-mint); background: rgba(7, 25, 24, 0.5); color: #d5ebea; font-family: var(--console-mono); font-size: 12px; line-height: 1.8; }
@@ -980,22 +1004,29 @@
     .architecture-node h3 { color: #f5fbfa; font-size: 17px; margin: 0; }
     .architecture-node p { color: var(--console-muted); font-size: 13px; line-height: 1.55; margin: 12px 0 0; }
     .architecture-node .module-id { color: var(--console-cyan); }
-    .console-contact { background: #f4fbfa; color: var(--dt-deep-charcoal); }
-    .console-contact .section-label { color: var(--dt-signal-teal); }
-    .console-contact .section-header h2 { color: var(--dt-med-blue); }
-    .console-contact .contact-card { border-radius: 0; box-shadow: none; }
-    .console-contact .submit-btn { border-radius: 0; background: var(--dt-med-blue); }
+    .console-contact { border-top: 1px solid var(--console-line); background: var(--surface-panel); color: var(--text-clinical); }
+    .console-contact .section-label { color: var(--accent-telemetry); }
+    .console-contact .section-header h2 { color: var(--text-clinical); }
+    .console-contact .section-header p { color: var(--text-muted); }
+    .console-contact .contact-card { border: 1px solid var(--console-line); border-radius: 0; background: var(--bg-prime); box-shadow: none; }
+    .console-contact .form-field label { color: var(--text-clinical); }
+    .console-contact .form-field input, .console-contact .form-field textarea { border-color: var(--console-line); border-radius: 0; background: var(--surface-panel); color: var(--text-clinical); }
+    .console-contact .form-field input:focus, .console-contact .form-field textarea:focus { border-color: var(--accent-telemetry); box-shadow: 0 0 0 3px rgba(0, 245, 212, 0.08); }
+    .console-contact .submit-btn { border-radius: 0; background: var(--accent-telemetry); color: var(--bg-prime); }
     .console-footer { padding: 34px 0; border-top: 1px solid var(--console-line); color: var(--console-muted); font-size: 12px; }
     .console-footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
     .console-footer a { color: var(--console-mint); margin-left: 18px; text-decoration: none; }
     @keyframes scan { from { transform: translateX(-120%); } to { transform: translateX(120%); } }
     @keyframes pulse-signal { 50% { transform: scaleY(0.76); opacity: 0.7; } }
+    @keyframes log-cycle { 0%, 8% { opacity: 0.22; transform: translateX(-4px); } 18%, 80% { opacity: 1; transform: translateX(0); } 92%, 100% { opacity: 0.22; transform: translateX(0); } }
+    @keyframes meter-load { from { width: 0; } }
     @media (max-width: 800px) {
       .clinical-nav-inner, .clinical-container { width: min(100% - 32px, 1180px); }
       .clinical-nav-links { display: none; }
       .console-hero { padding: 54px 0; }
       .console-hero-grid, .console-section-heading { grid-template-columns: 1fr; gap: 30px; }
       .leak-grid, .bento-grid { grid-template-columns: 1fr; }
+      .card-appointments, .card-eligibility, .card-refills, .card-billing { grid-column: auto; }
       .architecture-grid { grid-template-columns: repeat(2, 1fr); }
       .architecture-node:nth-child(2) { border-right: 0; }
       .architecture-node:nth-child(-n + 2) { border-bottom: 1px solid var(--console-line); }
@@ -1004,8 +1035,8 @@
       .architecture-grid { grid-template-columns: 1fr; }
       .architecture-node { border-right: 0; border-bottom: 1px solid var(--console-line); }
       .architecture-node:last-child { border-bottom: 0; }
-      .engine-route { grid-template-columns: 1fr; }
-      .route-arrow { transform: rotate(90deg); text-align: center; }
+      .engine-panel { min-height: 0; }
+      .route-paths { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -1029,20 +1060,27 @@
       <div class="clinical-container console-hero-grid">
         <div>
           <p class="console-kicker">DialTone.Med / inbound communication infrastructure</p>
-          <h1>High-availability inbound answering for <strong>high-volume practices.</strong></h1>
+          <h1>Hello Michelle inbound answering for <strong>high-volume practices.</strong></h1>
           <p class="console-lead">DialTone.Med answers routine patient calls and manages appointments, refill requests, billing management, and insurance verification so the front desk can stay focused on care.</p>
           <div class="console-actions">
             <a href="#contact" class="btn btn-lg console-button">Talk to our team</a>
             <a href="#architecture" class="btn btn-lg console-outline">Explore architecture</a>
           </div>
         </div>
-        <div class="engine-panel console-panel" aria-label="Illustrative patient-call operations">
-          <div class="engine-header"><span class="console-status">Patient calls answered</span><span class="engine-id">PRACTICE OPERATIONS</span></div>
-          <div class="signal-area" aria-hidden="true"><div class="signal-line"></div></div>
-          <div class="engine-route">
-            <div class="route-node">PATIENT SUPPORT<br>Calls answered promptly</div><span class="route-arrow">&gt;</span>
-            <div class="route-node">TRUSTED OPERATIONS<br>Accurate, compliant, practice-configured</div><span class="route-arrow">&gt;</span>
-            <div class="route-node">ROUTINE WORK<br>Scheduling, refills, billing, insurance</div>
+        <div class="engine-panel console-panel routing-simulator" aria-label="Illustrative live patient-call routing stream">
+          <div class="engine-header"><span class="console-status sim-header">Live edge stream</span><span class="engine-id">NODE // DTM-01</span></div>
+          <div class="sim-stream">
+            <p class="sim-log">&gt; INBOUND TELEPHONY CALL CONNECTED</p>
+            <p class="sim-log">&gt; INTENT RECOGNITION ACTIVE...</p>
+            <p class="sim-log route-success">&gt; CLASSIFIED: <span class="mint-text">[PRESCRIPTION_REFILL]</span></p>
+            <p class="sim-log">&gt; PROVIDER-APPROVED WORKFLOW SELECTED</p>
+            <p class="sim-log route-success">&gt; REQUEST CAPTURED // STATUS: ACTIVE</p>
+          </div>
+          <div class="route-paths" aria-label="Available workflow paths">
+            <div class="route-path">Appointments</div>
+            <div class="route-path">Refills</div>
+            <div class="route-path">Billing</div>
+            <div class="route-path">Insurance</div>
           </div>
           <p class="console-note">Each workflow is configured to the practice's requirements.</p>
         </div>
@@ -1053,8 +1091,8 @@
       <div class="clinical-container">
         <div class="console-section-heading"><div><p class="console-kicker">Call-capture exposure</p><h2 class="console-section-title" id="leak-title">The leaking pipeline.</h2></div><p>When routine calls reach voicemail, practices lose the chance to respond when a patient is ready to act. These published benchmarks make the exposure visible.</p></div>
         <div class="console-grid leak-grid">
-          <article class="leak-panel console-panel"><div class="module-header"><span class="console-status">Medical console</span></div><h3 class="leak-title">Voicemail is a drop-off point.</h3><p class="leak-description">Patients who cannot reach a practice often do not leave a message or return the call.</p><div class="leak-visual" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div class="leak-stat">$200K-$500K</div><div class="leak-label">Estimated annual revenue at risk</div><small class="leak-source">Existing site data; validate before paid promotion.</small></article>
-          <article class="leak-panel console-panel"><div class="module-header"><span class="console-status">Dental console</span></div><h3 class="leak-title">Immediate access matters.</h3><p class="leak-description">Each bar shows the caller pool narrowing after voicemail, where most patients do not return.</p><div class="leak-visual" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div class="leak-stat">75%-85%</div><div class="leak-label">Reported voicemail drop-off range</div><small class="leak-source">Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</small></article>
+          <article class="leak-panel console-panel"><div class="module-header"><span class="console-status">Medical operations console</span><span class="console-label">Revenue exposure</span></div><h3 class="leak-title">Business-hour demand is escaping.</h3><p class="leak-description">A study of 7,000 calls across 22 practices reported a 42% business-hour miss rate.</p><div class="leak-visual" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div class="leak-stat">$200K-$500K</div><div class="leak-label">Estimated annual revenue at risk</div><div class="metric-meter" aria-hidden="true"><span class="metric-meter-fill" style="--meter-value: 42%;"></span></div><div class="metric-diagnostic"><span>Business-hour miss rate</span><strong>42%</strong></div><small class="leak-source">Existing site data; validate before paid promotion.</small></article>
+          <article class="leak-panel console-panel"><div class="module-header"><span class="console-status">Dental operations console</span><span class="console-label">Caller retention</span></div><h3 class="leak-title">Voicemail narrows the pipeline.</h3><p class="leak-description">Most callers who reach voicemail never call back, reducing a full inbound pipeline to a narrow recovery window.</p><div class="leak-visual" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div class="leak-stat">75%-85%</div><div class="leak-label">Reported voicemail drop-off range</div><div class="metric-meter" aria-hidden="true"><span class="metric-meter-fill" style="--meter-value: 85%;"></span></div><div class="metric-diagnostic"><span>Caller pipeline lost</span><strong>High alert</strong></div><small class="leak-source">Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</small></article>
         </div>
       </div>
     </section>
@@ -1063,10 +1101,10 @@
       <div class="clinical-container">
         <div class="console-section-heading"><div><p class="console-kicker">Configurable workflows</p><h2 class="console-section-title" id="capabilities-title">The routine-call control plane.</h2></div><p>Each panel is an illustrative view of a capability area. Patient-facing behavior and integrations are configured with the practice.</p></div>
         <div class="console-grid bento-grid">
-          <article class="bento-module console-panel"><div class="module-header"><span class="console-status">Insurance</span></div><h3>Eligibility workflows</h3><p>Manage insurance questions through the practice-approved workflow before an appointment.</p><div class="terminal">&gt; eligibility request received<br><span class="cyan">&gt; verification workflow in progress</span><br><span class="mint">&gt; practice workflow active</span></div></article>
-          <article class="bento-module console-panel"><div class="module-header"><span class="console-status">Refills</span></div><h3>Prescription requests</h3><p>Capture eligible renewal requests and direct them through provider-approved processes.</p><div class="terminal">&gt; request classified: refill<br><span class="cyan">&gt; policy check initiated</span><br><span class="mint">&gt; provider workflow active</span></div></article>
-          <article class="bento-module console-panel"><div class="module-header"><span class="console-status">Billing</span></div><h3>Billing management</h3><p>Manage routine balances, statements, and payments without interrupting an in-person patient interaction.</p><div class="terminal">&gt; billing request received<br><span class="cyan">&gt; configured billing path selected</span><br><span class="mint">&gt; secure workflow active</span></div></article>
-          <article class="bento-module console-panel"><div class="module-header"><span class="console-status">Scheduling</span></div><h3>Appointment coordination</h3><p>Support appointment review, new scheduling, rescheduling, and call-back requests.</p><div class="terminal">&gt; appointment intent detected<br><span class="cyan">&gt; scheduling path selected</span><br><span class="mint">&gt; practice workflow active</span></div></article>
+          <article class="bento-module console-panel card-appointments"><div class="module-header"><span class="console-status">Scheduling</span></div><h3>Appointment coordination</h3><p>Support appointment review, new scheduling, rescheduling, and call-back requests.</p><div class="terminal">&gt; appointment intent detected<br><span class="cyan">&gt; scheduling path selected</span><br><span class="mint">&gt; practice workflow active</span></div></article>
+          <article class="bento-module console-panel card-eligibility"><div class="module-header"><span class="console-status">Insurance</span></div><h3>Eligibility workflows</h3><p>Manage insurance questions through the practice-approved workflow before an appointment.</p><div class="terminal">&gt; eligibility request received<br><span class="cyan">&gt; verification workflow in progress</span><br><span class="mint">&gt; practice workflow active</span></div></article>
+          <article class="bento-module console-panel card-refills"><div class="module-header"><span class="console-status">Refills</span></div><h3>Prescription requests</h3><p>Capture eligible renewal requests and direct them through provider-approved processes.</p><div class="terminal">&gt; request classified: refill<br><span class="cyan">&gt; policy check initiated</span><br><span class="mint">&gt; provider workflow active</span></div></article>
+          <article class="bento-module console-panel card-billing"><div class="module-header"><span class="console-status">Billing</span></div><h3>Billing management</h3><p>Manage routine balances, statements, and payments without interrupting an in-person patient interaction.</p><div class="terminal">&gt; billing request received<br><span class="cyan">&gt; configured billing path selected</span><br><span class="mint">&gt; secure workflow active</span></div></article>
         </div>
       </div>
     </section>
@@ -1447,9 +1485,11 @@
   <script>
     // Navbar scroll shadow
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 10);
-    }, { passive: true });
+    if (navbar) {
+      window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 10);
+      }, { passive: true });
+    }
 
     // Fade-in on scroll
     const faders = document.querySelectorAll('.fade-in');
