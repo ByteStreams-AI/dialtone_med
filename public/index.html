@@ -974,22 +974,22 @@
     .console-section-heading { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr); gap: 40px; align-items: end; margin-bottom: 32px; }
     .console-section-title { font-size: clamp(30px, 4vw, 48px); }
     .console-section-heading p { margin: 0; color: var(--console-muted); line-height: 1.6; }
-    .leak-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .leak-panel { padding: 24px; position: relative; overflow: hidden; }
-    .leak-panel::after { content: ''; position: absolute; right: 0; bottom: 0; left: 0; height: 45%; background: linear-gradient(180deg, transparent, rgba(239, 68, 68, 0.035)); pointer-events: none; }
-    .leak-title { margin: 22px 0 7px; color: #f5fbfa; font-size: 22px; }
-    .leak-description { min-height: 46px; margin: 0; color: var(--console-muted); font-size: 14px; }
-    .leak-visual { height: 76px; display: flex; align-items: end; gap: 7px; margin: 24px 0; border-bottom: 1px solid var(--console-line); background: linear-gradient(180deg, rgba(239,68,68,0.08), transparent); }
-    .leak-visual span { display: block; flex: 1; background: var(--console-red); }
-    .leak-visual span:nth-child(1) { height: 90%; } .leak-visual span:nth-child(2) { height: 70%; } .leak-visual span:nth-child(3) { height: 46%; } .leak-visual span:nth-child(4) { height: 27%; } .leak-visual span:nth-child(5) { height: 15%; }
-    .leak-stat { color: var(--accent-alert); font-family: var(--console-mono); font-size: clamp(34px, 5vw, 56px); font-weight: 700; letter-spacing: 0; line-height: 1; position: relative; z-index: 1; }
-    .leak-label { margin-top: 5px; color: var(--console-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; }
-    .metric-meter { height: 5px; margin: 18px 0 10px; background: var(--border-sterile); overflow: hidden; }
-    .metric-meter-fill { display: block; width: var(--meter-value); height: 100%; background: var(--accent-alert); animation: meter-load 1.2s ease-out both; }
-    .metric-diagnostic { display: flex; justify-content: space-between; gap: 16px; color: var(--text-muted); font-family: var(--console-mono); font-size: 10px; line-height: 1.5; text-transform: uppercase; }
-    .metric-diagnostic strong { color: var(--accent-alert); font-weight: 700; }
-    .leak-source { display: block; margin-top: 20px; color: var(--console-muted); font-size: 12px; }
-    .leak-source a { color: var(--console-cyan); }
+    .exposure-console { padding: 28px; }
+    .console-controls { display: flex; gap: 12px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border-sterile); }
+    .mode-toggle { padding: 9px 16px; border: 1px solid var(--border-sterile); background: transparent; color: var(--text-muted); cursor: pointer; font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.06em; transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
+    .mode-toggle:hover, .mode-toggle[aria-selected="true"] { border-color: var(--accent-telemetry); background: rgba(0, 245, 212, 0.03); color: var(--accent-telemetry); }
+    .mode-toggle:focus-visible { outline: 2px solid var(--accent-telemetry); outline-offset: 3px; }
+    .metric-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-bottom: 40px; }
+    .metric-block label, .pipeline-visualization label { display: block; margin-bottom: 12px; color: var(--text-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.1em; }
+    .metric-block p { max-width: 420px; margin: 12px 0 0; color: var(--console-muted); font-size: 14px; line-height: 1.6; }
+    .massive-stat { font-family: var(--console-mono); font-size: clamp(34px, 6vw, 62px); font-weight: 700; letter-spacing: 0; line-height: 1; }
+    .alert-text { color: var(--accent-alert); }
+    .telemetry-text { color: var(--accent-telemetry); }
+    .meter-container { width: 100%; height: 8px; margin-bottom: 12px; border: 1px solid var(--border-sterile); background: #06080B; overflow: hidden; }
+    .meter-fill { width: 15%; height: 100%; background: var(--accent-alert); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .meter-spec { color: var(--text-clinical); font-family: var(--console-mono); font-size: 11px; }
+    .exposure-source { margin: 24px 0 0; color: var(--console-muted); font-size: 12px; }
+    .exposure-source a { color: var(--console-cyan); }
     .bento-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
     .bento-module { min-height: 260px; padding: 22px; display: flex; flex-direction: column; }
     .card-appointments, .card-billing { grid-column: span 5; }
@@ -1004,6 +1004,16 @@
     .architecture-node h3 { color: #f5fbfa; font-size: 17px; margin: 0; }
     .architecture-node p { color: var(--console-muted); font-size: 13px; line-height: 1.55; margin: 12px 0 0; }
     .architecture-node .module-id { color: var(--console-cyan); }
+    .pipeline-track { display: flex; gap: 40px; position: relative; }
+    .pipeline-track::before { content: ''; position: absolute; z-index: 1; top: 16px; left: 0; width: 100%; height: 1px; background: var(--border-sterile); }
+    .pipeline-step { flex: 1; position: relative; z-index: 2; }
+    .step-indicator { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .step-node { display: flex; width: 32px; height: 32px; align-items: center; justify-content: center; border: 1px solid var(--border-sterile); background: var(--text-clinical); color: var(--bg-prime); font-family: var(--console-mono); font-size: 13px; font-weight: 700; transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
+    .step-label-mono { padding-right: 10px; background: var(--bg-prime); color: var(--text-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.15em; transition: color 0.2s ease-in-out; }
+    .step-content h3 { margin: 0 0 12px; color: var(--text-clinical); font-size: 20px; letter-spacing: 0; }
+    .step-content p { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+    .pipeline-step:hover .step-node { border-color: var(--accent-telemetry); background: var(--accent-telemetry); box-shadow: 0 0 15px rgba(0, 245, 212, 0.3); }
+    .pipeline-step:hover .step-label-mono { color: var(--accent-telemetry); }
     .console-contact { border-top: 1px solid var(--console-line); background: var(--surface-panel); color: var(--text-clinical); }
     .console-contact .section-label { color: var(--accent-telemetry); }
     .console-contact .section-header h2 { color: var(--text-clinical); }
@@ -1025,13 +1035,21 @@
       .clinical-nav-links { display: none; }
       .console-hero { padding: 54px 0; }
       .console-hero-grid, .console-section-heading { grid-template-columns: 1fr; gap: 30px; }
-      .leak-grid, .bento-grid { grid-template-columns: 1fr; }
+      .bento-grid { grid-template-columns: 1fr; }
       .card-appointments, .card-eligibility, .card-refills, .card-billing { grid-column: auto; }
+      .pipeline-track { flex-direction: column; gap: 48px; }
+      .pipeline-track::before { top: 0; left: 16px; width: 1px; height: 100%; }
+      .pipeline-step { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 24px; }
+      .step-indicator { margin: 0; }
+      .step-label-mono { display: none; }
       .architecture-grid { grid-template-columns: repeat(2, 1fr); }
       .architecture-node:nth-child(2) { border-right: 0; }
       .architecture-node:nth-child(-n + 2) { border-bottom: 1px solid var(--console-line); }
     }
     @media (max-width: 480px) {
+      .exposure-console { padding: 20px; }
+      .console-controls { align-items: stretch; flex-direction: column; }
+      .metric-row { grid-template-columns: 1fr; gap: 32px; }
       .architecture-grid { grid-template-columns: 1fr; }
       .architecture-node { border-right: 0; border-bottom: 1px solid var(--console-line); }
       .architecture-node:last-child { border-bottom: 0; }
@@ -1090,9 +1108,19 @@
     <section class="console-section" id="problem" aria-labelledby="leak-title">
       <div class="clinical-container">
         <div class="console-section-heading"><div><p class="console-kicker">Call-capture exposure</p><h2 class="console-section-title" id="leak-title">The leaking pipeline.</h2></div><p>When routine calls reach voicemail, practices lose the chance to respond when a patient is ready to act. These published benchmarks make the exposure visible.</p></div>
-        <div class="console-grid leak-grid">
-          <article class="leak-panel console-panel"><div class="module-header"><span class="console-status">Medical operations console</span><span class="console-label">Revenue exposure</span></div><h3 class="leak-title">Business-hour demand is escaping.</h3><p class="leak-description">A study of 7,000 calls across 22 practices reported a 42% business-hour miss rate.</p><div class="leak-visual" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div class="leak-stat">$200K-$500K</div><div class="leak-label">Estimated annual revenue at risk</div><div class="metric-meter" aria-hidden="true"><span class="metric-meter-fill" style="--meter-value: 42%;"></span></div><div class="metric-diagnostic"><span>Business-hour miss rate</span><strong>42%</strong></div><small class="leak-source">Existing site data; validate before paid promotion.</small></article>
-          <article class="leak-panel console-panel"><div class="module-header"><span class="console-status">Dental operations console</span><span class="console-label">Caller retention</span></div><h3 class="leak-title">Voicemail narrows the pipeline.</h3><p class="leak-description">Most callers who reach voicemail never call back, reducing a full inbound pipeline to a narrow recovery window.</p><div class="leak-visual" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div><div class="leak-stat">75%-85%</div><div class="leak-label">Reported voicemail drop-off range</div><div class="metric-meter" aria-hidden="true"><span class="metric-meter-fill" style="--meter-value: 85%;"></span></div><div class="metric-diagnostic"><span>Caller pipeline lost</span><strong>High alert</strong></div><small class="leak-source">Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</small></article>
+        <div class="exposure-console console-panel">
+          <div class="console-controls" role="tablist" aria-label="Practice exposure profile">
+            <button class="mode-toggle" type="button" role="tab" id="medicalMode" aria-selected="true" aria-controls="exposureMetrics" data-practice-mode="medical">CONSOLE // MED_OPS</button>
+            <button class="mode-toggle" type="button" role="tab" id="dentalMode" aria-selected="false" aria-controls="exposureMetrics" data-practice-mode="dental" tabindex="-1">CONSOLE // DENT_OPS</button>
+          </div>
+          <div id="exposureMetrics" role="tabpanel" aria-labelledby="medicalMode">
+            <div class="metric-row">
+              <div class="metric-block"><label>SYSTEM RISK PROFILE</label><div class="massive-stat alert-text" id="missRate">42%</div><p>Average business-hour inbound miss rate documented across regional practices.</p></div>
+              <div class="metric-block"><label>ESTIMATED ANNUAL REVENUE RISK</label><div class="massive-stat telemetry-text" id="revenueRisk">$200K-$500K</div><p>Potential practice revenue exposed through uncaptured inbound workflows.</p></div>
+            </div>
+            <div class="pipeline-visualization"><label>PIPELINE RETENTION AFTER VOICEMAIL</label><div class="meter-container" aria-hidden="true"><div class="meter-fill" id="pipelineFill"></div></div><span class="meter-spec" id="dropOffLabel">75%-85% PATIENT ABANDONMENT RATE</span></div>
+            <p class="exposure-source">Benchmarks are directional estimates. Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -1109,7 +1137,18 @@
       </div>
     </section>
 
-    <section class="console-section" id="architecture" aria-labelledby="architecture-title">
+    <section class="console-section" id="architecture" aria-labelledby="onboarding-title">
+      <div class="clinical-container">
+        <div class="console-section-heading"><div><p class="console-kicker">Core runtime init // system onboarding matrix</p><h2 class="console-section-title" id="onboarding-title">Integration architecture.</h2></div><p>Deploy high-availability communication handling across your existing infrastructure in three sequence modules.</p></div>
+        <div class="pipeline-track" aria-labelledby="onboarding-title">
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">01</div><div class="step-label-mono">HANDSHAKE</div></div><div class="step-content"><h3>Telephony Line Handshake</h3><p>Route missed, overflow, or after-hours call paths to DialTone.Med while retaining your current practice phone numbers.</p></div></article>
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">02</div><div class="step-label-mono">PROVISION</div></div><div class="step-content"><h3>Workflow Control Provisioning</h3><p>Define practice-approved rules for scheduling, insurance inquiries, billing, and prescription refill requests.</p></div></article>
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">03</div><div class="step-label-mono">RUNTIME</div></div><div class="step-content"><h3>Edge Automation Activation</h3><p>Activate the answering layer so routine patient requests enter secure, configured workflows without adding front-desk pressure.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="console-section" aria-labelledby="architecture-title">
       <div class="clinical-container">
         <div class="console-section-heading"><div><p class="console-kicker">Trust architecture</p><h2 class="console-section-title" id="architecture-title">HIPAA-aligned infrastructure.</h2></div><p>DialTone.Med is designed for secure healthcare communication, with controls documented in the platform compliance policy.</p></div>
         <div class="architecture-grid">
@@ -1503,6 +1542,48 @@
       });
     }, appearOptions);
     faders.forEach(fader => appearOnScroll.observe(fader));
+
+    // Practice exposure console
+    (() => {
+      const practiceData = {
+        medical: { missRate: '42%', revenue: '$200K-$500K', dropOff: '75%-85%', fill: '15%' },
+        dental: { missRate: '38%', revenue: '$100K-$150K+', dropOff: '78%-85%', fill: '18%' }
+      };
+      const tabs = Array.from(document.querySelectorAll('[data-practice-mode]'));
+      const panel = document.getElementById('exposureMetrics');
+      const missRate = document.getElementById('missRate');
+      const revenueRisk = document.getElementById('revenueRisk');
+      const dropOffLabel = document.getElementById('dropOffLabel');
+      const pipelineFill = document.getElementById('pipelineFill');
+      if (!tabs.length || !panel || !missRate || !revenueRisk || !dropOffLabel || !pipelineFill) return;
+
+      const activateMode = (mode) => {
+        const data = practiceData[mode];
+        if (!data) return;
+        tabs.forEach((tab) => {
+          const isActive = tab.dataset.practiceMode === mode;
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          tab.tabIndex = isActive ? 0 : -1;
+          if (isActive) panel.setAttribute('aria-labelledby', tab.id);
+        });
+        missRate.textContent = data.missRate;
+        revenueRisk.textContent = data.revenue;
+        dropOffLabel.textContent = `${data.dropOff} PATIENT ABANDONMENT RATE`;
+        pipelineFill.style.width = data.fill;
+      };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => activateMode(tab.dataset.practiceMode));
+        tab.addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+          event.preventDefault();
+          const direction = event.key === 'ArrowRight' ? 1 : -1;
+          const nextTab = tabs[(index + direction + tabs.length) % tabs.length];
+          nextTab.focus();
+          activateMode(nextTab.dataset.practiceMode);
+        });
+      });
+    })();
 
     // Problem data tabs
     (() => {

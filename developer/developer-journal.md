@@ -2,6 +2,9 @@
 
 ## 2026-10-25
 
+- Replaced the homepage's side-by-side leak cards with an accessible Medical/Dental exposure console that updates miss rate, annual revenue risk, and voicemail retention telemetry.
+- Added a responsive three-stage integration pipeline covering telephony handoff, workflow provisioning, and automation activation.
+- Verified click and arrow-key mode switching, ARIA state updates, unique element IDs, and overflow-free desktop/mobile layouts through the local Wrangler preview.
 - Created `feat/engineering-console-refresh` from the successful `30bdb4f` homepage refresh so the new visual work can be reviewed or rolled back without moving `main`.
 - Updated the live homepage to the specified obsidian, sterile-panel, surgical-mint, and alert-crimson color system.
 - Replaced the hero's static workflow diagram with a looping inbound-call terminal and four practice workflow paths.
