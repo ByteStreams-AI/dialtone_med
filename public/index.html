@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DialTone.Med — Inbound Communication Infrastructure for Healthcare</title>
-  <meta name="description" content="DialTone.Med provides HIPAA-aligned inbound communication workflows for healthcare practices, including appointments, billing management, refill requests, and insurance verification.">
+  <title>DialTone.Med — The Phone Agent for Every Patient Call</title>
+  <meta name="description" content="DialTone.Med answers every patient call and manages appointments, refill requests, billing, and insurance verification through configurable practice workflows.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dialtone.med/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DialTone.Med">
-  <meta property="og:title" content="DialTone.Med — Inbound Communication Infrastructure for Healthcare">
-  <meta property="og:description" content="HIPAA-aligned inbound communication workflows for healthcare practices.">
+  <meta property="og:title" content="DialTone.Med — The Phone Agent for Every Patient Call">
+  <meta property="og:description" content="One healthcare phone agent for appointments, refills, billing, and insurance verification.">
   <meta property="og:url" content="https://dialtone.med/">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="DialTone.Med — Inbound Communication Infrastructure for Healthcare">
-  <meta name="twitter:description" content="HIPAA-aligned inbound communication workflows for healthcare practices.">
+  <meta name="twitter:title" content="DialTone.Med — The Phone Agent for Every Patient Call">
+  <meta name="twitter:description" content="One healthcare phone agent for appointments, refills, billing, and insurance verification.">
 
   <script type="application/ld+json">
   {
@@ -35,6 +35,7 @@
         "@id": "https://dialtone.med/#website",
         "url": "https://dialtone.med/",
         "name": "DialTone.Med",
+        "description": "A healthcare phone agent that answers patient calls and manages appointments, refill requests, billing, and insurance verification.",
         "publisher": { "@id": "https://dialtone.med/#organization" }
       }
     ]
@@ -986,7 +987,7 @@
     .alert-text { color: var(--accent-alert); }
     .telemetry-text { color: var(--accent-telemetry); }
     .meter-container { width: 100%; height: 8px; margin-bottom: 12px; border: 1px solid var(--border-sterile); background: #06080B; overflow: hidden; }
-    .meter-fill { width: 15%; height: 100%; background: var(--accent-alert); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .meter-fill { width: 38%; height: 100%; background: var(--accent-alert); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     .meter-spec { color: var(--text-clinical); font-family: var(--console-mono); font-size: 11px; }
     .exposure-source { margin: 24px 0 0; color: var(--console-muted); font-size: 12px; }
     .exposure-source a { color: var(--console-cyan); }
@@ -1066,7 +1067,7 @@
       <div class="clinical-nav-links">
         <a href="#capabilities">Capabilities</a>
         <a href="#architecture">Architecture</a>
-        <a href="/pricing">Pricing</a>
+        <a href="/pricing">Plans &amp; pricing</a>
         <a href="#contact">Contact</a>
       </div>
       <a href="#contact" class="btn console-button">Contact us</a>
@@ -1077,12 +1078,12 @@
     <section class="console-hero">
       <div class="clinical-container console-hero-grid">
         <div>
-          <p class="console-kicker">DialTone.Med / inbound communication infrastructure</p>
-          <h1>High-availability inbound answering for <strong>high-volume practices.</strong></h1>
-          <p class="console-lead">DialTone.Med answers routine patient calls and manages appointments, refill requests, billing management, and insurance verification so the front desk can stay focused on care.</p>
+          <p class="console-kicker">DialTone.Med / customized patient-engagement platform</p>
+          <h1>Every patient call answered. <strong>Every request moved forward.</strong></h1>
+          <p class="console-lead">DialTone.Med answers every call and manages appointments, refill requests, billing, and insurance verification so your front desk can stay focused on patients in the practice.</p>
           <div class="console-actions">
             <a href="#contact" class="btn btn-lg console-button">Talk to our team</a>
-            <a href="#architecture" class="btn btn-lg console-outline">Explore architecture</a>
+            <a href="/pricing" class="btn btn-lg console-outline">Compare plans</a>
           </div>
         </div>
         <div class="engine-panel console-panel routing-simulator" aria-label="Illustrative live patient-call routing stream">
@@ -1115,10 +1116,10 @@
           </div>
           <div id="exposureMetrics" role="tabpanel" aria-labelledby="medicalMode">
             <div class="metric-row">
-              <div class="metric-block"><label>SYSTEM RISK PROFILE</label><div class="massive-stat alert-text" id="missRate">42%</div><p>Average business-hour inbound miss rate documented across regional practices.</p></div>
+              <div class="metric-block"><label>SYSTEM RISK PROFILE</label><div class="massive-stat alert-text" id="missRate">23%</div><p>Conservative business-hour benchmark for inbound calls unanswered or abandoned in queue.</p></div>
               <div class="metric-block"><label>ESTIMATED ANNUAL REVENUE RISK</label><div class="massive-stat telemetry-text" id="revenueRisk">$200K-$500K</div><p>Potential practice revenue exposed through uncaptured inbound workflows.</p></div>
             </div>
-            <div class="pipeline-visualization"><label>PIPELINE RETENTION AFTER VOICEMAIL</label><div class="meter-container" aria-hidden="true"><div class="meter-fill" id="pipelineFill"></div></div><span class="meter-spec" id="dropOffLabel">75%-85% PATIENT ABANDONMENT RATE</span></div>
+            <div class="pipeline-visualization"><label>PIPELINE RETENTION AFTER VOICEMAIL</label><div class="meter-container" aria-hidden="true"><div class="meter-fill" id="pipelineFill"></div></div><span class="meter-spec" id="dropOffLabel">62% PATIENT ABANDONMENT RATE</span></div>
             <p class="exposure-source">Benchmarks are directional estimates. Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</p>
           </div>
         </div>
@@ -1127,7 +1128,7 @@
 
     <section class="console-section" id="capabilities" aria-labelledby="capabilities-title">
       <div class="clinical-container">
-        <div class="console-section-heading"><div><p class="console-kicker">Configurable workflows</p><h2 class="console-section-title" id="capabilities-title">The routine-call control plane.</h2></div><p>Each panel is an illustrative view of a capability area. Patient-facing behavior and integrations are configured with the practice.</p></div>
+        <div class="console-section-heading"><div><p class="console-kicker">One agent // four core workflows</p><h2 class="console-section-title" id="capabilities-title">From hello to handled.</h2></div><p>The agent categorizes each call and moves the patient into the practice-approved appointment, refill, billing, or insurance workflow.</p></div>
         <div class="console-grid bento-grid">
           <article class="bento-module console-panel card-appointments"><div class="module-header"><span class="console-status">Scheduling</span></div><h3>Appointment coordination</h3><p>Support appointment review, new scheduling, rescheduling, and call-back requests.</p><div class="terminal">&gt; appointment intent detected<br><span class="cyan">&gt; scheduling path selected</span><br><span class="mint">&gt; practice workflow active</span></div></article>
           <article class="bento-module console-panel card-eligibility"><div class="module-header"><span class="console-status">Insurance</span></div><h3>Eligibility workflows</h3><p>Manage insurance questions through the practice-approved workflow before an appointment.</p><div class="terminal">&gt; eligibility request received<br><span class="cyan">&gt; verification workflow in progress</span><br><span class="mint">&gt; practice workflow active</span></div></article>
@@ -1139,11 +1140,11 @@
 
     <section class="console-section" id="architecture" aria-labelledby="onboarding-title">
       <div class="clinical-container">
-        <div class="console-section-heading"><div><p class="console-kicker">Core runtime init // system onboarding matrix</p><h2 class="console-section-title" id="onboarding-title">Integration architecture.</h2></div><p>Deploy high-availability communication handling across your existing infrastructure in three sequence modules.</p></div>
+        <div class="console-section-heading"><div><p class="console-kicker">Core runtime init // system onboarding matrix</p><h2 class="console-section-title" id="onboarding-title">Built around your practice.</h2></div><p>Start with the capabilities your team needs today, then add messaging, operational tools, integrations, and analytics as you grow.</p></div>
         <div class="pipeline-track" aria-labelledby="onboarding-title">
-          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">01</div><div class="step-label-mono">HANDSHAKE</div></div><div class="step-content"><h3>Telephony Line Handshake</h3><p>Route missed, overflow, or after-hours call paths to DialTone.Med while retaining your current practice phone numbers.</p></div></article>
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">01</div><div class="step-label-mono">HANDSHAKE</div></div><div class="step-content"><h3>Connect Every Call</h3><p>Connect your practice phone line to DialTone.Med while retaining the phone numbers your patients already know.</p></div></article>
           <article class="pipeline-step"><div class="step-indicator"><div class="step-node">02</div><div class="step-label-mono">PROVISION</div></div><div class="step-content"><h3>Workflow Control Provisioning</h3><p>Define practice-approved rules for scheduling, insurance inquiries, billing, and prescription refill requests.</p></div></article>
-          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">03</div><div class="step-label-mono">RUNTIME</div></div><div class="step-content"><h3>Edge Automation Activation</h3><p>Activate the answering layer so routine patient requests enter secure, configured workflows without adding front-desk pressure.</p></div></article>
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">03</div><div class="step-label-mono">RUNTIME</div></div><div class="step-content"><h3>Activate and Expand</h3><p>Launch your phone agent, then add tier upgrades as your messaging, integration, analytics, and multi-site needs evolve.</p></div></article>
         </div>
       </div>
     </section>
@@ -1327,7 +1328,7 @@
               </li>
               <li>
                 <strong>Voicemail is a dead end</strong>
-                <span class="problem-subpoint">75-85% of callers who hit voicemail vanish forever</span>
+                <span class="problem-subpoint">62% of callers who hit voicemail hang up without leaving a message</span>
               </li>
               <li>
                 <strong>No one knows it's happening</strong>
@@ -1349,7 +1350,7 @@
             <ul class="problem-data-list">
               <li class="problem-data-item">
                 <p class="problem-data-metric">Average Miss Rate</p>
-                <p class="problem-data-value"><strong>30-42%</strong> of calls are missed during business hours.</p>
+                <p class="problem-data-value"><strong>23%</strong> of calls go unanswered or are abandoned, our conservative planning benchmark. Published studies report up to 42%.</p>
               </li>
               <li class="problem-data-item">
                 <p class="problem-data-metric">Landmark Study</p>
@@ -1361,7 +1362,7 @@
               </li>
               <li class="problem-data-item">
                 <p class="problem-data-metric">Voicemail Drop-off</p>
-                <p class="problem-data-value">80% who reach voicemail do not leave a message.</p>
+                <p class="problem-data-value">62% who reach voicemail hang up without leaving a message.</p>
               </li>
               <li class="problem-data-item">
                 <p class="problem-data-metric">Revenue Risk</p>
@@ -1378,7 +1379,7 @@
             <ul class="problem-data-list">
               <li class="problem-data-item">
                 <p class="problem-data-metric">Average Miss Rate</p>
-                <p class="problem-data-value"><strong>28-38%</strong> of inbound calls are missed.</p>
+                <p class="problem-data-value"><strong>23%</strong> of inbound calls go unanswered or are abandoned, our conservative planning benchmark. Peerlogic found 38%.</p>
               </li>
               <li class="problem-data-item">
                 <p class="problem-data-metric">Peerlogic Study</p>
@@ -1390,7 +1391,7 @@
               </li>
               <li class="problem-data-item">
                 <p class="problem-data-metric">Voicemail Abandonment</p>
-                <p class="problem-data-value"><strong>78-85%</strong> of callers who hit voicemail never call back.</p>
+                <p class="problem-data-value"><strong>62%</strong> of callers who hit voicemail hang up without leaving a message.</p>
               </li>
               <li class="problem-data-item">
                 <p class="problem-data-metric">Competitor Defection</p>
@@ -1546,8 +1547,8 @@
     // Practice exposure console
     (() => {
       const practiceData = {
-        medical: { missRate: '42%', revenue: '$200K-$500K', dropOff: '75%-85%', fill: '15%' },
-        dental: { missRate: '38%', revenue: '$100K-$150K+', dropOff: '78%-85%', fill: '18%' }
+        medical: { missRate: '23%', revenue: '$200K-$500K', dropOff: '62%', fill: '38%' },
+        dental: { missRate: '23%', revenue: '$100K-$150K+', dropOff: '62%', fill: '38%' }
       };
       const tabs = Array.from(document.querySelectorAll('[data-practice-mode]'));
       const panel = document.getElementById('exposureMetrics');

@@ -1,5 +1,30 @@
 # Developer Journal
 
+## 2026-11-10
+
+- Reviewed the Rock Health first-pass investor deck against Rock Health Capital's intake requirements (10-15 page PDF, team accomplishments, market overview, what buyers use today, how we make money, fundraising goals) and revised it in `developer/create-investor-deck.js`, which is the deck's source of truth; regenerate with `node developer/create-investor-deck.js`.
+- Slide 2: aligned the missed-call benchmarks to 23% unanswered or abandoned and 62% hang up without voicemail, replacing the vendor-blog 30-42% and 75-85% figures.
+- Slide 9: added unit economics from vendor list prices (Vapi, Deepgram, OpenAI, ElevenLabs, Telnyx) and the Menu product's observed spend; set standard pricing at $999/mo solo plus $699/mo per added provider and a 1.5% platform fee on agent-collected payments, with $599/mo as a time-boxed pilot rate. The $599 floor could not clear 70% gross margin at list costs.
+- Slide 10: replaced the market-strategy wedge with a bottom-up market-size slide from `docs/dialtonemed_buyer_universe.md`: ~85,000 independent 1-10 physician practices, ~$1.0B at the solo rate, $2B+ with per-provider and tier expansion. The source doc's internal contradictions (four TAM figures, two leakage figures) were not carried into the deck.
+- Slide 11: replaced four generic category dots with eleven named vendors scored on system replacement vs augmentation and workflow depth; attributed study figures and self-reported vendor claims are footnoted as such.
+- Slide 13: converted the allocation to dollars, tied engineering spend to the slide 6 production gates, dated the milestones by quarter through Q4 2027, added a Series A gate panel, and stated a 24-month runway with staged hiring at ~$62k/mo average burn.
+- Slide 14: replaced the generic execution model with the founder's healthcare-operations background (demand modeling, 8-to-37-hub network scaling, field-operations platform) and the reuse of the DialTone.Menu voice stack.
+- Fixed the doubled page number on every content slide: the slide master and `addChrome` were both printing one; the master's now stands alone.
+- Site: updated the pricing-page callout to the new pricing; aligned the ROI calculator constants and defaults, the homepage exposure console (both modes), and the problem-card benchmarks to 23% and 62%. The two attributed studies (7,000-call at 42%, Peerlogic at 38%) keep their published numbers and are now framed beside the conservative benchmark.
+- Recorded the 1.5% platform-fee gap in `dialtone_med_app/developer/developer-journal.md`: the Med payment path is platform-account Checkout with no Connect charge model, so the fee is promised in copy but not yet collectible.
+
+## 2026-11-08
+
+- Repositioned the homepage around a healthcare phone agent that answers every call and manages appointments, refill requests, billing, and insurance verification.
+- Replaced the previous organization-size pricing plans with four capability tiers: Essential Answering, Patient Connect, Practice Operations, and Enterprise Network.
+- Distinguished default functionality from optional upgrades across SMS, exam-room management, EMR/EHR integration, analytics, and multi-site support while preserving the existing DialTone.Med clinical-console branding.
+- Updated pricing SEO metadata and structured data for the four-tier healthcare phone-agent model, including an offer catalog and matching visible FAQ content.
+- Improved cross-page internal link text and confirmed the existing sitemap already uses canonical extensionless routes.
+- Updated the pricing hero to position DialTone.Med as a customized patient-engagement platform and restored the "Every patient call answered" headline.
+- Updated the homepage hero label to "DialTone.Med / Customized Patient-Engagement Platform" for consistent positioning across the site.
+- Created a branded 15-slide first-pass investor deck for Rock Health Capital while preserving the original draft.
+- Reframed the investor narrative around measurable workflow pain, staged product evidence, a PBM and general-practice pilot pipeline, tiered expansion, durable implementation advantage, and the existing $1.5M seed ask without presenting planned pilots as live traction.
+
 ## 2026-10-25
 
 - Replaced the homepage's side-by-side leak cards with an accessible Medical/Dental exposure console that updates miss rate, annual revenue risk, and voicemail retention telemetry.
