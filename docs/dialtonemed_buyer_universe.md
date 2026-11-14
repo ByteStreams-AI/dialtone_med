@@ -43,6 +43,8 @@ Independent practices face major financial headwinds. Highlighting our software'
 
 ## Daily Volume Benchmarks
 
+> **Correction, 2026-11-14:** the call-volume and timing figures in this section (53 calls per day, 150 to 300 per week, the per-practice table, 38% and 41%) have no traceable source and MGMA did not publish them. Use about 750 answered calls per physician per month as a planning estimate instead. See `reports/Medical practice inbound call volume.md`.
+
 **A primary care physician generates an average of 53 inbound calls per day.** According to data from the Medical Group Management Association (MGMA), this translates to roughly **150 to 300 phone calls per week per doctor**.
 
 For our target "buyer universe" of small-group practices, the cumulative daily inbound volume scales by provider headcount:
