@@ -377,7 +377,7 @@
     .alert-text { color: var(--accent-alert); }
     .telemetry-text { color: var(--accent-telemetry); }
     .meter-container { width: 100%; height: 8px; margin-bottom: 12px; border: 1px solid var(--border-sterile); background: #06080B; overflow: hidden; }
-    .meter-fill { width: 38%; height: 100%; background: var(--accent-alert); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+    .meter-fill { width: 45%; height: 100%; background: var(--accent-alert); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     .meter-fill--steady { background: var(--accent-telemetry); }
     .meter-spec { color: var(--text-clinical); font-family: var(--console-mono); font-size: 12px; text-transform: uppercase; }
     .exposure-source { margin: 24px 0 0; color: var(--console-muted); font-size: 12px; }
@@ -549,7 +549,7 @@
 
     <section class="console-section" id="problem" aria-labelledby="leak-title">
       <div class="clinical-container">
-        <div class="console-section-heading"><div><p class="console-kicker">What the phones cost</p><h2 class="console-section-title" id="leak-title">The leaking pipeline.</h2></div><p>A general practice loses the calls it cannot answer. A specialty pharmacy answers nearly all of them, and pays for it in staff time. Published benchmarks show both.</p></div>
+        <div class="console-section-heading"><div><p class="console-kicker">What the phones cost</p><h2 class="console-section-title" id="leak-title">The leaking pipeline.</h2></div><p>A general practice loses the calls it cannot answer. A specialty pharmacy answers nearly all of them, and pays for it in staff time. Survey and accreditor data show both.</p></div>
         <div class="exposure-console console-panel">
           <div class="console-controls" role="tablist" aria-label="Practice type">
             <button class="mode-toggle" type="button" role="tab" id="gpMode" aria-selected="true" aria-controls="exposureMetrics" data-practice-mode="gp">General practice</button>
@@ -557,12 +557,12 @@
           </div>
           <div id="exposureMetrics" role="tabpanel" aria-labelledby="gpMode">
             <div class="metric-row">
-              <div class="metric-block"><label id="statOneLabel">Calls unanswered or abandoned</label><div class="massive-stat alert-text" id="statOne">23%</div><p id="statOneText">Conservative business-hour benchmark for inbound calls unanswered or abandoned in queue.</p></div>
-              <div class="metric-block"><label id="statTwoLabel">Estimated annual revenue at risk</label><div class="massive-stat telemetry-text" id="statTwo">$200K-$500K</div><p id="statTwoText">Potential practice revenue exposed when those callers do not get through.</p></div>
+              <div class="metric-block"><label id="statOneLabel">Leaders missing 11% or more of calls at peak</label><div class="massive-stat alert-text" id="statOne">36%</div><p id="statOneText">Share of 302 practice leaders who say at least 11% of calls go unanswered or to voicemail at peak times.</p></div>
+              <div class="metric-block"><label id="statTwoLabel">Missed-call rate, healthcare businesses</label><div class="massive-stat telemetry-text" id="statTwo">32%</div><p id="statTwoText">The highest of any industry in one call-tracking vendor's 2025 benchmark. It covers healthcare businesses, not medical practices alone.</p></div>
             </div>
-            <div class="pipeline-visualization"><label id="meterLabel">Callers who leave a voicemail</label><div class="meter-container" aria-hidden="true"><div class="meter-fill" id="pipelineFill"></div></div><span class="meter-spec" id="meterSpec">62% hang up without leaving a message</span></div>
-            <p class="exposure-source" id="exposureSource">Benchmarks are directional estimates. Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</p>
-            <p class="exposure-source" id="exposureSourceSp" hidden>Source: <a href="https://2297879.fs1.hubspotusercontent-na1.net/hubfs/2297879/URAC_Specialty%20Pharmacy_Aggregate%20Summary%20Report_2024.pdf" target="_blank" rel="noopener noreferrer">URAC 2024 Specialty Pharmacy Performance Measurement</a>, aggregate results for accredited pharmacies.</p>
+            <div class="pipeline-visualization"><label id="meterLabel">Most time-consuming phone task: eligibility and prior authorization</label><div class="meter-container" aria-hidden="true"><div class="meter-fill" id="pipelineFill"></div></div><span class="meter-spec" id="meterSpec">45% of practice leaders name it first; scheduling is second at 31%</span></div>
+            <p class="exposure-source" id="exposureSource">Survey and vendor data, not measured rates for small practices. Sources: <a href="https://www.mgma.com/getkaiasset/3d85ddee-e329-4280-b726-3a93d63c7771/InsightHealth-MGMA-Agentic-Impact-for-Intake-and-Beyond-Final.pdf" target="_blank" rel="noopener noreferrer">MGMA and Insight Health 2026 Phone and Fax Solutions Survey</a> (vendor-sponsored), <a href="https://www.callrail.com/blog/callrail-releases-benchmark-report" target="_blank" rel="noopener noreferrer">CallRail 2025 benchmark</a>, and an <a href="https://mgma.com/mgma-stat/phones-are-still-a-backlog-costing-medical-practices-time" target="_blank" rel="noopener noreferrer">MGMA Stat poll</a> of 294 practice leaders, March 2026.</p>
+            <p class="exposure-source" id="exposureSourceSp" hidden>Source: <a href="https://2297879.fs1.hubspotusercontent-na1.net/hubfs/2297879/Measure%20Reports%202026/URAC_Specialty%20Pharmacy_Aggregate%20Summary%20Report_2025.pdf" target="_blank" rel="noopener noreferrer">URAC 2025 Specialty Pharmacy Performance Measurement report</a>, aggregate 2024 results for accredited pharmacies.</p>
           </div>
         </div>
       </div>
@@ -708,14 +708,14 @@
     (() => {
       const practiceData = {
         gp: {
-          one: ['Calls unanswered or abandoned', '23%', 'Conservative business-hour benchmark for inbound calls unanswered or abandoned in queue.'],
-          two: ['Estimated annual revenue at risk', '$200K-$500K', 'Potential practice revenue exposed when those callers do not get through.'],
-          meter: ['Callers who leave a voicemail', '38%', '62% hang up without leaving a message'],
+          one: ['Leaders missing 11% or more of calls at peak', '36%', 'Share of 302 practice leaders who say at least 11% of calls go unanswered or to voicemail at peak times.'],
+          two: ['Missed-call rate, healthcare businesses', '32%', 'The highest of any industry in one call-tracking vendor\'s 2025 benchmark. It covers healthcare businesses, not medical practices alone.'],
+          meter: ['Most time-consuming phone task: eligibility and prior authorization', '45%', '45% of practice leaders name it first; scheduling is second at 31%'],
           alert: true
         },
         sp: {
-          one: ['Calls abandoned', '2.76%', 'Accredited specialty pharmacies already answer nearly every call.'],
-          two: ['Answered by a person within 30 seconds', '84%', 'Every one of those answers is staff time, including calls about refills, prior authorization status, and billing.'],
+          one: ['Calls abandoned', '2.98%', 'Accredited specialty pharmacies already answer nearly every call.'],
+          two: ['Answered by a person within 30 seconds', '83%', 'Every one of those answers is staff time, including calls about refills, prior authorization status, and billing.'],
           meter: ['Calls that reach a person', '97%', '97% of calls are answered by staff'],
           alert: false
         }
