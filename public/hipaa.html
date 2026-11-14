@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security and HIPAA — DialTone.Med</title>
+  <meta name="description" content="How DialTone.Med protects patient information: its role as a business associate, safeguards, retention, and breach notification." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://dialtone.med/hipaa" />
+
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=20260427" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+      --navy: #0A2463;
+      --teal: #1B998B;
+      --green: #2EC4B6;
+      --cream: #FAFBFC;
+      --warm: #EEF7F6;
+      --text: #1A1F36;
+      --muted: #6B7C93;
+      --white: #FFFFFF;
+      --r: 12px;
+      --line: rgba(10, 36, 99, 0.12);
+
+      --font-display: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+      --font-body: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+      --font-mono: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+
+      --max-content: 900px;
+      --max-nav: 1240px;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--cream);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav {
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: var(--max-nav);
+      margin: 0 auto;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.35rem;
+      color: var(--navy);
+      text-decoration: none;
+      line-height: 1;
+      letter-spacing: -0.01em;
+    }
+    .logo .med { color: var(--teal); font-weight: 500; }
+    .nav-meta {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+    }
+    .nav-home {
+      font-size: 0.85rem;
+      color: var(--navy);
+      text-decoration: none;
+      opacity: 0.7;
+    }
+    .nav-home:hover { opacity: 1; }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    @media (max-width: 480px) {
+      .nav-inner { padding: 1rem; gap: 0.75rem; }
+      .nav-meta { display: none; }
+      .nav-actions { margin-left: auto; gap: 0.65rem; }
+      .nav-home { font-size: 0.78rem; }
+    }
+
+    main { flex: 1; }
+    .container {
+      max-width: var(--max-content);
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--teal);
+      margin: 0 0 1rem;
+      font-weight: 600;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2rem, 4vw, 2.9rem);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      color: var(--navy);
+      margin: 0 0 0.5rem;
+    }
+
+    .doc-meta {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 1.5rem;
+    }
+
+    .summary-box {
+      background: var(--warm);
+      border-left: 3px solid var(--teal);
+      padding: 1.2rem 1.4rem;
+      margin: 1.75rem 0 2rem;
+      font-size: 0.98rem;
+    }
+    .summary-box-label {
+      font-weight: 600;
+      font-size: 0.8rem;
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      margin-bottom: 0.4rem;
+    }
+
+    h2 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.45rem;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin: 2.4rem 0 0.9rem;
+      display: flex;
+      align-items: baseline;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+    }
+    h2 .num {
+      font-size: 0.8em;
+      color: var(--teal);
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-size: 1.03rem;
+      color: var(--navy);
+      margin: 1.3rem 0 0.45rem;
+    }
+
+    p {
+      margin: 0 0 1rem;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0 0 1rem;
+      padding-left: 1.2rem;
+    }
+    ul li {
+      margin-bottom: 0.45rem;
+      color: var(--text);
+    }
+    ul li::marker {
+      color: var(--teal);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.8rem 0 1.3rem;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    th, td {
+      border-bottom: 1px solid var(--line);
+      padding: 0.62rem 0.7rem;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.95rem;
+    }
+    th {
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      background: rgba(10, 36, 99, 0.03);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--teal);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
+
+    footer {
+      background: var(--navy);
+      margin-top: auto;
+    }
+    .footer-inner {
+      max-width: var(--max-nav);
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      color: rgba(245, 239, 230, 0.65);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-inner a {
+      color: rgba(245, 239, 230, 0.88);
+      text-decoration: none;
+    }
+    .footer-links { display: flex; gap: 1.1rem; flex-wrap: wrap; }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a class="logo" href="/" aria-label="DialTone.Med home">DialTone<span class="med">.Med</span></a>
+      <span class="nav-meta">HIPAA</span>
+      <span class="nav-actions"><a class="nav-home" href="/#contact">Contact</a><a class="nav-home" href="/">&larr; Home</a></span>
+    </div>
+  </nav>
+
+  <main>
+    <div class="container">
+      <p class="eyebrow">Compliance</p>
+      <h1>Security and HIPAA</h1>
+      <p class="doc-meta">ByteStreams LLC (d/b/a DialTone.Med) · Last updated · November 13, 2026</p>
+
+      <div class="summary-box">
+        <div class="summary-box-label">Summary</div>
+        <p style="margin: 0;">This page summarizes how DialTone.Med protects patient information under its HIPAA compliance policy. Practices can request the full policy and a business associate agreement at <a href="mailto:hello@bytestreams.ai">hello@bytestreams.ai</a>.</p>
+      </div>
+
+      <h2><span class="num">01</span> Our role</h2>
+      <p>Healthcare practices that use DialTone.Med are covered entities under HIPAA. ByteStreams LLC acts as their business associate: it handles protected health information (PHI) only to provide the service on a practice's behalf.</p>
+      <ul>
+        <li>We sign a business associate agreement with a practice before handling its patient information.</li>
+        <li>Vendors that handle PHI on our behalf are required to sign business associate agreements with us. They are listed in the <a href="/privacy">Privacy Policy</a>.</li>
+        <li>Workflows collect and use only the information needed for the request being handled.</li>
+      </ul>
+
+      <h2><span class="num">02</span> What happens to patient information</h2>
+      <ul>
+        <li><strong>On the call.</strong> The assistant confirms who is calling, then says only what is safe to say aloud. Balances, medications, and procedures are never read out.</li>
+        <li><strong>By secure link.</strong> Appointments, balances, and prior authorization detail open in the patient's browser from a link sent by text. Card payments are handled by the payment processor; card numbers are not read to staff or to the assistant.</li>
+        <li><strong>Decisions.</strong> DialTone.Med relays facts. It does not approve refills, decide prior authorizations, or give medical advice.</li>
+      </ul>
+
+      <h2><span class="num">03</span> Safeguards</h2>
+      <h3>Administrative</h3>
+      <ul>
+        <li>Annual risk analysis, with the risk management plan updated from its findings</li>
+        <li>Role-based, least-privilege access, reviewed quarterly</li>
+        <li>Incident handling with containment, investigation, remediation, and post-incident review</li>
+        <li>Contingency planning: daily encrypted backups, disaster recovery, and annual testing</li>
+      </ul>
+      <h3>Technical</h3>
+      <ul>
+        <li>AES-256 encryption at rest and TLS 1.2+ encryption in transit, including API and telephony channels</li>
+        <li>Unique user IDs, multi-factor authentication, and automatic logoff</li>
+        <li>Audit logging of access to patient information</li>
+        <li>Integrity controls, including checksums, versioning, and alerts</li>
+      </ul>
+      <h3>Physical</h3>
+      <ul>
+        <li>Cloud data centers with restricted physical access</li>
+        <li>Workstations with automatic lock, full-disk encryption, and secured remote access</li>
+        <li>Documented disposal and sanitization of devices and media</li>
+      </ul>
+
+      <h2><span class="num">04</span> Retention</h2>
+      <table>
+        <thead><tr><th>Information</th><th>How long it is kept</th></tr></thead>
+        <tbody>
+          <tr><td>Call recordings and transcripts</td><td>Kept only when the caller agrees to recording, for 30 days, then deleted</td></tr>
+          <tr><td>Patient and request records</td><td>While the practice uses the service; removed or returned when the practice leaves</td></tr>
+          <tr><td>Audit logs and compliance records</td><td>At least six years</td></tr>
+          <tr><td>Card numbers</td><td>Not stored by DialTone.Med; handled by the payment processor</td></tr>
+        </tbody>
+      </table>
+
+      <h2><span class="num">05</span> Breach notification</h2>
+      <ul>
+        <li>Suspected incidents are reported to our compliance officer within 24 hours and assessed using the four HIPAA risk factors in 45 CFR 164.402.</li>
+        <li>As a business associate, we notify affected practices without unreasonable delay and within 30 days.</li>
+        <li>Breach investigations and corrective actions are documented and kept for at least six years.</li>
+      </ul>
+
+      <h2><span class="num">06</span> Training and review</h2>
+      <ul>
+        <li>HIPAA training before access to systems holding PHI, with an annual refresher</li>
+        <li>Policy review at least annually, with quarterly log review and an annual risk assessment</li>
+        <li>Good-faith reporting of concerns is required and protected from retaliation</li>
+      </ul>
+
+      <h2><span class="num">07</span> Patient rights</h2>
+      <p>Patients exercise their HIPAA rights through their healthcare practice. We support practices in meeting requests for access, amendment, restriction, confidential communications, and an accounting of disclosures.</p>
+
+      <h2><span class="num">08</span> Contact</h2>
+      <table>
+        <tbody>
+          <tr><th>Organization</th><td>ByteStreams LLC (d/b/a DialTone.Med)</td></tr>
+          <tr><th>Compliance officer</th><td>Steven Cotton, Owner</td></tr>
+          <tr><th>Address</th><td>100 Powell Place #1473, Nashville, TN 37204</td></tr>
+          <tr><th>Phone</th><td>(629) 250-1143</td></tr>
+          <tr><th>Email</th><td><a href="mailto:hello@bytestreams.ai">hello@bytestreams.ai</a></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <span>&copy; 2026 DialTone.Med · ByteStreams LLC</span>
+      <span class="footer-links">
+        <a href="/">Home</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </span>
+    </div>
+  </footer>
+</body>
+</html>
