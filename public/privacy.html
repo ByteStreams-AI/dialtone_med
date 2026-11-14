@@ -270,53 +270,61 @@
     <div class="container">
       <p class="eyebrow">Legal</p>
       <h1>Privacy Policy</h1>
-      <p class="doc-meta">Last updated · April 20, 2026</p>
+      <p class="doc-meta">Last updated · November 14, 2026</p>
 
       <div class="summary-box">
         <div class="summary-box-label">Privacy notice</div>
         <p style="margin: 0;">This is a privacy notice for DialTone.Med. If anything here is unclear, email <a href="mailto:hello@bytestreams.ai">hello@bytestreams.ai</a>.</p>
       </div>
 
-      <p>This policy explains what information DialTone.Med collects when you call or text a healthcare practice that uses our service, submit information through this website, or otherwise interact with our patient-communication tools. DialTone.Med is an AI-powered phone assistant built for healthcare providers.</p>
+      <p>This policy explains what information DialTone.Med collects when you call or text a healthcare practice that uses our service, submit information through this website, or otherwise interact with our patient-communication tools. DialTone.Med is an AI-powered assistant that answers calls for healthcare practices and texts secure links so patients can finish their requests.</p>
 
       <h2><span class="num">01</span> What we collect</h2>
       <ul>
-        <li><strong>Phone number.</strong> When you call a participating practice, we receive your caller ID from the phone network. We use it to route follow-up messages and help practices recognize returning callers.</li>
-        <li><strong>Voice call content.</strong> The AI assistant may transcribe and temporarily retain call content so it can handle scheduling, billing questions, refill requests, insurance checks, or message-taking workflows. Recordings or transcripts may be retained short-term for quality review and dispute resolution.</li>
-        <li><strong>Patient-submitted details.</strong> Information you provide during a call or form submission, such as your name, callback information, appointment preferences, insurance details, and the reason for your request.</li>
-        <li><strong>Practice workflow data.</strong> Status information associated with a request, such as whether an appointment was booked, a message was routed, or a follow-up task was created for staff review.</li>
+        <li><strong>Phone number.</strong> When you call a participating practice, we receive your caller ID from the phone network. We use it only as a hint to find your record; it does not prove who you are. Secure links are texted to the phone number the practice has on file for you, or for a caregiver the practice has approved.</li>
+        <li><strong>Voice call content.</strong> The assistant transcribes the call as it happens so it can handle your request. Calls are recorded only if you agree to recording.</li>
+        <li><strong>Details you provide.</strong> Information you give during a call or through a secure link, such as your name, date of birth, appointment preferences, insurance details, and the reason for your request.</li>
+        <li><strong>Practice records.</strong> Information the practice holds about your request, such as appointments, balances, refill requests, and prior authorization status.</li>
+        <li><strong>Payments.</strong> If you pay a bill through a secure link, your card details go directly to the payment processor. DialTone.Med receives confirmation of the payment, not your card number.</li>
         <li><strong>Website usage.</strong> Standard web server logs, including IP address, user agent, and requested page. We do not use tracking cookies on this marketing site.</li>
       </ul>
 
       <h2><span class="num">02</span> How we use it</h2>
       <ul>
-        <li>To answer, route, and summarize inbound patient calls for participating healthcare practices.</li>
-        <li>To support scheduling, billing questions, prescription refill requests, insurance verification, and message-taking workflows.</li>
-        <li>To send transactional SMS messages such as appointment confirmations, callback updates, or secure follow-up instructions.</li>
+        <li>To answer inbound patient calls for participating healthcare practices and confirm who is calling.</li>
+        <li>To support appointments, billing and payment, prescription refill requests, prior authorization status, and insurance verification.</li>
+        <li>To send transactional text messages and emails, such as secure links and appointment or payment confirmations.</li>
         <li>To let the participating practice review and act on the patient request.</li>
         <li>To debug, monitor, and improve the service when something goes wrong on a call or message flow.</li>
       </ul>
       <p>We do not sell your information. We do not use caller or patient-submitted information for third-party advertising. We use data only to operate and improve the service for the participating practice.</p>
+      <p>DialTone.Med does not give medical advice, approve refills, or decide prior authorizations. Those decisions stay with your healthcare practice.</p>
 
       <h2><span class="num">03</span> Service providers</h2>
-      <p>DialTone relies on a small number of third parties to operate:</p>
+      <p>DialTone.Med relies on a small number of third parties to operate:</p>
       <ul>
         <li><a href="https://supabase.com/privacy">Supabase</a> — database and secure application data storage.</li>
-        <li><a href="https://www.twilio.com/legal/privacy">Twilio</a> — phone number routing and SMS delivery.</li>
-        <li><a href="https://vapi.ai/privacy">Vapi</a> — the voice agent platform (speech-to-text, large language model, text-to-speech orchestration).</li>
-        <li><a href="https://elevenlabs.io/privacy">ElevenLabs</a> — text-to-speech voice generation used by Vapi.</li>
+        <li><a href="https://telnyx.com/privacy-policy">Telnyx</a> — phone number routing and text message delivery.</li>
+        <li><a href="https://vapi.ai/privacy">Vapi</a> — the voice agent platform that connects the call to speech recognition, the language model, and speech generation.</li>
+        <li><a href="https://deepgram.com/privacy">Deepgram</a> — speech-to-text transcription used by Vapi.</li>
         <li><a href="https://openai.com/policies/privacy-policy/">OpenAI</a> — large language model powering the voice agent.</li>
-        <li><a href="https://resend.com/legal/privacy-policy">Resend</a> — delivery of website contact-form email notifications.</li>
-        <li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> — web hosting and application delivery.</li>
+        <li><a href="https://elevenlabs.io/privacy">ElevenLabs</a> — text-to-speech voice generation used by Vapi.</li>
+        <li><a href="https://stripe.com/privacy">Stripe</a> — payment processing for bills paid through a secure link.</li>
+        <li><a href="https://resend.com/legal/privacy-policy">Resend</a> — delivery of confirmation emails and website contact-form notifications.</li>
+        <li><a href="https://www.cloudflare.com/privacypolicy/">Cloudflare</a> — web hosting, application delivery, and encrypted storage of call recordings.</li>
       </ul>
 
       <h2><span class="num">04</span> SMS messaging</h2>
-      <p>If you interact with a practice through DialTone.Med, we may send transactional SMS messages on the practice's behalf, such as appointment confirmations, callback updates, intake reminders, or secure follow-up links. Message and data rates may apply. Message frequency varies based on the workflow involved.</p>
+      <p>If you interact with a practice through DialTone.Med, we may send transactional SMS messages on the practice's behalf, such as secure links, appointment confirmations, and payment confirmations. Message and data rates may apply. Message frequency varies based on the workflow involved.</p>
       <p>You can opt out at any time by replying <strong>STOP</strong> to any message from us. Reply <strong>HELP</strong> for assistance. Opting out may limit the practice's ability to send confirmations, reminders, or follow-up instructions by text.</p>
       <p>We do not use the phone numbers we collect for marketing SMS, and we do not share them with other companies for their marketing.</p>
 
       <h2><span class="num">05</span> Data retention</h2>
-      <p>Request records and operational logs are retained for the participating practice's business, compliance, and support needs. Voice call transcripts and recordings may be retained short-term for quality review, troubleshooting, and audit support, then deleted or archived according to applicable workflow and retention requirements.</p>
+      <ul>
+        <li><strong>Call recordings and transcripts.</strong> Call recordings and transcripts are retained for 30 days for quality assurance and troubleshooting, after which they are permanently deleted. Participating practices may request custom retention periods in writing.</li>
+        <li><strong>Patient and operational data.</strong> ByteStreams is not an electronic health record (EHR) or pharmacy management system of record, and does not store comprehensive clinical charts. To deliver communication, intake, and payment services, ByteStreams retains only minimum-necessary operational and workflow data—including patient contact details, appointment metadata, billing and transaction records, prior authorization statuses, and prescription refill requests (which may include caller-stated medication names). All such data is safeguarded as Protected Health Information (PHI) under our Business Associate Agreement (BAA), retained strictly while the practice maintains an active account, and securely purged or returned upon termination of service.</li>
+        <li><strong>Audit logs.</strong> Kept for at least six years, as healthcare privacy rules require.</li>
+      </ul>
 
       <h2><span class="num">06</span> Your rights</h2>
       <p>You can ask us to confirm what information we hold that is associated with your phone number or submitted contact information, to correct it if it is wrong, or to delete it, subject to the participating practice's own legal and record-keeping obligations. Email <a href="mailto:hello@bytestreams.ai">hello@bytestreams.ai</a> and we will respond within a reasonable time.</p>
@@ -337,8 +345,9 @@
       <span>&copy; 2026 <span class="footer-brand">DialTone<span class="med">.Med</span></span> · ByteStreams LLC</span>
       <span class="footer-links">
         <a href="/">Home</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
+        <a href="/hipaa">HIPAA</a>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
       </span>
     </div>
   </footer>

@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DialTone.Med — The Phone Agent for Every Patient Call</title>
-  <meta name="description" content="DialTone.Med answers every patient call and manages appointments, refill requests, billing, and insurance verification through configurable practice workflows.">
+  <title>DialTone.Med — Every Patient Call and Text, Handled</title>
+  <meta name="description" content="DialTone.Med answers every patient call, verifies the caller, and texts a secure link for appointments, billing, refill requests, prior authorization status, and insurance verification.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dialtone.med/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DialTone.Med">
-  <meta property="og:title" content="DialTone.Med — The Phone Agent for Every Patient Call">
-  <meta property="og:description" content="One healthcare phone agent for appointments, refills, billing, and insurance verification.">
+  <meta property="og:title" content="DialTone.Med — Every Patient Call and Text, Handled">
+  <meta property="og:description" content="One agent, by call and text, for appointments, billing, refills, prior authorization status, and insurance verification.">
   <meta property="og:url" content="https://dialtone.med/">
 
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="DialTone.Med — The Phone Agent for Every Patient Call">
-  <meta name="twitter:description" content="One healthcare phone agent for appointments, refills, billing, and insurance verification.">
+  <meta name="twitter:title" content="DialTone.Med — Every Patient Call and Text, Handled">
+  <meta name="twitter:description" content="One agent, by call and text, for appointments, billing, refills, prior authorization status, and insurance verification.">
 
   <script type="application/ld+json">
   {
@@ -35,7 +35,7 @@
         "@id": "https://dialtone.med/#website",
         "url": "https://dialtone.med/",
         "name": "DialTone.Med",
-        "description": "A healthcare phone agent that answers patient calls and manages appointments, refill requests, billing, and insurance verification.",
+        "description": "A healthcare agent that answers patient calls and texts secure links for appointments, billing, refill requests, prior authorization status, and insurance verification.",
         "publisher": { "@id": "https://dialtone.med/#organization" }
       }
     ]
@@ -77,44 +77,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── NAVBAR ── */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(250,251,252,0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--dt-soft-gray);
-      transition: box-shadow var(--dt-transition);
-    }
-    .navbar.scrolled { box-shadow: var(--dt-shadow-md); }
-    .navbar-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 24px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--dt-med-blue);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-    }
-    .logo .med { font-weight: 500; color: var(--dt-signal-teal); }
-    .nav-right { display: flex; align-items: center; gap: 24px; }
-    .nav-right a {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--dt-slate-gray);
-      text-decoration: none;
-      transition: color var(--dt-transition);
-    }
-    .nav-right a:hover { color: var(--dt-med-blue); }
-
     .btn {
       display: inline-flex;
       align-items: center;
@@ -130,256 +92,7 @@
       transition: all var(--dt-transition);
       line-height: 1.4;
     }
-    .btn-primary { background: var(--dt-med-blue); color: #fff; }
-    .btn-primary:hover { background: #0d2d7a; transform: translateY(-1px); box-shadow: var(--dt-shadow-md); }
-    .btn-teal { background: var(--dt-signal-teal); color: #fff; }
-    .btn-teal:hover { background: #178a7d; transform: translateY(-1px); box-shadow: var(--dt-shadow-md); }
     .btn-lg { padding: 14px 32px; font-size: 16px; border-radius: 10px; }
-    .btn-white { background: #fff; color: var(--dt-med-blue); font-weight: 700; }
-    .btn-white:hover { background: var(--dt-soft-gray); transform: translateY(-1px); }
-    .btn-outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.4); }
-    .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
-
-    /* ── HERO ── */
-    .hero {
-      padding: 80px 24px 60px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -180px; right: -180px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(27,153,139,0.06) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
-    .hero h1 {
-      font-size: clamp(30px, 5vw, 44px);
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-      color: var(--dt-med-blue);
-      margin-bottom: 16px;
-    }
-    .hero h1 em {
-      font-style: normal;
-      background: linear-gradient(135deg, var(--dt-signal-teal), var(--dt-pulse-green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .hero p {
-      font-size: 17px;
-      color: var(--dt-slate-gray);
-      max-width: 520px;
-      margin: 0 auto 32px;
-      line-height: 1.7;
-    }
-    .hero-copy {
-      text-align: center;
-    }
-    .hero-copy-highlight {
-      background: linear-gradient(135deg, var(--dt-signal-teal), var(--dt-pulse-green));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    /* ── SERVICES GRID ── */
-    .services {
-      padding: 0 24px 80px;
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-    .service-card {
-      background: #fff;
-      border: 1px solid var(--dt-soft-gray);
-      border-radius: var(--dt-radius-lg);
-      padding: 32px;
-      transition: all var(--dt-transition);
-      display: flex;
-      flex-direction: column;
-      color: inherit;
-    }
-    .service-card:hover {
-      border-color: rgba(27,153,139,0.3);
-      box-shadow: var(--dt-shadow-lg);
-      transform: translateY(-4px);
-    }
-    .service-card-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-    .service-icon {
-      width: 52px; height: 52px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-    .service-icon.teal { background: rgba(27,153,139,0.1); color: var(--dt-signal-teal); }
-    .service-icon.blue { background: rgba(10,36,99,0.07); color: var(--dt-med-blue); }
-    .service-icon.violet { background: rgba(123,97,255,0.1); color: var(--dt-care-violet); }
-    .service-card h3 {
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--dt-deep-charcoal);
-      margin-bottom: 4px;
-      letter-spacing: -0.01em;
-    }
-    .service-card .subtitle {
-      font-size: 13px;
-      color: var(--dt-slate-gray);
-      font-weight: 500;
-    }
-    .service-card p {
-      font-size: 15px;
-      color: var(--dt-slate-gray);
-      line-height: 1.65;
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-    .service-list {
-      font-size: 15px;
-      color: var(--dt-slate-gray);
-      line-height: 1.9;
-      padding-left: 18px;
-      margin-bottom: 0;
-    }
-    .service-actions { display: flex; gap: 8px; flex-wrap: wrap; }
-    .action-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 6px 14px;
-      background: var(--dt-clinical-white);
-      border: 1px solid var(--dt-soft-gray);
-      border-radius: 100px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--dt-deep-charcoal);
-      transition: all var(--dt-transition);
-    }
-    .service-card:hover .action-tag { border-color: rgba(27,153,139,0.25); }
-    .action-tag svg { flex-shrink: 0; }
-
-    /* ── EMERGENCY CARD ── */
-    .service-card.emergency {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, var(--dt-med-blue) 0%, #0d2d7a 100%);
-      border-color: transparent;
-      color: #fff;
-      flex-direction: row;
-      align-items: center;
-      gap: 32px;
-      padding: 36px 40px;
-      cursor: default;
-    }
-    .service-card.emergency:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 32px rgba(10,36,99,0.25);
-      border-color: transparent;
-    }
-    .service-card.emergency .service-icon {
-      background: rgba(230,57,70,0.2);
-      color: #fff;
-      width: 60px; height: 60px;
-      border-radius: 16px;
-      flex-shrink: 0;
-    }
-    .emergency-content { flex-grow: 1; }
-    .service-card.emergency h3 { color: #fff; font-size: 20px; margin-bottom: 6px; }
-    .service-card.emergency p { color: rgba(255,255,255,0.7); margin-bottom: 0; font-size: 15px; }
-    .emergency-phone { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
-    .phone-number {
-      font-size: 28px;
-      font-weight: 700;
-      color: #fff;
-      text-decoration: none;
-      letter-spacing: -0.01em;
-      white-space: nowrap;
-      transition: color var(--dt-transition);
-    }
-    .phone-number:hover { color: var(--dt-pulse-green); }
-    .phone-label {
-      font-size: 12px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.5);
-    }
-    .pulse-dot {
-      width: 12px; height: 12px;
-      background: var(--dt-alert-red);
-      border-radius: 50%;
-      position: relative;
-      flex-shrink: 0;
-    }
-    .pulse-dot::after {
-      content: '';
-      position: absolute;
-      top: -4px; left: -4px;
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      border: 2px solid var(--dt-alert-red);
-      animation: pulse-ring 2s ease-out infinite;
-    }
-    @keyframes pulse-ring {
-      0% { transform: scale(0.8); opacity: 1; }
-      100% { transform: scale(1.6); opacity: 0; }
-    }
-
-    /* ── TRUST BAR ── */
-    .trust-bar {
-      padding: 40px 24px;
-      border-top: 1px solid var(--dt-soft-gray);
-      border-bottom: 1px solid var(--dt-soft-gray);
-      background: #fff;
-    }
-    .trust-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 48px;
-      flex-wrap: wrap;
-    }
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--dt-slate-gray);
-    }
-    .trust-icon {
-      width: 32px; height: 32px;
-      background: rgba(10,36,99,0.05);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--dt-med-blue);
-    }
-
-    /* ── HOW IT WORKS ── */
-    .how-section {
-      padding: 80px 24px;
-      max-width: 1120px;
-      margin: 0 auto;
-    }
     .section-header { text-align: center; margin-bottom: 48px; }
     .section-label {
       font-size: 13px;
@@ -396,245 +109,6 @@
       line-height: 1.25;
       letter-spacing: -0.02em;
     }
-    .steps-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-    }
-    .step { text-align: center; }
-    .step-num {
-      width: 44px; height: 44px;
-      border-radius: 50%;
-      background: var(--dt-med-blue);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      font-weight: 700;
-      margin: 0 auto 16px;
-    }
-    .step h3 {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--dt-deep-charcoal);
-      margin-bottom: 8px;
-    }
-    .step p {
-      font-size: 14px;
-      color: var(--dt-slate-gray);
-      line-height: 1.6;
-      max-width: 280px;
-      margin: 0 auto;
-    }
-
-    /* ── THE PROBLEM ── */
-    .problem-section {
-      padding: 80px 24px;
-      background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
-      border-top: 1px solid var(--dt-soft-gray);
-      border-bottom: 1px solid var(--dt-soft-gray);
-    }
-    .problem-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-    .problem-header p {
-      margin-top: 12px;
-      font-size: 17px;
-      color: var(--dt-slate-gray);
-      line-height: 1.6;
-    }
-    .problem-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-    }
-    .problem-card {
-      background: #fff;
-      border: 1px solid var(--dt-soft-gray);
-      border-radius: var(--dt-radius-lg);
-      box-shadow: var(--dt-shadow-md);
-      overflow: hidden;
-    }
-    .problem-card h3 {
-      padding: 20px 24px;
-      font-size: 20px;
-      color: var(--dt-med-blue);
-      border-bottom: 1px solid var(--dt-soft-gray);
-      letter-spacing: -0.01em;
-    }
-    .problem-card-body {
-      padding: 20px 24px 24px;
-    }
-    .problem-keypoints {
-      list-style: none;
-      display: grid;
-      gap: 14px;
-    }
-    .problem-keypoints li {
-      position: relative;
-      padding-left: 20px;
-      font-size: 15px;
-      line-height: 1.6;
-      color: var(--dt-slate-gray);
-    }
-    .problem-keypoints li strong {
-      color: var(--dt-deep-charcoal);
-      font-weight: 700;
-    }
-    .problem-keypoints li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.65em;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--dt-signal-teal), var(--dt-pulse-green));
-    }
-    .problem-subpoint {
-      display: block;
-      margin-top: 4px;
-      color: var(--dt-slate-gray);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-    .problem-source {
-      display: block;
-      margin-top: 6px;
-      color: var(--dt-slate-gray);
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.01em;
-    }
-    .problem-source a {
-      color: var(--dt-slate-gray);
-      text-decoration: none;
-    }
-    .problem-source a:hover {
-      text-decoration: underline;
-    }
-
-    .problem-tabs {
-      display: flex;
-      gap: 8px;
-      padding: 16px 16px 0;
-      border-bottom: 1px solid var(--dt-soft-gray);
-      background: var(--dt-clinical-white);
-    }
-    .problem-tab {
-      appearance: none;
-      border: 1px solid transparent;
-      background: transparent;
-      color: var(--dt-slate-gray);
-      border-radius: var(--dt-radius) var(--dt-radius) 0 0;
-      padding: 10px 14px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      cursor: pointer;
-      transition: color var(--dt-transition), background-color var(--dt-transition), border-color var(--dt-transition);
-    }
-    .problem-tab:not([aria-selected='true']):hover {
-      color: var(--dt-deep-charcoal);
-      background: rgba(43,196,182,0.06);
-    }
-    .problem-tab[aria-selected='true'] {
-      color: var(--dt-med-blue);
-      background: #fff;
-      border-color: var(--dt-soft-gray);
-      border-bottom-color: #fff;
-      box-shadow: inset 0 3px 0 0 var(--dt-pulse-green);
-    }
-    .problem-tab:focus-visible {
-      outline: 2px solid var(--dt-signal-teal);
-      outline-offset: 2px;
-    }
-
-    .problem-tab-panel {
-      display: none;
-      padding: 16px 20px 20px;
-    }
-    .problem-tab-panel.is-active {
-      display: block;
-    }
-    .problem-data-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-    }
-    .problem-data-item {
-      border: 1px solid var(--dt-soft-gray);
-      border-radius: var(--dt-radius);
-      padding: 12px;
-      background: #fff;
-    }
-    .problem-data-metric {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--dt-med-blue);
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .problem-data-value {
-      font-size: 14px;
-      color: var(--dt-slate-gray);
-      line-height: 1.5;
-    }
-    .problem-data-value strong {
-      color: var(--dt-deep-charcoal);
-    }
-    .source-links {
-      display: block;
-      margin-top: 6px;
-      font-size: 12px;
-      color: var(--dt-slate-gray);
-    }
-    .source-links a {
-      color: var(--dt-slate-gray);
-      text-decoration: none;
-      font-weight: 600;
-      margin-right: 8px;
-    }
-    .source-links a:hover {
-      text-decoration: underline;
-    }
-
-    /* ── CTA ── */
-    .cta-banner {
-      background: linear-gradient(135deg, var(--dt-med-blue) 0%, #0d2d7a 60%, #0f3391 100%);
-      padding: 72px 24px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .cta-banner::before {
-      content: '';
-      position: absolute;
-      top: -80px; left: 50%;
-      transform: translateX(-50%);
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(27,153,139,0.12), transparent 60%);
-      pointer-events: none;
-    }
-    .cta-inner { max-width: 560px; margin: 0 auto; position: relative; z-index: 1; }
-    .cta-banner h2 {
-      font-size: clamp(24px, 3.5vw, 34px);
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.25;
-      margin-bottom: 14px;
-      letter-spacing: -0.02em;
-    }
-    .cta-banner p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.7);
-      margin-bottom: 28px;
-      line-height: 1.6;
-    }
-    .cta-buttons { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
     /* ── CONTACT ── */
     /* Brand kit refs:
@@ -753,101 +227,11 @@
     }
     .form-status--success { color: #06D6A0; }
     .form-status--error   { color: var(--dt-alert-red); }
-
-    /* ── FOOTER ── */
-    .footer {
-      background: var(--dt-deep-charcoal);
-      padding: 48px 24px 28px;
-      color: rgba(255,255,255,0.5);
-    }
-    .footer-inner { max-width: 1120px; margin: 0 auto; }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 48px;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
-    }
-    .footer-brand .logo { color: #fff; font-size: 18px; display: inline-block; margin-bottom: 10px; }
-    .footer-brand .logo .med { color: var(--dt-signal-teal); }
-    .footer-brand p { font-size: 13px; line-height: 1.6; max-width: 300px; }
-    .footer-links { display: flex; gap: 48px; flex-wrap: wrap; }
-    .footer-col h4 {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 14px;
-    }
-    .footer-col a {
-      display: block;
-      font-size: 13px;
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      margin-bottom: 8px;
-      transition: color var(--dt-transition);
-    }
-    .footer-col a:hover { color: var(--dt-signal-teal); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.07);
-      padding-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-    .footer-legal a {
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      margin-left: 20px;
-    }
-    .footer-legal a:hover { color: var(--dt-signal-teal); }
-
-    /* ── FADE-IN ── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .services-grid { grid-template-columns: 1fr; }
-      .service-card.emergency {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-        padding: 32px 28px;
-      }
-      .emergency-phone { justify-content: center; }
-      .problem-grid { grid-template-columns: 1fr; }
-      .steps-row { grid-template-columns: 1fr; gap: 40px; }
-    }
-    @media (max-width: 640px) {
-      .nav-right .hide-mobile { display: none; }
-      .hero { padding: 60px 24px 40px; }
-      .trust-inner { gap: 24px; }
-      .problem-section { padding: 64px 16px; }
-      .problem-card h3 { padding: 18px 20px; font-size: 18px; }
-      .problem-card-body { padding: 16px 18px 18px; }
-      .problem-tabs { padding: 12px 12px 0; }
-      .problem-tab { padding: 9px 10px; font-size: 12px; }
-      .problem-tab-panel { padding: 12px 14px 14px; }
-      .footer-top { flex-direction: column; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .phone-number { font-size: 22px; }
-    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
       }
-      .fade-in { opacity: 1; transform: none; }
       html { scroll-behavior: auto; }
     }
 
@@ -930,8 +314,6 @@
         animation: none !important;
       }
     }
-
-    .legacy-home { display: none; }
     .clinical-nav {
       min-height: 70px;
       border-bottom: 1px solid var(--console-line);
@@ -960,47 +342,65 @@
     .engine-panel::before { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 45%, rgba(46,196,182,0.08), transparent 55%); animation: scan 5s linear infinite; }
     .engine-header, .module-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; position: relative; }
     .engine-id, .module-id { color: var(--console-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.08em; }
-    .sim-header, .console-label { color: var(--text-muted); font-family: var(--console-mono); font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
-    .sim-stream { min-height: 238px; margin: 28px 0 24px; padding: 22px 0; border-top: 1px solid var(--console-line); border-bottom: 1px solid var(--console-line); position: relative; }
-    .sim-log { margin: 0 0 15px; color: #CBD5E1; font-family: var(--console-mono); font-size: 12px; line-height: 1.5; animation: log-cycle 8s ease-in-out infinite; }
-    .sim-log:nth-child(2) { animation-delay: 0.6s; }
-    .sim-log:nth-child(3) { animation-delay: 1.2s; }
-    .sim-log:nth-child(4) { animation-delay: 1.8s; }
-    .sim-log:nth-child(5) { animation-delay: 2.4s; }
-    .route-success, .mint-text { color: var(--accent-telemetry); }
-    .route-paths { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; position: relative; }
-    .route-path { padding: 10px 8px; border: 1px solid var(--console-line); color: var(--text-clinical); font-family: var(--console-mono); font-size: 9px; line-height: 1.4; text-align: center; text-transform: uppercase; }
+    .demo-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; position: relative; }
+    .demo-tab { min-height: 36px; padding: 8px 12px; border: 1px solid var(--console-line); border-radius: 0; background: transparent; color: #CBD5E1; cursor: pointer; font: 600 12px var(--console-display); letter-spacing: 0.02em; }
+    .demo-tab:hover { border-color: var(--console-cyan); }
+    .demo-tab[aria-selected='true'] { border-color: var(--console-mint); background: rgba(0, 245, 212, 0.1); color: var(--console-mint); }
+    .demo-tab:focus-visible { outline: 2px solid var(--console-cyan); outline-offset: 2px; }
+    .demo-panels { display: grid; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--console-line); position: relative; }
+    .demo-panel { grid-area: 1 / 1; }
+    .is-enhanced .demo-panel { transition: opacity 0.25s ease; }
+    .is-enhanced .demo-panel[aria-hidden='true'] { visibility: hidden; opacity: 0; }
+    .demo-line { margin: 0 0 14px; color: #f5fbfa; font-size: 16px; line-height: 1.5; }
+    .demo-who, .demo-split dt { color: #94A3B8; font: 500 12px var(--console-mono); letter-spacing: 0.05em; text-transform: uppercase; }
+    .demo-who { display: block; margin-bottom: 3px; }
+    .demo-agent .demo-who { color: var(--console-mint); }
+    .demo-split { margin: 20px 0 0; border-top: 1px solid var(--console-line); }
+    .demo-split div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 14px; padding: 11px 0; border-bottom: 1px solid var(--console-line); }
+    .demo-split dd { margin: 0; color: #d5ebea; font-size: 14px; line-height: 1.5; }
+    @media (prefers-reduced-motion: reduce) { .is-enhanced .demo-panel { transition: none; } }
     .console-note { margin-top: 15px; color: var(--console-muted); font-size: 11px; font-family: var(--console-mono); }
+    .console-note a { color: var(--console-cyan); }
     .console-section { padding: 82px 0; border-top: 1px solid var(--console-line); }
     .console-section-heading { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.55fr); gap: 40px; align-items: end; margin-bottom: 32px; }
     .console-section-title { font-size: clamp(30px, 4vw, 48px); }
     .console-section-heading p { margin: 0; color: var(--console-muted); line-height: 1.6; }
     .exposure-console { padding: 28px; }
     .console-controls { display: flex; gap: 12px; margin-bottom: 32px; padding-bottom: 16px; border-bottom: 1px solid var(--border-sterile); }
-    .mode-toggle { padding: 9px 16px; border: 1px solid var(--border-sterile); background: transparent; color: var(--text-muted); cursor: pointer; font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.06em; transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
+    .mode-toggle { padding: 9px 16px; border: 1px solid var(--border-sterile); background: transparent; color: #94A3B8; cursor: pointer; font-family: var(--console-mono); font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; transition: border-color 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out; }
     .mode-toggle:hover, .mode-toggle[aria-selected="true"] { border-color: var(--accent-telemetry); background: rgba(0, 245, 212, 0.03); color: var(--accent-telemetry); }
     .mode-toggle:focus-visible { outline: 2px solid var(--accent-telemetry); outline-offset: 3px; }
     .metric-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; margin-bottom: 40px; }
-    .metric-block label, .pipeline-visualization label { display: block; margin-bottom: 12px; color: var(--text-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.1em; }
+    .metric-block label, .pipeline-visualization label { display: block; margin-bottom: 12px; color: #94A3B8; font-family: var(--console-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; }
     .metric-block p { max-width: 420px; margin: 12px 0 0; color: var(--console-muted); font-size: 14px; line-height: 1.6; }
     .massive-stat { font-family: var(--console-mono); font-size: clamp(34px, 6vw, 62px); font-weight: 700; letter-spacing: 0; line-height: 1; }
     .alert-text { color: var(--accent-alert); }
     .telemetry-text { color: var(--accent-telemetry); }
     .meter-container { width: 100%; height: 8px; margin-bottom: 12px; border: 1px solid var(--border-sterile); background: #06080B; overflow: hidden; }
     .meter-fill { width: 38%; height: 100%; background: var(--accent-alert); transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-    .meter-spec { color: var(--text-clinical); font-family: var(--console-mono); font-size: 11px; }
+    .meter-fill--steady { background: var(--accent-telemetry); }
+    .meter-spec { color: var(--text-clinical); font-family: var(--console-mono); font-size: 12px; text-transform: uppercase; }
     .exposure-source { margin: 24px 0 0; color: var(--console-muted); font-size: 12px; }
     .exposure-source a { color: var(--console-cyan); }
     .bento-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 16px; }
     .bento-module { min-height: 260px; padding: 22px; display: flex; flex-direction: column; }
-    .card-appointments, .card-billing { grid-column: span 5; }
-    .card-eligibility, .card-refills { grid-column: span 7; }
+    .card-appointments, .card-billing, .card-refills { grid-column: span 4; }
+    .card-prior-auth, .card-eligibility { grid-column: span 6; }
+    .card-console { grid-column: span 7; }
+    .card-caregiver { grid-column: span 5; }
+    .mock-list { margin: 22px 0 0; padding: 0; list-style: none; }
+    .mock-row { display: grid; grid-template-columns: 108px minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 11px 0; border-top: 1px solid var(--console-line); color: #d5ebea; font-size: 14px; line-height: 1.45; }
+    .mock-row--pair { grid-template-columns: minmax(0, 1fr) auto; }
+    .mock-tag { color: var(--console-mint); font: 500 12px var(--console-mono); letter-spacing: 0.05em; text-transform: uppercase; }
+    .mock-badge { padding: 3px 8px; border: 1px solid var(--console-line); color: #CBD5E1; font: 500 12px var(--console-mono); white-space: nowrap; }
+    .mock-badge--open { border-color: var(--accent-alert); color: #FCA5A5; }
+    .mock-badge--off { color: #94A3B8; }
     .bento-module h3 { margin: 28px 0 8px; color: #f5fbfa; font-size: 24px; }
     .bento-module p { margin: 0; color: var(--console-muted); font-size: 14px; line-height: 1.6; }
     .terminal { margin-top: auto; padding: 14px; border-left: 2px solid var(--console-mint); background: rgba(7, 25, 24, 0.5); color: #d5ebea; font-family: var(--console-mono); font-size: 12px; line-height: 1.8; }
     .terminal .mint { color: var(--console-mint); } .terminal .cyan { color: var(--console-cyan); }
     .architecture-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--console-line); }
-    .architecture-node { min-height: 185px; padding: 20px; border-right: 1px solid var(--console-line); display: flex; flex-direction: column; justify-content: space-between; }
+    .architecture-node { min-height: 185px; padding: 20px; border-right: 1px solid var(--console-line); display: flex; flex-direction: column; gap: 22px; }
     .architecture-node:last-child { border-right: 0; }
     .architecture-node h3 { color: #f5fbfa; font-size: 17px; margin: 0; }
     .architecture-node p { color: var(--console-muted); font-size: 13px; line-height: 1.55; margin: 12px 0 0; }
@@ -1010,7 +410,7 @@
     .pipeline-step { flex: 1; position: relative; z-index: 2; }
     .step-indicator { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
     .step-node { display: flex; width: 32px; height: 32px; align-items: center; justify-content: center; border: 1px solid var(--border-sterile); background: var(--text-clinical); color: var(--bg-prime); font-family: var(--console-mono); font-size: 13px; font-weight: 700; transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out; }
-    .step-label-mono { padding-right: 10px; background: var(--bg-prime); color: var(--text-muted); font-family: var(--console-mono); font-size: 11px; letter-spacing: 0.15em; transition: color 0.2s ease-in-out; }
+    .step-label-mono { padding-right: 10px; background: var(--bg-prime); color: #94A3B8; font-family: var(--console-mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s ease-in-out; }
     .step-content h3 { margin: 0 0 12px; color: var(--text-clinical); font-size: 20px; letter-spacing: 0; }
     .step-content p { margin: 0; color: var(--text-muted); font-size: 14px; line-height: 1.6; }
     .pipeline-step:hover .step-node { border-color: var(--accent-telemetry); background: var(--accent-telemetry); box-shadow: 0 0 15px rgba(0, 245, 212, 0.3); }
@@ -1028,16 +428,15 @@
     .console-footer-inner { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
     .console-footer a { color: var(--console-mint); margin-left: 18px; text-decoration: none; }
     @keyframes scan { from { transform: translateX(-120%); } to { transform: translateX(120%); } }
-    @keyframes pulse-signal { 50% { transform: scaleY(0.76); opacity: 0.7; } }
-    @keyframes log-cycle { 0%, 8% { opacity: 0.22; transform: translateX(-4px); } 18%, 80% { opacity: 1; transform: translateX(0); } 92%, 100% { opacity: 0.22; transform: translateX(0); } }
-    @keyframes meter-load { from { width: 0; } }
     @media (max-width: 800px) {
       .clinical-nav-inner, .clinical-container { width: min(100% - 32px, 1180px); }
       .clinical-nav-links { display: none; }
       .console-hero { padding: 54px 0; }
       .console-hero-grid, .console-section-heading { grid-template-columns: 1fr; gap: 30px; }
       .bento-grid { grid-template-columns: 1fr; }
-      .card-appointments, .card-eligibility, .card-refills, .card-billing { grid-column: auto; }
+      .card-appointments, .card-eligibility, .card-refills, .card-billing, .card-prior-auth, .card-console, .card-caregiver { grid-column: auto; }
+      .mock-row { grid-template-columns: minmax(0, 1fr) auto; }
+      .mock-row .mock-tag { grid-column: 1 / -1; }
       .pipeline-track { flex-direction: column; gap: 48px; }
       .pipeline-track::before { top: 0; left: 16px; width: 1px; height: 100%; }
       .pipeline-step { display: grid; grid-template-columns: 32px minmax(0, 1fr); gap: 24px; }
@@ -1055,7 +454,7 @@
       .architecture-node { border-right: 0; border-bottom: 1px solid var(--console-line); }
       .architecture-node:last-child { border-bottom: 0; }
       .engine-panel { min-height: 0; }
-      .route-paths { grid-template-columns: repeat(2, 1fr); }
+      .demo-split div { grid-template-columns: 1fr; gap: 3px; }
     }
   </style>
 </head>
@@ -1066,7 +465,8 @@
       <a href="#top" class="clinical-logo" aria-label="DialTone.Med home">DialTone<span>.Med</span></a>
       <div class="clinical-nav-links">
         <a href="#capabilities">Capabilities</a>
-        <a href="#architecture">Architecture</a>
+        <a href="#staff">For staff</a>
+        <a href="#architecture">Data handling</a>
         <a href="/pricing">Plans &amp; pricing</a>
         <a href="#contact">Contact</a>
       </div>
@@ -1078,49 +478,91 @@
     <section class="console-hero">
       <div class="clinical-container console-hero-grid">
         <div>
-          <p class="console-kicker">DialTone.Med / customized patient-engagement platform</p>
+          <p class="console-kicker">DialTone.Med / calls and texts for general practices and specialty pharmacies</p>
           <h1>Every patient call answered. <strong>Every request moved forward.</strong></h1>
-          <p class="console-lead">DialTone.Med answers every call and manages appointments, refill requests, billing, and insurance verification so your front desk can stay focused on patients in the practice.</p>
+          <p class="console-lead">DialTone.Med answers every call, verifies the caller, and texts a secure link to finish the request: appointments, billing, refills, prior authorization status, and insurance. Your front desk stays focused on the patients in the room.</p>
           <div class="console-actions">
             <a href="#contact" class="btn btn-lg console-button">Talk to our team</a>
-            <a href="/pricing" class="btn btn-lg console-outline">Compare plans</a>
+            <a href="/pricing" class="btn btn-lg console-outline">See pricing</a>
           </div>
         </div>
-        <div class="engine-panel console-panel routing-simulator" aria-label="Illustrative live patient-call routing stream">
-          <div class="engine-header"><span class="console-status sim-header">Live edge stream</span><span class="engine-id">NODE // DTM-01</span></div>
-          <div class="sim-stream">
-            <p class="sim-log">&gt; INBOUND TELEPHONY CALL CONNECTED</p>
-            <p class="sim-log">&gt; INTENT RECOGNITION ACTIVE...</p>
-            <p class="sim-log route-success">&gt; CLASSIFIED: <span class="mint-text">[PRESCRIPTION_REFILL]</span></p>
-            <p class="sim-log">&gt; PROVIDER-APPROVED WORKFLOW SELECTED</p>
-            <p class="sim-log route-success">&gt; REQUEST CAPTURED // STATUS: ACTIVE</p>
+        <div class="engine-panel console-panel call-demo" aria-label="Illustrative patient calls, one for each workflow">
+          <div class="engine-header"><span class="console-status">Example call</span><span class="engine-id">Illustrative</span></div>
+          <div class="demo-tabs" role="tablist" aria-label="Workflow">
+            <button class="demo-tab" type="button" role="tab" id="demoTab-appointments" aria-controls="demoPanel-appointments" aria-selected="true">Appointments</button>
+            <button class="demo-tab" type="button" role="tab" id="demoTab-billing" aria-controls="demoPanel-billing" aria-selected="false" tabindex="-1">Billing</button>
+            <button class="demo-tab" type="button" role="tab" id="demoTab-refills" aria-controls="demoPanel-refills" aria-selected="false" tabindex="-1">Refills</button>
+            <button class="demo-tab" type="button" role="tab" id="demoTab-prior-auth" aria-controls="demoPanel-prior-auth" aria-selected="false" tabindex="-1">Prior auth</button>
+            <button class="demo-tab" type="button" role="tab" id="demoTab-insurance" aria-controls="demoPanel-insurance" aria-selected="false" tabindex="-1">Insurance</button>
           </div>
-          <div class="route-paths" aria-label="Available workflow paths">
-            <div class="route-path">Appointments</div>
-            <div class="route-path">Refills</div>
-            <div class="route-path">Billing</div>
-            <div class="route-path">Insurance</div>
+          <div class="demo-panels">
+            <div class="demo-panel" role="tabpanel" id="demoPanel-appointments" aria-labelledby="demoTab-appointments">
+              <p class="demo-line"><span class="demo-who">Patient</span>&ldquo;I need to move my appointment on Thursday.&rdquo;</p>
+              <p class="demo-line demo-agent"><span class="demo-who">DialTone.Med</span>&ldquo;I can text you a secure link to pick a new time. Should I send it?&rdquo;</p>
+              <dl class="demo-split">
+                <div><dt>Said on the call</dt><dd>An identity check and the offer of a link</dd></div>
+                <div><dt>Sent by secure link</dt><dd>Open times, with booking, rescheduling, and cancelling</dd></div>
+                <div><dt>Left for your staff</dt><dd>Nothing. The change appears in the patient record.</dd></div>
+              </dl>
+            </div>
+            <div class="demo-panel" role="tabpanel" id="demoPanel-billing" aria-labelledby="demoTab-billing" hidden>
+              <p class="demo-line"><span class="demo-who">Patient</span>&ldquo;How much do I owe, and can I pay it now?&rdquo;</p>
+              <p class="demo-line demo-agent"><span class="demo-who">DialTone.Med</span>&ldquo;I&rsquo;ll text you a secure link with your balance. You can pay from there.&rdquo;</p>
+              <dl class="demo-split">
+                <div><dt>Said on the call</dt><dd>No dollar amounts</dd></div>
+                <div><dt>Sent by secure link</dt><dd>The balance and card payment</dd></div>
+                <div><dt>Left for your staff</dt><dd>Nothing. The patient gets a receipt by text and email.</dd></div>
+              </dl>
+            </div>
+            <div class="demo-panel" role="tabpanel" id="demoPanel-refills" aria-labelledby="demoTab-refills" hidden>
+              <p class="demo-line"><span class="demo-who">Patient</span>&ldquo;I need a refill on my blood pressure medication.&rdquo;</p>
+              <p class="demo-line demo-agent"><span class="demo-who">DialTone.Med</span>&ldquo;I&rsquo;ve sent your request to the care team. I can&rsquo;t approve refills myself.&rdquo;</p>
+              <dl class="demo-split">
+                <div><dt>Said on the call</dt><dd>The request, taken in the patient&rsquo;s own words</dd></div>
+                <div><dt>Sent by secure link</dt><dd>Nothing needed</dd></div>
+                <div><dt>Left for your staff</dt><dd>One refill request to review. The decision stays with the prescriber.</dd></div>
+              </dl>
+            </div>
+            <div class="demo-panel" role="tabpanel" id="demoPanel-prior-auth" aria-labelledby="demoTab-prior-auth" hidden>
+              <p class="demo-line"><span class="demo-who">Patient</span>&ldquo;Has my prior authorization been approved yet?&rdquo;</p>
+              <p class="demo-line demo-agent"><span class="demo-who">DialTone.Med</span>&ldquo;You have one approved and one still in review. Want the details by text?&rdquo;</p>
+              <dl class="demo-split">
+                <div><dt>Said on the call</dt><dd>Status only, never the drug or procedure</dd></div>
+                <div><dt>Sent by secure link</dt><dd>What each request is for, its dates, and the next step</dd></div>
+                <div><dt>Left for your staff</dt><dd>Nothing. No status call to return.</dd></div>
+              </dl>
+            </div>
+            <div class="demo-panel" role="tabpanel" id="demoPanel-insurance" aria-labelledby="demoTab-insurance" hidden>
+              <p class="demo-line"><span class="demo-who">Patient</span>&ldquo;I have new insurance. Can you update it?&rdquo;</p>
+              <p class="demo-line demo-agent"><span class="demo-who">DialTone.Med</span>&ldquo;I&rsquo;ll text you a secure link to enter your new plan details.&rdquo;</p>
+              <dl class="demo-split">
+                <div><dt>Said on the call</dt><dd>An identity check and the offer of a link</dd></div>
+                <div><dt>Sent by secure link</dt><dd>Carrier, member ID, and group number, typed by the patient</dd></div>
+                <div><dt>Left for your staff</dt><dd>An eligibility result to review</dd></div>
+              </dl>
+            </div>
           </div>
-          <p class="console-note">Each workflow is configured to the practice's requirements.</p>
+          <p class="console-note">Balances, medications, and procedures are never read aloud. They go to the secure link.</p>
         </div>
       </div>
     </section>
 
     <section class="console-section" id="problem" aria-labelledby="leak-title">
       <div class="clinical-container">
-        <div class="console-section-heading"><div><p class="console-kicker">Call-capture exposure</p><h2 class="console-section-title" id="leak-title">The leaking pipeline.</h2></div><p>When routine calls reach voicemail, practices lose the chance to respond when a patient is ready to act. These published benchmarks make the exposure visible.</p></div>
+        <div class="console-section-heading"><div><p class="console-kicker">What the phones cost</p><h2 class="console-section-title" id="leak-title">The leaking pipeline.</h2></div><p>A general practice loses the calls it cannot answer. A specialty pharmacy answers nearly all of them, and pays for it in staff time. Published benchmarks show both.</p></div>
         <div class="exposure-console console-panel">
-          <div class="console-controls" role="tablist" aria-label="Practice exposure profile">
-            <button class="mode-toggle" type="button" role="tab" id="medicalMode" aria-selected="true" aria-controls="exposureMetrics" data-practice-mode="medical">CONSOLE // MED_OPS</button>
-            <button class="mode-toggle" type="button" role="tab" id="dentalMode" aria-selected="false" aria-controls="exposureMetrics" data-practice-mode="dental" tabindex="-1">CONSOLE // DENT_OPS</button>
+          <div class="console-controls" role="tablist" aria-label="Practice type">
+            <button class="mode-toggle" type="button" role="tab" id="gpMode" aria-selected="true" aria-controls="exposureMetrics" data-practice-mode="gp">General practice</button>
+            <button class="mode-toggle" type="button" role="tab" id="spMode" aria-selected="false" aria-controls="exposureMetrics" data-practice-mode="sp" tabindex="-1">Specialty pharmacy</button>
           </div>
-          <div id="exposureMetrics" role="tabpanel" aria-labelledby="medicalMode">
+          <div id="exposureMetrics" role="tabpanel" aria-labelledby="gpMode">
             <div class="metric-row">
-              <div class="metric-block"><label>SYSTEM RISK PROFILE</label><div class="massive-stat alert-text" id="missRate">23%</div><p>Conservative business-hour benchmark for inbound calls unanswered or abandoned in queue.</p></div>
-              <div class="metric-block"><label>ESTIMATED ANNUAL REVENUE RISK</label><div class="massive-stat telemetry-text" id="revenueRisk">$200K-$500K</div><p>Potential practice revenue exposed through uncaptured inbound workflows.</p></div>
+              <div class="metric-block"><label id="statOneLabel">Calls unanswered or abandoned</label><div class="massive-stat alert-text" id="statOne">23%</div><p id="statOneText">Conservative business-hour benchmark for inbound calls unanswered or abandoned in queue.</p></div>
+              <div class="metric-block"><label id="statTwoLabel">Estimated annual revenue at risk</label><div class="massive-stat telemetry-text" id="statTwo">$200K-$500K</div><p id="statTwoText">Potential practice revenue exposed when those callers do not get through.</p></div>
             </div>
-            <div class="pipeline-visualization"><label>PIPELINE RETENTION AFTER VOICEMAIL</label><div class="meter-container" aria-hidden="true"><div class="meter-fill" id="pipelineFill"></div></div><span class="meter-spec" id="dropOffLabel">62% PATIENT ABANDONMENT RATE</span></div>
-            <p class="exposure-source">Benchmarks are directional estimates. Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</p>
+            <div class="pipeline-visualization"><label id="meterLabel">Callers who leave a voicemail</label><div class="meter-container" aria-hidden="true"><div class="meter-fill" id="pipelineFill"></div></div><span class="meter-spec" id="meterSpec">62% hang up without leaving a message</span></div>
+            <p class="exposure-source" id="exposureSource">Benchmarks are directional estimates. Sources: <a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a> and <a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a>.</p>
+            <p class="exposure-source" id="exposureSourceSp" hidden>Source: <a href="https://2297879.fs1.hubspotusercontent-na1.net/hubfs/2297879/URAC_Specialty%20Pharmacy_Aggregate%20Summary%20Report_2024.pdf" target="_blank" rel="noopener noreferrer">URAC 2024 Specialty Pharmacy Performance Measurement</a>, aggregate results for accredited pharmacies.</p>
           </div>
         </div>
       </div>
@@ -1128,435 +570,161 @@
 
     <section class="console-section" id="capabilities" aria-labelledby="capabilities-title">
       <div class="clinical-container">
-        <div class="console-section-heading"><div><p class="console-kicker">One agent // four core workflows</p><h2 class="console-section-title" id="capabilities-title">From hello to handled.</h2></div><p>The agent categorizes each call and moves the patient into the practice-approved appointment, refill, billing, or insurance workflow.</p></div>
+        <div class="console-section-heading"><div><p class="console-kicker">One agent, five workflows</p><h2 class="console-section-title" id="capabilities-title">From hello to handled.</h2></div><p>The call identifies the patient. A secure texted link carries the detail. Your staff see every request, recording, and outcome in one console.</p></div>
         <div class="console-grid bento-grid">
-          <article class="bento-module console-panel card-appointments"><div class="module-header"><span class="console-status">Scheduling</span></div><h3>Appointment coordination</h3><p>Support appointment review, new scheduling, rescheduling, and call-back requests.</p><div class="terminal">&gt; appointment intent detected<br><span class="cyan">&gt; scheduling path selected</span><br><span class="mint">&gt; practice workflow active</span></div></article>
-          <article class="bento-module console-panel card-eligibility"><div class="module-header"><span class="console-status">Insurance</span></div><h3>Eligibility workflows</h3><p>Manage insurance questions through the practice-approved workflow before an appointment.</p><div class="terminal">&gt; eligibility request received<br><span class="cyan">&gt; verification workflow in progress</span><br><span class="mint">&gt; practice workflow active</span></div></article>
-          <article class="bento-module console-panel card-refills"><div class="module-header"><span class="console-status">Refills</span></div><h3>Prescription requests</h3><p>Capture eligible renewal requests and direct them through provider-approved processes.</p><div class="terminal">&gt; request classified: refill<br><span class="cyan">&gt; policy check initiated</span><br><span class="mint">&gt; provider workflow active</span></div></article>
-          <article class="bento-module console-panel card-billing"><div class="module-header"><span class="console-status">Billing</span></div><h3>Billing management</h3><p>Manage routine balances, statements, and payments without interrupting an in-person patient interaction.</p><div class="terminal">&gt; billing request received<br><span class="cyan">&gt; configured billing path selected</span><br><span class="mint">&gt; secure workflow active</span></div></article>
+          <article class="bento-module console-panel card-appointments"><div class="module-header"><span class="console-status">Scheduling</span></div><h3>Appointments</h3><p>Patients review, book, reschedule, or cancel from a secure link, with confirmation by text and email.</p><div class="terminal">&gt; caller verified<br><span class="cyan">&gt; scheduling link texted</span><br><span class="mint">&gt; booked // confirmation sent</span></div></article>
+          <article class="bento-module console-panel card-billing"><div class="module-header"><span class="console-status">Billing</span></div><h3>Billing review and payment</h3><p>The balance is never spoken on the call. Patients see what they owe and pay from the secure link.</p><div class="terminal">&gt; billing request received<br><span class="cyan">&gt; balance shown in browser only</span><br><span class="mint">&gt; payment confirmed // receipt sent</span></div></article>
+          <article class="bento-module console-panel card-refills"><div class="module-header"><span class="console-status">Refills</span></div><h3>Refill requests</h3><p>The request is captured in the caller's own words and queued for your staff. The agent never promises an approval.</p><div class="terminal">&gt; request classified: refill<br><span class="cyan">&gt; saved to staff queue</span><br><span class="mint">&gt; decision stays with the prescriber</span></div></article>
+          <article class="bento-module console-panel card-prior-auth"><div class="module-header"><span class="console-status">Prior auth</span></div><h3>Prior authorization status</h3><p>Verified callers hear where each request stands. The drug or procedure is never named aloud; dates and next steps arrive by secure link.</p><div class="terminal">&gt; caller verified<br><span class="cyan">&gt; spoken: one approved, one in review</span><br><span class="mint">&gt; detail sent by secure link</span></div></article>
+          <article class="bento-module console-panel card-eligibility"><div class="module-header"><span class="console-status">Insurance</span></div><h3>Insurance verification</h3><p>Patients submit carrier and member details from the secure link. An eligibility check runs and your staff review the result.</p><div class="terminal">&gt; coverage details received<br><span class="cyan">&gt; eligibility check run</span><br><span class="mint">&gt; result ready for staff review</span></div></article>
         </div>
       </div>
     </section>
 
-    <section class="console-section" id="architecture" aria-labelledby="onboarding-title">
+    <section class="console-section" id="staff" aria-labelledby="staff-title">
       <div class="clinical-container">
-        <div class="console-section-heading"><div><p class="console-kicker">Core runtime init // system onboarding matrix</p><h2 class="console-section-title" id="onboarding-title">Built around your practice.</h2></div><p>Start with the capabilities your team needs today, then add messaging, operational tools, integrations, and analytics as you grow.</p></div>
+        <div class="console-section-heading"><div><p class="console-kicker">For your front desk</p><h2 class="console-section-title" id="staff-title">Your staff see every call.</h2></div><p>DialTone.Med handles the request. Your team sees what was asked, what was sent, and what still needs a person.</p></div>
+        <div class="console-grid bento-grid">
+          <article class="bento-module console-panel card-console"><div class="module-header"><span class="console-status">Staff console</span><span class="module-id">Illustrative</span></div><h3>Every call, sorted by request</h3><p>Calls are tagged by type. Refill requests and anything the agent could not finish arrive as messages in the caller's own words, and stay unresolved until staff close them. Recordings and transcripts are there when the caller agreed to recording.</p>
+            <ul class="mock-list" aria-label="Example call inbox">
+              <li class="mock-row"><span class="mock-tag">Appointment</span><span>Rescheduled from a secure link</span><span class="mock-badge">Transcript</span></li>
+              <li class="mock-row"><span class="mock-tag">Message</span><span>&ldquo;I need a refill on my blood pressure medication.&rdquo;</span><span class="mock-badge mock-badge--open">Unresolved</span></li>
+              <li class="mock-row"><span class="mock-tag">Billing</span><span>Payment link sent</span><span class="mock-badge">First text</span></li>
+              <li class="mock-row"><span class="mock-tag">Insurance</span><span>New plan details submitted</span><span class="mock-badge">Transcript</span></li>
+            </ul>
+          </article>
+          <article class="bento-module console-panel card-caregiver"><div class="module-header"><span class="console-status">Caregiver access</span><span class="module-id">Illustrative</span></div><h3>Family can call, within limits you set</h3><p>Staff grant each caregiver only the services they need and approve the phone their links go to. A caregiver who asks for anything else is told it is not available on that call.</p>
+            <ul class="mock-list" aria-label="Example caregiver permissions">
+              <li class="mock-row mock-row--pair"><span>Manage appointments</span><span class="mock-badge">Allowed</span></li>
+              <li class="mock-row mock-row--pair"><span>Prior authorization status</span><span class="mock-badge">Allowed</span></li>
+              <li class="mock-row mock-row--pair"><span>Read financial information</span><span class="mock-badge mock-badge--off">Not allowed</span></li>
+              <li class="mock-row mock-row--pair"><span>Make payments</span><span class="mock-badge mock-badge--off">Not allowed</span></li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="console-section" id="onboarding" aria-labelledby="onboarding-title">
+      <div class="clinical-container">
+        <div class="console-section-heading"><div><p class="console-kicker">Getting started</p><h2 class="console-section-title" id="onboarding-title">Built around your practice.</h2></div><p>Start with no integration and the phone numbers your patients already know. Connect your EMR or EHR when your team is ready.</p></div>
         <div class="pipeline-track" aria-labelledby="onboarding-title">
-          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">01</div><div class="step-label-mono">HANDSHAKE</div></div><div class="step-content"><h3>Connect Every Call</h3><p>Connect your practice phone line to DialTone.Med while retaining the phone numbers your patients already know.</p></div></article>
-          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">02</div><div class="step-label-mono">PROVISION</div></div><div class="step-content"><h3>Workflow Control Provisioning</h3><p>Define practice-approved rules for scheduling, insurance inquiries, billing, and prescription refill requests.</p></div></article>
-          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">03</div><div class="step-label-mono">RUNTIME</div></div><div class="step-content"><h3>Activate and Expand</h3><p>Launch your phone agent, then add tier upgrades as your messaging, integration, analytics, and multi-site needs evolve.</p></div></article>
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">01</div><div class="step-label-mono">Connect</div></div><div class="step-content"><h3>Connect Every Call</h3><p>Connect your practice phone line to DialTone.Med while retaining the phone numbers your patients already know.</p></div></article>
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">02</div><div class="step-label-mono">Configure</div></div><div class="step-content"><h3>Set Your Rules</h3><p>Define practice-approved rules for scheduling, billing, refill requests, prior authorization status, and insurance.</p></div></article>
+          <article class="pipeline-step"><div class="step-indicator"><div class="step-node">03</div><div class="step-label-mono">Go live</div></div><div class="step-content"><h3>Activate and Expand</h3><p>Launch calls and texts first, then connect your EMR or EHR so appointments, balances, and statuses stay in sync.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section class="console-section" aria-labelledby="architecture-title">
+    <section class="console-section" id="architecture" aria-labelledby="architecture-title">
       <div class="clinical-container">
-        <div class="console-section-heading"><div><p class="console-kicker">Trust architecture</p><h2 class="console-section-title" id="architecture-title">HIPAA-aligned infrastructure.</h2></div><p>DialTone.Med is designed for secure healthcare communication, with controls documented in the platform compliance policy.</p></div>
+        <div class="console-section-heading"><div><p class="console-kicker">Data handling</p><h2 class="console-section-title" id="architecture-title">What happens to patient data.</h2></div><p>DialTone.Med handles patient information as a business associate, under a signed agreement with your practice. This is what it does with that information, and what it never does.</p></div>
         <div class="architecture-grid">
-          <article class="architecture-node"><span class="module-id">Telephony</span><div><h3>Inbound voice</h3><p>Calls enter through VoIP/SIP telephony infrastructure.</p></div></article>
-          <article class="architecture-node"><span class="module-id">Transmission</span><div><h3>TLS 1.2+</h3><p>Data transmission is protected through encrypted channels.</p></div></article>
-          <article class="architecture-node"><span class="module-id">Access</span><div><h3>Controlled access</h3><p>Role-based controls, MFA, and audit logging support operational oversight.</p></div></article>
-          <article class="architecture-node"><span class="module-id">Integration</span><div><h3>Practice systems</h3><p>API integrations support practice-management and EHR workflows.</p></div></article>
+          <article class="architecture-node"><span class="module-id">On the call</span><div><h3>Status, not detail</h3><p>The agent confirms who is calling, then says only what is safe to say aloud. Balances, medications, and procedures are never read out.</p></div></article>
+          <article class="architecture-node"><span class="module-id">By secure link</span><div><h3>Detail goes to the patient</h3><p>Appointments, balances, and prior authorization detail open in the patient's browser. Card payments go straight to the payment processor, so no one reads a card number aloud.</p></div></article>
+          <article class="architecture-node"><span class="module-id">Decisions</span><div><h3>Your team decides</h3><p>DialTone.Med relays facts. It never approves a refill, decides a prior authorization, or gives medical advice.</p></div></article>
+          <article class="architecture-node"><span class="module-id">Retention</span><div><h3>Kept briefly, then deleted</h3><p>Calls are recorded only with the caller's consent. Recordings and transcripts are kept for 30 days. Access records are kept for at least six years.</p></div></article>
         </div>
-        <p class="console-note">Controls summarized from the published <a href="/hippa.html">HIPAA Compliance Policy</a>. Client configuration and contractual requirements apply.</p>
+        <p class="console-note">Encrypted in transit with TLS 1.2+ and at rest, with role-based access, MFA, and audit logging. Controls summarized from the published <a href="/hipaa">HIPAA Compliance Policy</a>. Client configuration and contractual requirements apply.</p>
+      </div>
+    </section>
+    <section class="contact-section console-contact" id="contact" aria-labelledby="refreshContactTitle">
+      <div class="contact-inner">
+        <div class="section-header">
+          <div class="section-label">Start a conversation</div>
+          <h2 id="refreshContactTitle">Build the right call workflow for your practice.</h2>
+          <p>Tell us where patient calls are creating pressure. We will follow up with a practical conversation about your team and workflows.</p>
+        </div>
+        <div class="contact-card">
+          <form class="contact-form" id="refreshContactForm" novalidate>
+            <div class="form-field"><label for="refreshNameField">Name</label><input id="refreshNameField" name="name" type="text" placeholder="Your name" required autocomplete="name" maxlength="120"></div>
+            <div class="form-field"><label for="refreshCompanyField">Company</label><input id="refreshCompanyField" name="company" type="text" placeholder="Your practice or company" required autocomplete="organization" maxlength="160"></div>
+            <div class="form-field"><label for="refreshEmailField">Email</label><input id="refreshEmailField" name="email" type="email" placeholder="you@example.com" required autocomplete="email" maxlength="254"></div>
+            <div class="form-field"><label for="refreshMessageField">Message</label><textarea id="refreshMessageField" name="message" placeholder="How can we help?" required maxlength="5000"></textarea></div>
+            <div class="honeypot" aria-hidden="true"><label for="refreshWebsiteField">Leave this field empty</label><input id="refreshWebsiteField" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <p class="form-status" id="refreshFormStatus" role="status" aria-live="polite"></p>
+            <button type="submit" class="submit-btn" id="refreshSubmitBtn">Send message</button>
+          </form>
+        </div>
       </div>
     </section>
   </main>
 
-  <template>
 
-  <!-- NAVBAR -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
-    <div class="navbar-inner">
-      <a href="#" class="logo" aria-label="DialTone.Med home">DialTone<span class="med">.Med</span></a>
-      <div class="nav-right">
-        <a href="#services" class="hide-mobile">Services</a>
-        <a href="#problem" class="hide-mobile">Problem</a>
-        <a href="#how" class="hide-mobile">How It Works</a>
-        <a href="#contact" class="hide-mobile">Contact</a>
-      </div>
-    </div>
-  </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner fade-in">
-      <h1>Your Front Desk Has A<br><em>New Receptionist</em></h1>
-      <p class="hero-copy">DialTone.Med manages your appointments and billing<br>with a secure phone call.<br><br><span class="hero-copy-highlight">DialTone.Med allows you to focus on your patients.</span></p>
-      <a href="#contact" class="btn btn-primary btn-lg">Contact Us</a>
-    </div>
-  </section>
 
-  <!-- SERVICES -->
-  <section class="services" id="services">
-    <div class="services-grid">
-
-      <!-- Appointments -->
-      <article class="service-card fade-in">
-        <div class="service-card-header">
-          <div class="service-icon teal">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          </div>
-          <div>
-            <h3>Appointments</h3>
-            <span class="subtitle">Manage your visits</span>
-          </div>
-        </div>
-        <ul class="service-list">
-          <li>Review appointments</li>
-          <li>Book a new appointment</li>
-          <li>Reschedule an appointment</li>
-          <li>Schedule a phone call</li>
-        </ul>
-      </article>
-
-      <!-- Billing -->
-      <article class="service-card fade-in">
-        <div class="service-card-header">
-          <div class="service-icon violet">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-          </div>
-          <div>
-            <h3>Billing</h3>
-            <span class="subtitle">Payments &amp; statements</span>
-          </div>
-        </div>
-        <ul class="service-list">
-          <li>Review your balance</li>
-          <li>Make a payment</li>
-          <li>All transactions are encrypted and processed securely</li>
-        </ul>
-      </article>
-
-      <!-- Prescription Refills -->
-      <article class="service-card fade-in">
-        <div class="service-card-header">
-          <div class="service-icon blue">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 3.5L20.5 13.5a3.536 3.536 0 0 1-5 5l-10-10a3.536 3.536 0 0 1 5-5z"/><path d="M8 6l10 10"/></svg>
-          </div>
-          <div>
-            <h3>Prescription Refills</h3>
-            <span class="subtitle">Provider approved workflows</span>
-          </div>
-        </div>
-        <ul class="service-list">
-          <li>Request eligible prescription renewals</li>
-          <li>Route refill requests through provider-approved workflows</li>
-          <li>Reduce call volume for routine medication follow-up</li>
-        </ul>
-      </article>
-
-      <!-- Insurance Verification -->
-      <article class="service-card fade-in">
-        <div class="service-card-header">
-          <div class="service-icon teal">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/><path d="M14 15h4"/></svg>
-          </div>
-          <div>
-            <h3>Insurance Verification</h3>
-            <span class="subtitle">Real-time eligibility checks</span>
-          </div>
-        </div>
-        <ul class="service-list">
-          <li>Verify patient insurance eligibility before appointments</li>
-          <li>Confirm co-pays, deductibles, and coverage details</li>
-          <li>Reduce billing surprises and front-desk workload</li>
-        </ul>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- TRUST BAR -->
-  <div class="trust-bar">
-    <div class="trust-inner">
-      <div class="trust-item">
-        <div class="trust-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <span>HIPAA-aligned architecture</span>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-        </div>
-        <span>256-bit Encryption</span>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <span>HIPAA-aligned architecture, SOC 2 Type 2 roadmap in place</span>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <span>24/7 Availability</span>
-      </div>
-      <div class="trust-item">
-        <div class="trust-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <span>Support Team</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- THE PROBLEM -->
-  <section class="problem-section" id="problem" aria-labelledby="problemTitle">
-    <div class="problem-inner">
-      <div class="section-header fade-in problem-header">
-        <div class="section-label">The Problem</div>
-        <h2 id="problemTitle">Missing calls is a bigger problem...</h2>
-        <p>Frustrated patients and lost revenue</p>
-      </div>
-
-      <div class="problem-grid">
-        <article class="problem-card fade-in" aria-labelledby="problemKeyPointsTitle">
-          <h3 id="problemKeyPointsTitle">Key Points</h3>
-          <div class="problem-card-body">
-            <ul class="problem-keypoints">
-              <li>
-                <strong>Phones are infinite, humans are finite</strong>
-                <span class="problem-subpoint">front desk staff are checking patients in out while the phone rings</span>
-                <span class="problem-source"><a href="https://prettygoodai.com" target="_blank" rel="noopener noreferrer">prettygoodai.com</a></span>
-              </li>
-              <li>
-                <strong>Peak hours are the worst</strong>
-                <span class="problem-subpoint">Monday mornings, lunch, and end-of-day see the highest miss rates, exactly when patients are most likely to call</span>
-              </li>
-              <li>
-                <strong>Voicemail is a dead end</strong>
-                <span class="problem-subpoint">62% of callers who hit voicemail hang up without leaving a message</span>
-              </li>
-              <li>
-                <strong>No one knows it's happening</strong>
-                <span class="problem-subpoint">there's no "missed revenue" line item on any P&amp;L</span>
-                <span class="problem-source"><a href="https://vigma.ai" target="_blank" rel="noopener noreferrer">vigma.ai</a></span>
-              </li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="problem-card fade-in" aria-labelledby="problemDataTitle">
-          <h3 id="problemDataTitle">Practice Data Points</h3>
-          <div class="problem-tabs" role="tablist" aria-label="Practice type data tabs">
-            <button type="button" class="problem-tab" role="tab" id="medicalTab" aria-selected="true" aria-controls="medicalPanel" data-problem-tab="medical">Medical Practice</button>
-            <button type="button" class="problem-tab" role="tab" id="dentalTab" aria-selected="false" aria-controls="dentalPanel" data-problem-tab="dental" tabindex="-1">Dental Practice</button>
-          </div>
-
-          <div class="problem-tab-panel is-active" role="tabpanel" id="medicalPanel" aria-labelledby="medicalTab" data-problem-panel="medical">
-            <ul class="problem-data-list">
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Average Miss Rate</p>
-                <p class="problem-data-value"><strong>23%</strong> of calls go unanswered or are abandoned, our conservative planning benchmark. Published studies report up to 42%.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Landmark Study</p>
-                <p class="problem-data-value">7,000 calls across 22 practices in 18 states showed <strong>42% missed calls</strong>.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Patient Behavior</p>
-                <p class="problem-data-value">60% hang up on hold, and 30% of those never call back.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Voicemail Drop-off</p>
-                <p class="problem-data-value">62% who reach voicemail hang up without leaving a message.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Revenue Risk</p>
-                <p class="problem-data-value">Annual impact is typically <strong>$200K-$500K</strong>, and can exceed <strong>$1M</strong> in high-volume specialties.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">After-hours Demand</p>
-                <p class="problem-data-value">About <strong>40%</strong> of patient calls happen outside standard business hours.</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="problem-tab-panel" role="tabpanel" id="dentalPanel" aria-labelledby="dentalTab" data-problem-panel="dental" hidden>
-            <ul class="problem-data-list">
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Average Miss Rate</p>
-                <p class="problem-data-value"><strong>23%</strong> of inbound calls go unanswered or are abandoned, our conservative planning benchmark. Peerlogic found 38%.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Peerlogic Study</p>
-                <p class="problem-data-value">4,280 calls across 26 practices found <strong>38% unanswered</strong> during business hours.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Monthly Missed Calls</p>
-                <p class="problem-data-value">Roughly <strong>300 calls</strong> are missed per average practice each month.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Voicemail Abandonment</p>
-                <p class="problem-data-value"><strong>62%</strong> of callers who hit voicemail hang up without leaving a message.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Competitor Defection</p>
-                <p class="problem-data-value">67% who cannot get through immediately call another dentist.</p>
-              </li>
-              <li class="problem-data-item">
-                <p class="problem-data-metric">Revenue and LTV Risk</p>
-                <p class="problem-data-value">A mid-size practice can lose <strong>$100K-$150K+</strong> annually; one missed new patient may cost roughly <strong>$5,400</strong> in lifetime value.</p>
-              </li>
-            </ul>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="how-section" id="how">
-    <div class="section-header fade-in">
-      <div class="section-label">How It Works</div>
-      <h2>Three Steps To Better Care</h2>
-    </div>
-    <div class="steps-row">
-      <div class="step fade-in">
-        <div class="step-num">1</div>
-        <h3>Connect Your Practice Line</h3>
-        <p>Forward missed, overflow, after-hours, or all inbound calls to DialTone.Med without changing your existing phone number.</p>
-      </div>
-      <div class="step fade-in">
-        <div class="step-num">2</div>
-        <h3>Set Your Front-Desk Workflows</h3>
-        <p>Define how appointments, billing questions, refill requests, and insurance checks should be handled for your team.</p>
-      </div>
-      <div class="step fade-in">
-        <div class="step-num">3</div>
-        <h3>Let DialTone Handle Routine Calls</h3>
-        <p>Patients get instant answers, your staff gets fewer interruptions, and your practice misses fewer high-value calls.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact-section" id="contact" aria-labelledby="contactTitle">
-    <div class="contact-inner">
-      <div class="section-header fade-in">
-        <div class="section-label">Get In Touch</div>
-        <h2 id="contactTitle">Contact Us</h2>
-        <p>Questions about DialTone.Med, partnership inquiries, or feedback on your experience? Send a note and we'll get back to you.</p>
-      </div>
-
-      <div class="contact-card fade-in">
-        <form class="contact-form" id="contactForm" novalidate>
-          <div class="form-field">
-            <label for="nameField">Name</label>
-            <input id="nameField" name="name" type="text" placeholder="Your name" required autocomplete="name" maxlength="120">
-          </div>
-
-          <div class="form-field">
-            <label for="companyField">Company</label>
-            <input id="companyField" name="company" type="text" placeholder="Your practice or company" required autocomplete="organization" maxlength="160">
-          </div>
-
-          <div class="form-field">
-            <label for="emailField">Email</label>
-            <input id="emailField" name="email" type="email" placeholder="you@example.com" required autocomplete="email" maxlength="254">
-          </div>
-
-          <div class="form-field">
-            <label for="messageField">Message</label>
-            <textarea id="messageField" name="message" placeholder="How can we help?" required maxlength="5000"></textarea>
-          </div>
-
-          <div class="honeypot" aria-hidden="true">
-            <label for="websiteField">Leave this field empty</label>
-            <input id="websiteField" name="website" type="text" tabindex="-1" autocomplete="off">
-          </div>
-
-          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
-
-          <button type="submit" class="submit-btn" id="submitBtn">Send message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#" class="logo">DialTone<span class="med">.Med</span></a>
-          <p>Clear signals in critical moments. Secure, intelligent healthcare communication built for patients and providers.</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <span>&copy; 2026 DialTone.Med. All rights reserved.</span>
-        <div class="footer-legal">
-          <a href="/hippa.html">HIPAA</a>
-          <a href="/privacy.html">Privacy</a>
-          <a href="/terms.html">Terms</a>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  </template>
-
-  <section class="contact-section console-contact" id="contact" aria-labelledby="refreshContactTitle">
-    <div class="contact-inner">
-      <div class="section-header">
-        <div class="section-label">Start a conversation</div>
-        <h2 id="refreshContactTitle">Build the right call workflow for your practice.</h2>
-        <p>Tell us where patient calls are creating pressure. We will follow up with a practical conversation about your team and workflows.</p>
-      </div>
-      <div class="contact-card">
-        <form class="contact-form" id="refreshContactForm" novalidate>
-          <div class="form-field"><label for="refreshNameField">Name</label><input id="refreshNameField" name="name" type="text" placeholder="Your name" required autocomplete="name" maxlength="120"></div>
-          <div class="form-field"><label for="refreshCompanyField">Company</label><input id="refreshCompanyField" name="company" type="text" placeholder="Your practice or company" required autocomplete="organization" maxlength="160"></div>
-          <div class="form-field"><label for="refreshEmailField">Email</label><input id="refreshEmailField" name="email" type="email" placeholder="you@example.com" required autocomplete="email" maxlength="254"></div>
-          <div class="form-field"><label for="refreshMessageField">Message</label><textarea id="refreshMessageField" name="message" placeholder="How can we help?" required maxlength="5000"></textarea></div>
-          <div class="honeypot" aria-hidden="true"><label for="refreshWebsiteField">Leave this field empty</label><input id="refreshWebsiteField" name="website" type="text" tabindex="-1" autocomplete="off"></div>
-          <p class="form-status" id="refreshFormStatus" role="status" aria-live="polite"></p>
-          <button type="submit" class="submit-btn" id="refreshSubmitBtn">Send message</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <footer class="console-footer"><div class="clinical-container console-footer-inner"><span>&copy; 2026 DialTone.Med. All rights reserved.</span><span><a href="/hippa.html">HIPAA</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></span></div></footer>
+  <footer class="console-footer"><div class="clinical-container console-footer-inner"><span>&copy; 2026 DialTone.Med. All rights reserved.</span><span><a href="/hipaa">HIPAA</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></span></div></footer>
 
   <script>
-    // Navbar scroll shadow
-    const navbar = document.querySelector('.navbar');
-    if (navbar) {
-      window.addEventListener('scroll', () => {
-        navbar.classList.toggle('scrolled', window.scrollY > 10);
-      }, { passive: true });
-    }
+    // Hero example calls: one per workflow, rotating until the visitor picks one
+    (() => {
+      const demo = document.querySelector('.call-demo');
+      if (!demo) return;
+      const tabs = Array.from(demo.querySelectorAll('[role="tab"]'));
+      const panels = Array.from(demo.querySelectorAll('[role="tabpanel"]'));
+      if (!tabs.length || tabs.length !== panels.length) return;
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      let active = 0;
+      let timer = null;
+      let userChose = false;
 
-    // Fade-in on scroll
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.15, rootMargin: '0px 0px -40px 0px' };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
+      const select = (index) => {
+        active = (index + tabs.length) % tabs.length;
+        tabs.forEach((tab, i) => {
+          tab.setAttribute('aria-selected', String(i === active));
+          tab.tabIndex = i === active ? 0 : -1;
+        });
+        panels.forEach((panel, i) => {
+          panel.hidden = false;
+          panel.setAttribute('aria-hidden', String(i !== active));
+        });
+      };
+      const stop = () => { clearInterval(timer); timer = null; };
+      const start = () => {
+        if (timer || userChose || reducedMotion) return;
+        timer = setInterval(() => select(active + 1), 6000);
+      };
+      const choose = (index) => { userChose = true; stop(); select(index); };
+
+      tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => choose(index));
+        tab.addEventListener('keydown', (event) => {
+          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
+          event.preventDefault();
+          choose(index + (event.key === 'ArrowRight' ? 1 : -1));
+          tabs[active].focus();
+        });
       });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
+      demo.addEventListener('mouseenter', stop);
+      demo.addEventListener('mouseleave', start);
+      demo.addEventListener('focusin', stop);
+      demo.addEventListener('focusout', start);
+      demo.classList.add('is-enhanced');
+      select(0);
+      start();
+    })();
 
     // Practice exposure console
     (() => {
       const practiceData = {
-        medical: { missRate: '23%', revenue: '$200K-$500K', dropOff: '62%', fill: '38%' },
-        dental: { missRate: '23%', revenue: '$100K-$150K+', dropOff: '62%', fill: '38%' }
+        gp: {
+          one: ['Calls unanswered or abandoned', '23%', 'Conservative business-hour benchmark for inbound calls unanswered or abandoned in queue.'],
+          two: ['Estimated annual revenue at risk', '$200K-$500K', 'Potential practice revenue exposed when those callers do not get through.'],
+          meter: ['Callers who leave a voicemail', '38%', '62% hang up without leaving a message'],
+          alert: true
+        },
+        sp: {
+          one: ['Calls abandoned', '2.76%', 'Accredited specialty pharmacies already answer nearly every call.'],
+          two: ['Answered by a person within 30 seconds', '84%', 'Every one of those answers is staff time, including calls about refills, prior authorization status, and billing.'],
+          meter: ['Calls that reach a person', '97%', '97% of calls are answered by staff'],
+          alert: false
+        }
       };
       const tabs = Array.from(document.querySelectorAll('[data-practice-mode]'));
       const panel = document.getElementById('exposureMetrics');
-      const missRate = document.getElementById('missRate');
-      const revenueRisk = document.getElementById('revenueRisk');
-      const dropOffLabel = document.getElementById('dropOffLabel');
-      const pipelineFill = document.getElementById('pipelineFill');
-      if (!tabs.length || !panel || !missRate || !revenueRisk || !dropOffLabel || !pipelineFill) return;
+      const byId = (id) => document.getElementById(id);
+      const pipelineFill = byId('pipelineFill');
+      if (!tabs.length || !panel || !pipelineFill) return;
 
       const activateMode = (mode) => {
         const data = practiceData[mode];
@@ -1567,10 +735,19 @@
           tab.tabIndex = isActive ? 0 : -1;
           if (isActive) panel.setAttribute('aria-labelledby', tab.id);
         });
-        missRate.textContent = data.missRate;
-        revenueRisk.textContent = data.revenue;
-        dropOffLabel.textContent = `${data.dropOff} PATIENT ABANDONMENT RATE`;
-        pipelineFill.style.width = data.fill;
+        [['statOne', data.one], ['statTwo', data.two]].forEach(([id, [label, value, text]]) => {
+          byId(`${id}Label`).textContent = label;
+          byId(id).textContent = value;
+          byId(`${id}Text`).textContent = text;
+        });
+        byId('statOne').classList.toggle('alert-text', data.alert);
+        byId('statOne').classList.toggle('telemetry-text', !data.alert);
+        byId('meterLabel').textContent = data.meter[0];
+        pipelineFill.style.width = data.meter[1];
+        pipelineFill.classList.toggle('meter-fill--steady', !data.alert);
+        byId('meterSpec').textContent = data.meter[2];
+        byId('exposureSource').hidden = mode !== 'gp';
+        byId('exposureSourceSp').hidden = mode !== 'sp';
       };
 
       tabs.forEach((tab, index) => {
@@ -1582,39 +759,6 @@
           const nextTab = tabs[(index + direction + tabs.length) % tabs.length];
           nextTab.focus();
           activateMode(nextTab.dataset.practiceMode);
-        });
-      });
-    })();
-
-    // Problem data tabs
-    (() => {
-      const tabs = Array.from(document.querySelectorAll('[data-problem-tab]'));
-      const panels = Array.from(document.querySelectorAll('[data-problem-panel]'));
-      if (!tabs.length || !panels.length) return;
-
-      const activateTab = (name) => {
-        tabs.forEach((tab) => {
-          const isActive = tab.dataset.problemTab === name;
-          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
-          tab.tabIndex = isActive ? 0 : -1;
-        });
-
-        panels.forEach((panel) => {
-          const isActive = panel.dataset.problemPanel === name;
-          panel.classList.toggle('is-active', isActive);
-          panel.hidden = !isActive;
-        });
-      };
-
-      tabs.forEach((tab, index) => {
-        tab.addEventListener('click', () => activateTab(tab.dataset.problemTab));
-        tab.addEventListener('keydown', (event) => {
-          if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') return;
-          event.preventDefault();
-          const dir = event.key === 'ArrowRight' ? 1 : -1;
-          const nextIndex = (index + dir + tabs.length) % tabs.length;
-          tabs[nextIndex].focus();
-          activateTab(tabs[nextIndex].dataset.problemTab);
         });
       });
     })();

@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Healthcare Phone Agent Pricing | DialTone.Med</title>
-  <meta name="description" content="Compare four DialTone.Med phone-agent tiers for appointments, refills, billing, insurance verification, integrations, analytics, and multi-site support.">
+  <meta name="description" content="One DialTone.Med plan per location, priced by answered calls. Appointments, billing, refills, prior authorization status, and insurance verification are all included, from $999 a month.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dialtone.med/pricing">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DialTone.Med">
   <meta property="og:title" content="Healthcare Phone Agent Pricing | DialTone.Med">
-  <meta property="og:description" content="Choose a healthcare phone-agent tier and add capabilities as your practice grows.">
+  <meta property="og:description" content="One plan with every workflow included, priced by answered calls from $999 a month.">
   <meta property="og:url" content="https://dialtone.med/pricing">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Healthcare Phone Agent Pricing | DialTone.Med">
-  <meta name="twitter:description" content="Choose a healthcare phone-agent tier and add capabilities as your practice grows.">
+  <meta name="twitter:description" content="One plan with every workflow included, priced by answered calls from $999 a month.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,15 +25,15 @@
         "name": "DialTone.Med healthcare phone agent",
         "url": "https://dialtone.med/pricing",
         "provider": { "@type": "Organization", "name": "DialTone.Med", "url": "https://dialtone.med/" },
-        "description": "A healthcare phone agent that answers patient calls and manages appointments, refill requests, billing, and insurance verification through four upgradeable capability tiers.",
+        "description": "A healthcare agent that answers patient calls and texts secure links for appointments, billing, refill requests, prior authorization status, and insurance verification, in one plan priced by answered calls.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "DialTone.Med phone-agent tiers",
+          "name": "DialTone.Med call bands",
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Essential Answering" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Patient Connect" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Practice Operations" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Enterprise Network" } }
+            { "@type": "Offer", "name": "Up to 750 answered calls per month", "price": "999", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "751 to 1,500 answered calls per month", "price": "1899", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "1,501 to 2,250 answered calls per month", "price": "2799", "priceCurrency": "USD" },
+            { "@type": "Offer", "name": "2,251 to 3,000 answered calls per month", "price": "3699", "priceCurrency": "USD" }
           ]
         }
       },
@@ -43,23 +43,33 @@
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "What does every DialTone.Med tier include?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Every tier includes a healthcare phone agent configured around practice-approved workflows for patient calls. Essential Answering includes custom branding, call answering, and categorization for appointments, refills, billing, and insurance." }
+            "name": "What does the plan include?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Every band includes the full product: a branded voice agent that answers each call, verifies the caller, and texts a secure link for appointments, billing and payment, prior authorization status, and insurance verification. Refill requests are queued for staff. Calls are recorded and tagged by type, and staff work from one console." }
           },
           {
             "@type": "Question",
-            "name": "Can capabilities be added without changing tiers?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Each tier identifies optional upgrades that can be added as a practice needs more messaging, operational tools, integrations, or analytics." }
+            "name": "What counts as an answered call?",
+            "acceptedAnswer": { "@type": "Answer", "text": "An inbound call with at least one caller reply. Hang-ups and calls without at least one reply are not counted. Text messages sent during a call are included." }
           },
           {
             "@type": "Question",
-            "name": "Which tier supports EMR and EHR integration?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Patient Connect offers EMR integration as an upgrade. Practice Operations includes EMR integration and offers EHR integration as an upgrade. Enterprise Network includes EHR integration." }
+            "name": "What happens if our call volume changes?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Your band is set on a three-month average of answered calls, so one busy month does not move you up. Each band of 750 calls adds $900 a month." }
           },
           {
             "@type": "Question",
-            "name": "Which tier supports multiple practice locations?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Enterprise Network includes multi-site support for healthcare groups managing patient calls across multiple locations." }
+            "name": "How does the 1.5% payment fee work?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It is 1.5% of the gross amount of each patient payment made through the texted link. Card transaction fees are separate and are paid by the practice. Payments you collect any other way carry no DialTone.Med fee, and the fee is the same in every call band." }
+          },
+          {
+            "@type": "Question",
+            "name": "Do we need an integration to start?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. You keep your existing phone numbers, and your staff load balances and prior authorization statuses and manage the calendar in the DialTone.Med console. EMR and EHR connection is scoped to your practice and quoted separately." }
+          },
+          {
+            "@type": "Question",
+            "name": "How is a multi-location group priced?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Each location has its own plan and band. Groups, and locations above 3,000 answered calls a month, receive a quote." }
           }
         ]
       }
@@ -135,22 +145,31 @@
     .result-value { display: block; color: var(--white); font: 700 clamp(24px, 3vw, 34px) var(--font-mono); line-height: 1.15; }
     .result-risk .result-value { color: var(--amber); }
     .result-label { margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .result-gain { border-color: var(--mint); }
+    .result-gain .result-value { color: var(--mint); }
+    .results-sub { margin-top: 4px; }
     .method-note { margin: 24px 0 0; color: var(--muted); font-size: 12px; line-height: 1.55; }
-    .plans { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .plans { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
     .plan { display: flex; flex-direction: column; min-height: 500px; padding: 26px; border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
     .plan-featured { border-color: var(--mint); box-shadow: inset 0 3px 0 var(--mint); }
     .plan-tag { min-height: 17px; color: var(--mint); }
     .plan h3 { margin: 18px 0 12px; font-size: 25px; line-height: 1.15; }
-    .plan-intro { min-height: 88px; color: var(--muted); font-size: 14px; }
+    .plan-intro { color: var(--muted); font-size: 14px; }
     .best-for { margin: 20px 0; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); color: var(--white); font-size: 14px; }
     .best-for span { color: var(--muted); }
     .feature-label { margin-bottom: 10px; color: var(--muted); font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
     .features { flex: 1; margin: 0 0 24px; padding: 0; list-style: none; }
     .features li { position: relative; margin-bottom: 12px; padding-left: 15px; color: #d7e7e5; font-size: 14px; line-height: 1.5; }
     .features li::before { position: absolute; left: 0; color: var(--mint); content: '+'; }
-    .features .included { color: var(--cyan); font-style: italic; }
-    .features .upgrade { color: var(--amber); }
-    .features .upgrade::before { color: var(--amber); content: '↗'; }
+    .bands { width: 100%; margin: 0 0 22px; border-collapse: collapse; }
+    .bands th, .bands td { padding: 14px 0; border-bottom: 1px solid var(--line); text-align: left; }
+    .bands th { color: var(--muted); font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+    .bands td { color: #d7e7e5; font-size: 14px; }
+    .bands th:last-child, .bands td:last-child { text-align: right; white-space: nowrap; }
+    .bands td:last-child { color: var(--white); font: 700 18px var(--font-mono); }
+    .bands td:last-child span { color: var(--muted); font: 500 12px var(--font-mono); }
+    .band-notes { flex: 1; margin: 0 0 24px; padding: 0; list-style: none; }
+    .band-notes li { margin-bottom: 10px; color: var(--muted); font-size: 13px; line-height: 1.6; }
     .faq-list { border-top: 1px solid var(--line); }
     .faq-item { display: grid; grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1fr); gap: 48px; padding: 26px 0; border-bottom: 1px solid var(--line); }
     .faq-item h3 { margin: 0; color: var(--white); font-size: 18px; line-height: 1.4; }
@@ -164,77 +183,126 @@
     .footer { padding: 32px 0; color: var(--muted); font-size: 12px; }
     .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
     .footer a { margin-left: 16px; color: var(--mint); text-decoration: none; }
-    @media (max-width: 1100px) { .plans { grid-template-columns: repeat(2, minmax(0, 1fr)); } .plan { min-height: auto; } .plan-intro { min-height: auto; } }
-    @media (max-width: 700px) { .plans { grid-template-columns: 1fr; } }
+    @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } .plan { min-height: auto; } }
     @media (max-width: 760px) { .container { width: min(100% - 32px, 1180px); } .nav-links { display: none; } .hero { padding: 58px 0; } .hero-grid, .section-head, .calculator, .guardrail-grid, .faq-item { grid-template-columns: 1fr; gap: 26px; } .hero-side { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; } .calculator-controls { border-right: 0; border-bottom: 1px solid var(--line); } .calculator-controls, .calculator-results { padding: 23px; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   </style>
 </head>
 <body>
-  <nav class="nav" aria-label="Main navigation"><div class="container nav-inner"><a class="brand" href="/" aria-label="DialTone.Med home">DialTone<span>.Med</span></a><div class="nav-links"><a href="/">Phone agent platform</a><a href="#calculator">ROI calculator</a><a href="#plans">Plans</a><a href="#implementation">Implementation</a></div><a class="button" href="/#contact">Contact</a></div></nav>
+  <nav class="nav" aria-label="Main navigation"><div class="container nav-inner"><a class="brand" href="/" aria-label="DialTone.Med home">DialTone<span>.Med</span></a><div class="nav-links"><a href="/">Platform</a><a href="#calculator">ROI calculator</a><a href="#plans">Pricing</a><a href="#implementation">Implementation</a></div><a class="button" href="/#contact">Contact</a></div></nav>
   <main>
-    <section class="hero"><div class="container hero-grid"><div><p class="eyebrow">Customized Patient-Engagement Platform</p><h1>Every patient call answered. <strong>Upgrade as your practice grows.</strong></h1><p class="hero-copy">Four clear tiers pair default phone-agent functionality with optional upgrades for messaging, operations, integrations, analytics, and multi-site support.</p></div><aside class="hero-side"><strong>Quote-based plans</strong><br>Every tier is scoped around your call volume and implementation needs. Optional upgrades let you add capabilities without changing how patients reach you.</aside></div></section>
+    <section class="hero"><div class="container hero-grid"><div><p class="eyebrow">Pricing</p><h1>Every patient call answered. <strong>One plan, priced by call volume.</strong></h1><p class="hero-copy">The agent answers the call and the texted link finishes the request: the appointment booked, the bill paid, the status delivered. You pay for answered calls, not for providers, seats, or features.</p></div><aside class="hero-side"><strong>Published pricing</strong><br>One plan per location, from $999 a month. EMR and EHR connection is scoped to your practice and quoted separately.</aside></div></section>
 
-    <section class="section" id="calculator" aria-labelledby="calculator-title"><div class="container"><div class="section-head"><div><p class="eyebrow">ROI calculator</p><h2 id="calculator-title">Calculate your practice's hidden revenue leak.</h2></div><p>Most practices do not realize that roughly 23% of inbound patient calls go unanswered or are abandoned in queue. Estimate what your front desk could be recovering.</p></div>
+    <section class="section" id="calculator" aria-labelledby="calculator-title"><div class="container"><div class="section-head"><div><p class="eyebrow">ROI calculator</p><h2 id="calculator-title">Calculate what your phones cost, and what the link returns.</h2></div><p>Enter your own numbers. The defaults are planning benchmarks for unanswered calls, front-desk phone time, and payments by text, not a forecast for your practice.</p></div>
       <div class="calculator">
         <div class="calculator-controls">
-          <div class="control"><div class="control-top"><label for="calls">Average inbound calls per month</label><output id="callsOutput" for="calls">500 calls</output></div><p class="range-hint">Select between 100 and 2,000 calls.</p><input id="calls" type="range" min="100" max="2000" step="25" value="500"></div>
-          <div class="control"><div class="control-top"><label>Practice type</label></div><div class="practice-choice" role="group" aria-label="Practice type"><button type="button" data-type="dental" aria-pressed="true">Dental</button><button type="button" data-type="medical" aria-pressed="false">Medical</button></div><div class="control-top"><label for="ltv">Average patient lifetime value</label><output id="ltvOutput" for="ltv">$5,400</output></div><p class="range-hint">Select between $1,000 and $10,000. Defaults: Dental $5,400; Medical $3,500.</p><input id="ltv" type="range" min="1000" max="10000" step="100" value="5400"></div>
+          <div class="control"><div class="control-top"><label id="typeLabel">Practice type</label></div><div class="practice-choice" role="group" aria-labelledby="typeLabel"><button type="button" data-type="gp" aria-pressed="true">General practice</button><button type="button" data-type="sp" aria-pressed="false">Specialty pharmacy</button></div></div>
+          <div class="control"><div class="control-top"><label for="calls">Inbound calls per month</label><output id="callsOutput" for="calls">500 calls</output></div><p class="range-hint">Select between 100 and 3,000 calls.</p><input id="calls" type="range" min="100" max="3000" step="50" value="500"></div>
+          <div class="control"><div class="control-top"><label for="missed">Calls unanswered or abandoned</label><output id="missedOutput" for="missed">23%</output></div><p class="range-hint" id="missedHint">Default 23%, a conservative planning benchmark for medical practices.</p><input id="missed" type="range" min="1" max="45" step="1" value="23"></div>
+          <div class="control"><div class="control-top"><label for="minutes">Staff minutes per answered call</label><output id="minutesOutput" for="minutes">4 min</output></div><p class="range-hint">Your estimate, including lookups and hold time.</p><input id="minutes" type="range" min="1" max="10" step="0.5" value="4"></div>
+          <div class="control" id="ltvControl"><div class="control-top"><label for="ltv">Average patient lifetime value</label><output id="ltvOutput" for="ltv">$3,500</output></div><p class="range-hint">Select between $1,000 and $10,000.</p><input id="ltv" type="range" min="1000" max="10000" step="100" value="3500"></div>
+          <div class="control"><div class="control-top"><label for="balances">Patient balances billed per month</label><output id="balancesOutput" for="balances">$10,000</output></div><p class="range-hint">What you bill patients directly, up to $100,000.</p><input id="balances" type="range" min="0" max="100000" step="500" value="10000"></div>
+          <div class="control"><div class="control-top"><label for="paid">Share paid through the texted link</label><output id="paidOutput" for="paid">15%</output></div><p class="range-hint">Default 15%, the response rate reported by published text-to-pay programs.</p><input id="paid" type="range" min="0" max="60" step="1" value="15"></div>
         </div>
-        <div class="calculator-results" aria-live="polite"><p class="calculator-meta">Your estimated ROI analysis</p><h3 class="results-title">The cost of unanswered calls</h3><div class="result-list"><div class="result"><output class="result-value" id="unanswered">115</output><div class="result-label">Estimated monthly unanswered calls</div></div><div class="result"><output class="result-value" id="lost">5</output><div class="result-label">Estimated patients lost to competitors</div></div><div class="result result-risk"><output class="result-value" id="revenue">$27,000</output><div class="result-label">Total monthly revenue risk</div></div></div><a class="button" href="/#contact">Stop the leak. Book an ROI audit demo.</a><p class="method-note">Estimate uses a 23% missed-call rate, 62% voicemail drop-off, and 67% competitor defection rate with a conservative 10% new-patient conversion assumption. It is not a guarantee of results.</p></div>
+        <div class="calculator-results" aria-live="polite"><p class="calculator-meta">Your estimate</p><h3 class="results-title">What the phones cost each month</h3><div class="result-list"><div class="result"><output class="result-value" id="unanswered">115</output><div class="result-label">Unanswered calls</div></div><div class="result" id="hoursRow"><output class="result-value" id="hours">26</output><div class="result-label">Front-desk hours spent answering calls</div></div><div class="result" id="lostRow"><output class="result-value" id="lost">2</output><div class="result-label">New patients lost</div></div><div class="result result-risk" id="revenueRow"><output class="result-value" id="revenue">$7,000</output><div class="result-label">Monthly revenue at risk</div></div></div><h3 class="results-title results-sub">What the texted link returns</h3><div class="result-list"><div class="result result-gain"><output class="result-value" id="collected">$1,478</output><div class="result-label">Patient payments collected by text, after the 1.5% fee</div></div></div><a class="button" href="/#contact">Stop the leak. Book an ROI audit demo.</a><p class="method-note" id="methodNote"></p></div>
       </div>
     </div></section>
 
-    <section class="section" id="plans" aria-labelledby="plans-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Four capability tiers</p><h2 id="plans-title">A clear path from answering to enterprise operations.</h2></div><p>Each tier includes a defined capability set. Items marked as upgrades can be added when your practice is ready.</p></div><div class="plans">
-      <article class="plan"><p class="plan-tag">Tier 1 // Answer</p><h3>Essential Answering</h3><p class="plan-intro">A branded phone agent that answers every call and directs each patient into the right workflow.</p><p class="best-for"><span>Best for:</span> Practices starting with reliable call coverage</p><p class="feature-label">Included capabilities</p><ul class="features"><li>Custom branding</li><li>Every call answered</li><li>Appointment, refill, billing, and insurance categorization</li><li class="upgrade">Appointment SMS upgrade</li><li class="upgrade">Refill SMS upgrade</li><li class="upgrade">Billing SMS upgrade</li><li class="upgrade">Insurance verification SMS upgrade</li></ul><a class="button button-outline" href="/#contact">Request Essential Quote</a></article>
-      <article class="plan plan-featured"><p class="plan-tag">Tier 2 // Coordinate</p><h3>Patient Connect</h3><p class="plan-intro">Adds complete patient messaging and recorded-call visibility for a more connected front desk.</p><p class="best-for"><span>Best for:</span> Teams coordinating a growing call volume</p><p class="feature-label">Included capabilities</p><ul class="features"><li class="included">Everything in Essential Answering, including all SMS upgrades</li><li>All calls recorded</li><li class="upgrade">Exam Room Management UI upgrade</li><li class="upgrade">EMR integration upgrade</li></ul><a class="button" href="/#contact">Request Connect Quote</a></article>
-      <article class="plan"><p class="plan-tag">Tier 3 // Integrate</p><h3>Practice Operations</h3><p class="plan-intro">Connects the phone agent to clinical operations and unlocks deeper performance insight.</p><p class="best-for"><span>Best for:</span> Practices ready for integrated workflows</p><p class="feature-label">Included capabilities</p><ul class="features"><li class="included">Everything in Patient Connect, including its upgrades</li><li>EMR integration</li><li class="upgrade">EHR integration upgrade</li><li class="upgrade">Analytics upgrade</li></ul><a class="button button-outline" href="/#contact">Request Operations Quote</a></article>
-      <article class="plan"><p class="plan-tag">Tier 4 // Scale</p><h3>Enterprise Network</h3><p class="plan-intro">A complete operating layer for organizations managing patient calls across multiple locations.</p><p class="best-for"><span>Best for:</span> Multi-site groups and healthcare networks</p><p class="feature-label">Included capabilities</p><ul class="features"><li class="included">Everything in Practice Operations, including all upgrades</li><li>EHR integration</li><li>Analytics</li><li>Multi-site support</li></ul><a class="button button-outline" href="/#contact">Contact Enterprise Sales</a></article>
+    <section class="section" id="plans" aria-labelledby="plans-title"><div class="container"><div class="section-head"><div><p class="eyebrow">One plan</p><h2 id="plans-title">Everything included. Priced by answered calls.</h2></div><p>No feature tiers and no per-provider fees. Each location pays for the band its call volume falls in.</p></div><div class="plans">
+      <article class="plan plan-featured"><p class="plan-tag">Included in every band</p><h3>The full front desk agent</h3><p class="plan-intro">Requests finished, not just calls answered. A branded agent answers every call, verifies the caller, and the secure texted link completes the request.</p><p class="feature-label">Capabilities</p><ul class="features"><li>Custom branding and every call answered</li><li>Caller identity verification</li><li>Appointments: review, book, reschedule, and cancel</li><li>Billing review and payment by text, with no card numbers read to staff</li><li>Refill requests queued for staff</li><li>Prior authorization status</li><li>Insurance verification</li><li>Text messages, with all calls recorded and tagged by type</li><li>Staff console and caregiver access</li></ul><a class="button" href="/#contact">Talk to our team</a></article>
+      <article class="plan"><p class="plan-tag">Per location, per month</p><h3>Call bands</h3><p class="plan-intro">$999 covers the first 750 answered calls. Each further 750 adds $900.</p>
+        <table class="bands">
+          <thead><tr><th scope="col">Answered calls per month</th><th scope="col">Price</th></tr></thead>
+          <tbody>
+            <tr><td>Up to 750</td><td>$999<span>/mo</span></td></tr>
+            <tr><td>751 to 1,500</td><td>$1,899<span>/mo</span></td></tr>
+            <tr><td>1,501 to 2,250</td><td>$2,799<span>/mo</span></td></tr>
+            <tr><td>2,251 to 3,000</td><td>$3,699<span>/mo</span></td></tr>
+            <tr><td>Over 3,000, or multi-site</td><td>Quote</td></tr>
+          </tbody>
+        </table>
+        <ul class="band-notes"><li>An answered call is an inbound call with at least one caller reply. Hang-ups and calls without a reply are not counted.</li><li>Your band is set on a three-month average, so one busy month does not move you up.</li><li>Patients can pay the moment the link arrives, with no statement to mail. A 1.5% platform fee applies to those payments only, and the practice pays card transaction fees.</li></ul><a class="button button-outline" href="/#contact">Request a quote</a></article>
     </div></div></section>
 
-    <section class="section" id="faq" aria-labelledby="faq-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Plan FAQ</p><h2 id="faq-title">Choosing and expanding your plan.</h2></div><p>Start with the tier that matches your current workflow, then add available upgrades as your operational needs change.</p></div><div class="faq-list">
-      <article class="faq-item"><h3>What does every DialTone.Med tier include?</h3><p>Every tier includes a healthcare phone agent configured around practice-approved workflows for patient calls. Essential Answering includes custom branding, call answering, and categorization for appointments, refills, billing, and insurance.</p></article>
-      <article class="faq-item"><h3>Can capabilities be added without changing tiers?</h3><p>Yes. Each tier identifies optional upgrades that can be added as a practice needs more messaging, operational tools, integrations, or analytics.</p></article>
-      <article class="faq-item"><h3>Which tier supports EMR and EHR integration?</h3><p>Patient Connect offers EMR integration as an upgrade. Practice Operations includes EMR integration and offers EHR integration as an upgrade. Enterprise Network includes EHR integration.</p></article>
-      <article class="faq-item"><h3>Which tier supports multiple practice locations?</h3><p>Enterprise Network includes multi-site support for healthcare groups managing patient calls across multiple locations.</p></article>
+    <section class="section" id="faq" aria-labelledby="faq-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Pricing FAQ</p><h2 id="faq-title">How the plan and bands work.</h2></div><p>One plan, one rule for volume, and no features held back.</p></div><div class="faq-list">
+      <article class="faq-item"><h3>What does the plan include?</h3><p>Every band includes the full product: a branded voice agent that answers each call, verifies the caller, and texts a secure link for appointments, billing and payment, prior authorization status, and insurance verification. Refill requests are queued for staff. Calls are recorded and tagged by type, and staff work from one console.</p></article>
+      <article class="faq-item"><h3>What counts as an answered call?</h3><p>An inbound call with at least one caller reply. Hang-ups and calls without at least one reply are not counted. Text messages sent during a call are included.</p></article>
+      <article class="faq-item"><h3>What happens if our call volume changes?</h3><p>Your band is set on a three-month average of answered calls, so one busy month does not move you up. Each band of 750 calls adds $900 a month.</p></article>
+      <article class="faq-item"><h3>How does the 1.5% payment fee work?</h3><p>It is 1.5% of the gross amount of each patient payment made through the texted link. Card transaction fees are separate and are paid by the practice. Payments you collect any other way carry no DialTone.Med fee, and the fee is the same in every call band.</p></article>
+      <article class="faq-item"><h3>Do we need an integration to start?</h3><p>No. You keep your existing phone numbers, and your staff load balances and prior authorization statuses and manage the calendar in the DialTone.Med console. EMR and EHR connection is scoped to your practice and quoted separately.</p></article>
+      <article class="faq-item"><h3>How is a multi-location group priced?</h3><p>Each location has its own plan and band. Groups, and locations above 3,000 answered calls a month, receive a quote.</p></article>
     </div></div></section>
 
-    <section class="guardrail" id="implementation" aria-labelledby="guardrail-title"><div class="container guardrail-grid"><div><p class="eyebrow">Implementation guardrail</p><h2 id="guardrail-title">Enterprise infrastructure built for medical compliance.</h2><p>To maintain HIPAA-aligned architecture, secure encrypted telephony, and dedicated provider integrations, every engagement is scoped to the practice before a final quote is provided.</p></div><div class="floor">Standard pricing starts at $999/month for a solo provider, plus $699/month per additional provider and a 1.5% platform fee on patient payments collected by the phone agent. Limited design-partner pilot rate: $599/month.</div></div></section>
+    <section class="guardrail" id="implementation" aria-labelledby="guardrail-title"><div class="container guardrail-grid"><div><p class="eyebrow">Implementation guardrail</p><h2 id="guardrail-title">Enterprise infrastructure built for medical compliance.</h2><p>To maintain HIPAA-aligned architecture, secure encrypted telephony, and dedicated provider integrations, every engagement is scoped to the practice before a final quote is provided.</p></div><div class="floor">Pricing starts at $999/month per location for up to 750 answered calls, plus a 1.5% platform fee on patient payments collected through DialTone.Med.</div></div></section>
   </main>
-  <footer class="footer"><div class="container footer-inner"><span>&copy; 2026 DialTone.Med. All rights reserved.</span><span><a href="/hippa.html">HIPAA</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></span></div></footer>
+  <footer class="footer"><div class="container footer-inner"><span>&copy; 2026 DialTone.Med. All rights reserved.</span><span><a href="/hipaa">HIPAA</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></span></div></footer>
   <script>
     (() => {
-      const calls = document.getElementById('calls');
-      const ltv = document.getElementById('ltv');
-      const callsOutput = document.getElementById('callsOutput');
-      const ltvOutput = document.getElementById('ltvOutput');
-      const unansweredOutput = document.getElementById('unanswered');
-      const lostOutput = document.getElementById('lost');
-      const revenueOutput = document.getElementById('revenue');
+      const byId = (id) => document.getElementById(id);
+      const calls = byId('calls');
+      const missed = byId('missed');
+      const minutes = byId('minutes');
+      const ltv = byId('ltv');
+      const balances = byId('balances');
+      const paid = byId('paid');
       const practiceButtons = Array.from(document.querySelectorAll('[data-type]'));
       const formatCurrency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+      // No-voicemail and never-call-back rates are the medical benchmarks cited on the homepage.
+      const NO_VOICEMAIL = 0.62;
+      const NEVER_CALL_BACK = 0.3;
+      const NEW_PATIENT_SHARE = 0.1;
+      const PLATFORM_FEE = 0.015;
+      const COLLECTIONS_NOTE = ' Collections are your patient balances multiplied by the share paid through the link, less the 1.5% platform fee; card transaction fees, which the practice pays, are not included.';
+      const types = {
+        gp: {
+          missed: 23,
+          hint: 'Default 23%, a conservative planning benchmark for medical practices.',
+          note: 'Revenue estimate assumes 62% of unanswered callers leave no voicemail, 30% of those never call back, and a conservative 10% are new patients. Staff hours are answered calls multiplied by your minutes per call.'
+        },
+        sp: {
+          missed: 3,
+          hint: 'Default 3%. URAC reported 2.76% aggregate call abandonment for specialty pharmacies in 2024.',
+          note: 'Accredited specialty pharmacies already answer most calls, so the cost shows up as staff time. Staff hours are answered calls multiplied by your minutes per call.'
+        }
+      };
+      let type = 'gp';
       const update = () => {
         const monthlyCalls = Number(calls.value);
+        const missedRate = Number(missed.value) / 100;
+        const minutesPerCall = Number(minutes.value);
         const patientLtv = Number(ltv.value);
-        const unansweredCalls = Math.round(monthlyCalls * 0.23);
-        const abandonedCalls = unansweredCalls * 0.62;
-        const lostPatients = Math.round(abandonedCalls * 0.67 * 0.1);
-        const monthlyRevenueRisk = lostPatients * patientLtv;
-        callsOutput.value = `${monthlyCalls.toLocaleString()} calls`;
-        ltvOutput.value = formatCurrency.format(patientLtv);
-        unansweredOutput.value = unansweredCalls.toLocaleString();
-        lostOutput.value = lostPatients.toLocaleString();
-        revenueOutput.value = formatCurrency.format(monthlyRevenueRisk);
+        const unansweredCalls = Math.round(monthlyCalls * missedRate);
+        const staffHours = Math.round((monthlyCalls - unansweredCalls) * minutesPerCall / 60);
+        const lostPatients = Math.round(unansweredCalls * NO_VOICEMAIL * NEVER_CALL_BACK * NEW_PATIENT_SHARE);
+        byId('callsOutput').value = `${monthlyCalls.toLocaleString()} calls`;
+        byId('missedOutput').value = `${missed.value}%`;
+        byId('minutesOutput').value = `${minutesPerCall} min`;
+        byId('ltvOutput').value = formatCurrency.format(patientLtv);
+        byId('unanswered').value = unansweredCalls.toLocaleString();
+        byId('hours').value = staffHours.toLocaleString();
+        byId('lost').value = lostPatients.toLocaleString();
+        byId('revenue').value = formatCurrency.format(lostPatients * patientLtv);
+        const collectedByText = Number(balances.value) * Number(paid.value) / 100;
+        byId('balancesOutput').value = formatCurrency.format(Number(balances.value));
+        byId('paidOutput').value = `${paid.value}%`;
+        byId('collected').value = formatCurrency.format(collectedByText * (1 - PLATFORM_FEE));
       };
-      calls.addEventListener('input', update);
-      ltv.addEventListener('input', update);
-      practiceButtons.forEach((button) => button.addEventListener('click', () => {
-        const isDental = button.dataset.type === 'dental';
-        practiceButtons.forEach((choice) => choice.setAttribute('aria-pressed', String(choice === button)));
-        ltv.value = isDental ? '5400' : '3500';
+      const setType = (next) => {
+        type = next;
+        const isPractice = type === 'gp';
+        practiceButtons.forEach((choice) => choice.setAttribute('aria-pressed', String(choice.dataset.type === type)));
+        missed.value = String(types[type].missed);
+        byId('missedHint').textContent = types[type].hint;
+        byId('methodNote').textContent = `${types[type].note}${COLLECTIONS_NOTE} It is not a guarantee of results.`;
+        byId('ltvControl').hidden = !isPractice;
+        byId('lostRow').hidden = !isPractice;
+        byId('revenueRow').hidden = !isPractice;
+        byId('hoursRow').classList.toggle('result-risk', !isPractice);
         update();
-      }));
-      update();
+      };
+      [calls, missed, minutes, ltv, balances, paid].forEach((input) => input.addEventListener('input', update));
+      practiceButtons.forEach((button) => button.addEventListener('click', () => setType(button.dataset.type)));
+      setType('gp');
     })();
   </script>
 </body>
