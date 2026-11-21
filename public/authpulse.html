@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prior Authorization Tracker for Practices | DialTone.Med AuthPulse</title>
+  <meta name="description" content="DialTone.Med AuthPulse tracks every prior authorization your practice is waiting on, shows when each plan's answer is due, and flags late and unexplained denials. Early access.">
+  <meta name="keywords" content="prior authorization tracker, prior auth tracking software, prior authorization turnaround, CMS-0057-F decision timeframes, prior authorization denials appeals, medical practice prior authorization">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://dialtone.med/authpulse">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DialTone.Med">
+  <meta property="og:title" content="DialTone.Med AuthPulse: every prior auth, on the clock">
+  <meta property="og:description" content="Track every prior authorization, see when each plan's answer is due, and flag late and unexplained denials. Early access.">
+  <meta property="og:url" content="https://dialtone.med/authpulse">
+  <meta property="og:image" content="https://dialtone.med/images/authpulse-requests.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="DialTone.Med AuthPulse: every prior auth, on the clock">
+  <meta name="twitter:description" content="Track every prior authorization, see when each plan's answer is due, and flag late and unexplained denials. Early access.">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "DialTone.Med AuthPulse",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "description": "A prior authorization tracker for medical practices: every request, when each plan's answer is due, and flags for late, expiring and unexplained denials. Early access.",
+    "url": "https://dialtone.med/authpulse",
+    "publisher": { "@type": "Organization", "name": "ByteStreams LLC" }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg?v=20260427">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root {
+      --ink: #10181d;
+      --panel: #162229;
+      --line: rgba(226, 245, 243, 0.18);
+      --muted: #a8babd;
+      --mint: #2ec4b6;
+      --cyan: #63d8ed;
+      --amber: #f3b34c;
+      --red: #ff7b84;
+      --white: #f5fbfa;
+      --blue: #0a2463;
+      --font-display: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background-color: var(--ink); background-image: linear-gradient(rgba(99,216,237,0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(99,216,237,0.035) 1px, transparent 1px); background-size: 28px 28px; color: var(--white); font-family: var(--font-display); line-height: 1.5; }
+    a { color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
+    .container { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+    .nav { min-height: 70px; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 20px; font-weight: 700; text-decoration: none; }
+    .brand span { color: var(--mint); font-weight: 500; }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--muted); font-size: 13px; text-decoration: none; }
+    .nav-links a:hover { color: var(--mint); }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 11px 18px; border: 1px solid var(--mint); background: var(--mint); border-radius: 0; color: #071918; cursor: pointer; font: 700 13px var(--font-display); text-decoration: none; transition: background-color 160ms ease, border-color 160ms ease; }
+    .button:hover { background: #65d9cd; border-color: #65d9cd; }
+    .button-outline { background: transparent; border-color: var(--line); color: var(--white); }
+    .button-outline:hover { background: rgba(99,216,237,0.1); border-color: var(--cyan); }
+    .eyebrow, .label { color: var(--mint); font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+    .status-pill { display: inline-block; margin-left: 10px; padding: 3px 9px; border: 1px solid var(--amber); color: var(--amber); font: 700 10px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle; }
+    .hero { padding: 84px 0 72px; border-bottom: 1px solid var(--line); }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.55fr); align-items: end; gap: 48px; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 820px; margin: 14px 0 18px; font-size: clamp(40px, 5vw, 64px); letter-spacing: 0; line-height: 1.05; }
+    h1 strong { color: var(--cyan); font-weight: inherit; }
+    .hero-copy { max-width: 660px; color: var(--muted); font-size: 18px; line-height: 1.65; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+    .hero-side { border-left: 1px solid var(--line); padding-left: 25px; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .hero-side strong { color: var(--white); }
+    .section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+    .section-head { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.55fr); gap: 40px; align-items: end; margin-bottom: 34px; }
+    h2 { margin: 12px 0 0; font-size: clamp(30px, 4vw, 46px); line-height: 1.1; }
+    .section-head > p { color: var(--muted); margin-bottom: 0; }
+    .section-head.stacked { grid-template-columns: 1fr; gap: 14px; }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
+    .stat { padding: 26px; border-right: 1px solid var(--line); }
+    .stat:last-child { border-right: 0; }
+    .stat-value { display: block; margin: 12px 0 8px; font: 700 clamp(32px, 4vw, 46px) var(--font-mono); line-height: 1; }
+    .stat-value.alert { color: var(--red); }
+    .stat-value.warn { color: var(--amber); }
+    .stat-value.good { color: var(--mint); }
+    .stat p { margin: 0; color: var(--muted); font-size: 14px; }
+    .source-note { margin: 18px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .source-note a { color: var(--mint); }
+    .shot { border: 1px solid var(--line); background: #fafbfc; }
+    .shot-caption { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 12px; color: var(--muted); font-size: 13px; }
+    .shot-caption .label { color: var(--amber); }
+    .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 34px; }
+    .feature { padding: 24px; border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
+    .feature h3 { margin: 14px 0 10px; font-size: 19px; }
+    .feature p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+    .two-shots { display: grid; grid-template-columns: 1fr; gap: 40px; }
+    .rules { width: 100%; border-collapse: collapse; border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
+    .rules th, .rules td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .rules th { color: var(--muted); font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+    .rules td { color: #d7e7e5; font-size: 14px; }
+    .rules td.time { color: var(--white); font: 700 15px var(--font-mono); white-space: nowrap; }
+    .rules td.none { color: var(--muted); font: 500 14px var(--font-mono); }
+    .model { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr); border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
+    .model-inputs, .model-results { padding: 30px; }
+    .model-inputs { border-right: 1px solid var(--line); }
+    .model-inputs ul { margin: 0; padding: 0; list-style: none; }
+    .model-inputs li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .model-inputs li span:last-child { color: var(--white); font: 700 14px var(--font-mono); white-space: nowrap; }
+    .model-results { background: rgba(7,25,24,0.42); display: grid; gap: 18px; align-content: start; }
+    .result { border-left: 2px solid var(--mint); padding: 3px 0 3px 14px; }
+    .result.warn { border-color: var(--amber); }
+    .result-value { display: block; color: var(--white); font: 700 clamp(22px, 3vw, 30px) var(--font-mono); line-height: 1.15; }
+    .result.warn .result-value { color: var(--amber); }
+    .result-label { margin-top: 5px; color: var(--muted); font-size: 13px; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { display: grid; grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1fr); gap: 48px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+    .faq-item h3 { margin: 0; color: var(--white); font-size: 18px; line-height: 1.4; }
+    .faq-item p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+    .guardrail { padding: 64px 0; background: #f4fbfa; color: #172126; }
+    .guardrail-grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(320px, 0.65fr); gap: 50px; align-items: center; }
+    .guardrail .eyebrow { color: #1b998b; }
+    .guardrail h2 { color: var(--blue); font-size: clamp(28px, 3vw, 42px); }
+    .guardrail p { color: #4e6167; line-height: 1.65; }
+    .floor { align-self: stretch; display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 26px; border-left: 3px solid #1b998b; background: #e5f5f2; color: var(--blue); font: 600 clamp(17px, 2vw, 20px) var(--font-display); line-height: 1.45; }
+    .floor .button { align-self: flex-start; }
+    .footer { padding: 32px 0; color: var(--muted); font-size: 12px; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; }
+    .footer a { margin-left: 16px; color: var(--mint); text-decoration: none; }
+    @media (max-width: 960px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .stat:nth-child(2) { border-right: 0; } .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); } .features, .two-shots { grid-template-columns: 1fr; } }
+    @media (max-width: 760px) { .container { width: min(100% - 32px, 1180px); } .nav-links { display: none; } .hero { padding: 58px 0; } .hero-grid, .section-head, .model, .guardrail-grid, .faq-item { grid-template-columns: 1fr; gap: 26px; } .hero-side { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; } .model-inputs { border-right: 0; border-bottom: 1px solid var(--line); } .stats { grid-template-columns: 1fr; } .stat { border-right: 0; border-bottom: 1px solid var(--line); } .rules { display: block; overflow-x: auto; } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Main navigation"><div class="container nav-inner"><a class="brand" href="/" aria-label="DialTone.Med home">DialTone<span>.Med</span></a><div class="nav-links"><a href="/">Platform</a><a href="#tracker">Tracker</a><a href="#clocks">Decision clocks</a><a href="#patients">With the voice agent</a><a href="/pricing">Pricing</a></div><a class="button" href="/#contact">Early access</a></div></nav>
+  <main>
+    <section class="hero"><div class="container hero-grid"><div><p class="eyebrow">DialTone.Med AuthPulse <span class="status-pill">Early access</span></p><h1>Every prior auth, on the clock. <strong>Know which answers are due, late, or denied without a reason.</strong></h1><p class="hero-copy">AuthPulse lists every prior authorization your practice is waiting on, shows when each plan's answer is due where a federal timeframe applies, and flags the requests that need your staff: late, due today, expiring, or denied without a specific reason.</p><div class="hero-actions"><a class="button" href="/#contact">Join early access</a><a class="button button-outline" href="#tracker">See the tracker</a></div></div><aside class="hero-side"><strong>In development.</strong> AuthPulse works on its own or with the DialTone.Med voice agent. It tracks requests your team already submits; it does not submit, decide, or appeal them for you. Screens on this page use sample data.</aside></div></section>
+
+    <section class="section" id="problem" aria-labelledby="problem-title"><div class="container"><div class="section-head"><div><p class="eyebrow">The problem</p><h2 id="problem-title">Prior auth runs on phone calls and memory.</h2></div><p>The form takes minutes. The hours go to chasing status, missed deadlines, and denials nobody has time to appeal.</p></div>
+      <div class="stats">
+        <div class="stat"><span class="label">Per physician, per week</span><span class="stat-value warn">13 hrs</span><p>Physician and staff time spent on about 40 prior authorizations.</p></div>
+        <div class="stat"><span class="label">Turnaround in 2026</span><span class="stat-value alert">44%</span><p>of medical group leaders say payer turnaround got slower than in 2025. 7% say faster.</p></div>
+        <div class="stat"><span class="label">Denials appealed</span><span class="stat-value alert">11.5%</span><p>of Medicare Advantage prior auth denials in 2024 were appealed.</p></div>
+        <div class="stat"><span class="label">Appeals overturned</span><span class="stat-value good">80.7%</span><p>of those appealed denials were overturned in full or in part.</p></div>
+      </div>
+      <p class="source-note">Sources: <a href="https://www.ama-assn.org/practice-management/prior-authorization/fixing-prior-auth-nearly-40-prior-authorizations-week-way" target="_blank" rel="noopener noreferrer">AMA 2025 prior authorization physician survey</a>; <a href="https://www.mgma.com/mgma-stat/fewer-than-1-in-10-see-prior-auth-turnarounds-faster" target="_blank" rel="noopener noreferrer">MGMA Stat poll, 2026</a>; <a href="https://www.kff.org/medicare/medicare-advantage-insurers-made-nearly-53-million-prior-authorization-determinations-in-2024/" target="_blank" rel="noopener noreferrer">KFF analysis of 2024 Medicare Advantage data</a>. Overturn rates are lower in other plan types; KFF reports 47% in Medicaid managed care and 43% in exchange plans.</p>
+    </div></section>
+
+    <section class="section" id="tracker" aria-labelledby="tracker-title"><div class="container"><div class="section-head"><div><p class="eyebrow">The tracker</p><h2 id="tracker-title">One list. Every request. Every deadline.</h2></div><p>Requests are sorted by what needs attention first. Each one shows its plan, how long it has waited, and when the answer is due.</p></div>
+      <figure class="shot" style="margin:0"><img src="/images/authpulse-requests.png" width="1440" height="1010" alt="AuthPulse requests screen: counts of requests waiting, past the federal timeframe, due within 24 hours, denied without a specific reason and expiring, above a table of requests with a decision clock for each." loading="lazy"></figure>
+      <div class="shot-caption"><span>Requests: the decision clock and flags for each prior authorization.</span><span class="label">Sample data</span></div>
+      <div class="features">
+        <article class="feature"><span class="label">Clock</span><h3>Due, due today, or late</h3><p>Each request runs against the timeframe its plan type carries, and turns amber, then red, as the deadline passes.</p></article>
+        <article class="feature"><span class="label">Flags</span><h3>Denied without a specific reason</h3><p>Medicare Advantage, Medicaid and CHIP plans must give a specific reason when they deny a medical service. AuthPulse flags the denials that don't, so staff ask before deciding on an appeal.</p></article>
+        <article class="feature"><span class="label">Renewals</span><h3>Approvals expiring soon</h3><p>Approvals that run out within 30 days are listed before they lapse, so renewals start on time.</p></article>
+      </div>
+    </div></section>
+
+    <section class="section" aria-labelledby="detail-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Evidence</p><h2 id="detail-title">A record you can take to the plan.</h2></div><p>Every request keeps its timeline: submitted, delivery confirmed, calls to the plan, the decision, and any appeal. The turnaround report shows each plan's record over 90 days.</p></div>
+      <div class="two-shots">
+        <figure style="margin:0"><div class="shot"><img src="/images/authpulse-detail.png" width="1440" height="760" alt="AuthPulse request detail: an MRI request 3 days 4 hours past the federal timeframe, with its timeline and next step." loading="lazy"></div><figcaption class="shot-caption"><span>Request detail: the clock, timeline and next step.</span><span class="label">Sample data</span></figcaption></figure>
+        <figure style="margin:0"><div class="shot"><img src="/images/authpulse-report.png" width="1440" height="700" alt="AuthPulse turnaround report: requests decided, median days to a decision, share past the federal timeframe, denials without a specific reason, and appeals overturned, by plan." loading="lazy"></div><figcaption class="shot-caption"><span>Turnaround report: median days, late decisions and overturned appeals, by plan.</span><span class="label">Sample data</span></figcaption></figure>
+      </div>
+    </div></section>
+
+    <section class="section" id="clocks" aria-labelledby="clocks-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Decision clocks</p><h2 id="clocks-title">Not every request has a federal deadline. AuthPulse knows which do.</h2></div><p>The plan type decides. Where no federal timeframe applies, AuthPulse still shows how long the request has waited.</p></div>
+      <table class="rules">
+        <thead><tr><th scope="col">Plan type</th><th scope="col">Standard</th><th scope="col">Expedited</th><th scope="col">Rule</th></tr></thead>
+        <tbody>
+          <tr><td>Medicare Advantage, Medicaid, CHIP</td><td class="time">7 calendar days</td><td class="time">72 hours</td><td>CMS-0057-F, medical items and services</td></tr>
+          <tr><td>Federal exchange plans</td><td class="time">15 days</td><td class="time">72 hours</td><td>Exchange plan rules; some states set shorter times</td></tr>
+          <tr><td>Commercial and employer plans</td><td class="none">None federal</td><td class="none">None federal</td><td>State rules may apply</td></tr>
+          <tr><td>Prescription drugs, any plan</td><td class="none">None yet</td><td class="none">None yet</td><td>CMS-0062-P would add one; it is a proposed rule</td></tr>
+        </tbody>
+      </table>
+      <p class="source-note">Source: <a href="https://www.cms.gov/initiatives/burden-reduction/overview/interoperability/frequently-asked-questions/improving-prior-authorization-processes" target="_blank" rel="noopener noreferrer">CMS, Improving Prior Authorization Processes</a>. AuthPulse shows these timeframes for tracking. It is not legal advice.</p>
+    </div></section>
+
+    <section class="section" id="patients" aria-labelledby="patients-title"><div class="container"><div class="section-head"><div><p class="eyebrow">With the DialTone.Med voice agent</p><h2 id="patients-title">Patients stop calling to ask "is it approved yet?"</h2></div><p>Verified callers hear how many requests are in each status, never the test or drug. A secure link carries the detail, and a text tells them when it changes.</p></div>
+      <figure class="shot" style="margin:0"><img src="/images/authpulse-patient.png" width="1440" height="1120" alt="What the patient sees: the call, where the agent reads status counts and texts a link; the status-change text; and the secure page listing each prior authorization." loading="lazy"></figure>
+      <div class="shot-caption"><span>The call, the status-change text, and the secure page.</span><span class="label">Sample data</span></div>
+    </div></section>
+
+    <section class="section" id="example" aria-labelledby="example-title"><div class="container"><div class="section-head"><div><p class="eyebrow">An example, not a result</p><h2 id="example-title">What prior auth costs a five-physician practice.</h2></div><p>Built from published survey averages and planning assumptions. Your numbers will differ; AuthPulse's own report measures them.</p></div>
+      <div class="model">
+        <div class="model-inputs"><p class="label" style="margin-bottom:12px">Inputs</p><ul>
+          <li><span>Physicians</span><span>5</span></li>
+          <li><span>Prior auths per physician per week (AMA)</span><span>40</span></li>
+          <li><span>Hours per physician per week (AMA)</span><span>13</span></li>
+          <li><span>Working weeks a year</span><span>50</span></li>
+          <li><span>Staff cost per hour, loaded (assumption)</span><span>$30</span></li>
+          <li><span>Denial rate (KFF, Medicare Advantage)</span><span>7.7%</span></li>
+          <li><span>Appeal rate today, then with tracking (assumption)</span><span>11.5% → 25%</span></li>
+          <li><span>Overturn rate (KFF, Medicare Advantage)</span><span>80.7%</span></li>
+        </ul></div>
+        <div class="model-results">
+          <div class="result"><span class="result-value">10,000</span><div class="result-label">prior authorizations a year</div></div>
+          <div class="result warn"><span class="result-value">3,250 hrs · $97,500</span><div class="result-label">physician and staff time a year, about 1.6 full-time staff</div></div>
+          <div class="result"><span class="result-value">+83</span><div class="result-label">more denied services overturned a year if appeals rise from 11.5% to 25%</div></div>
+        </div>
+      </div>
+      <p class="source-note">An illustration, not a forecast or a measured AuthPulse result. Denial and overturn rates are Medicare Advantage figures from KFF; other plan types differ.</p>
+    </div></section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title"><div class="container"><div class="section-head stacked"><div><p class="eyebrow">Questions</p><h2 id="faq-title">What AuthPulse does, and doesn't.</h2></div><p>A tracker for your staff, and status for your patients.</p></div><div class="faq-list">
+      <article class="faq-item"><h3>Does AuthPulse submit prior authorizations?</h3><p>No. Your team keeps submitting the way it does today: through the EHR, payer portals, or fax. AuthPulse tracks each request from submission to decision and keeps the record.</p></article>
+      <article class="faq-item"><h3>Do we need the DialTone.Med voice agent?</h3><p>No. AuthPulse works on its own. With the voice agent, verified patients can check status by phone and get a text when it changes.</p></article>
+      <article class="faq-item"><h3>How do requests get into AuthPulse?</h3><p>In early access, staff add requests by hand or upload a spreadsheet, such as a prior authorization report exported from your EHR, so nothing has to be retyped one by one. Where your EHR or your health plans can share prior authorization data electronically, we scope a connection with your practice so requests and decisions flow in on their own.</p></article>
+      <article class="faq-item"><h3>Does AuthPulse decide anything?</h3><p>No. The plan decides and your practice records it. A status in AuthPulse is a fact relayed from the plan, never a prediction.</p></article>
+      <article class="faq-item"><h3>When is it available, and what does it cost?</h3><p>AuthPulse is in development. Pricing is not set yet. Join early access and we'll contact you as practices are onboarded.</p></article>
+    </div></div></section>
+
+    <section class="guardrail" aria-labelledby="cta-title"><div class="container guardrail-grid"><div><p class="eyebrow">Early access</p><h2 id="cta-title">Put every prior auth on the clock.</h2><p>Tell us about your practice and how you track prior authorizations today. Early-access practices help shape the tracker and the turnaround report.</p></div><div class="floor"><span>DialTone.Med AuthPulse is built by ByteStreams. It works alone or with the DialTone.Med voice agent.</span><a class="button" href="/#contact">Join early access</a></div></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><span>&copy; 2026 DialTone.Med. All rights reserved.</span><span><a href="/hipaa">HIPAA</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></span></div></footer>
+</body>
+</html>

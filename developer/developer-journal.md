@@ -1,5 +1,37 @@
 # Developer Journal
 
+## 2026-11-21
+
+- New page `public/authpulse.html` (served at `/authpulse`) for DialTone.Med AuthPulse, the prior
+  authorization tracker built by ByteStreams in the `authpulse` repo. Owner asked for it after
+  deciding AuthPulse is sold as "DialTone.Med AuthPulse" on this site and "AuthPulse by
+  ByteStreams" on bytestreams.ai.
+- Page sections: hero with an "Early access" tag; four sourced stats (AMA 2025: 13 hours a week
+  per physician on about 40 prior auths; MGMA 2026: 44% say turnaround got slower; KFF 2024
+  Medicare Advantage: 11.5% of denials appealed, 80.7% of those overturned); the tracker,
+  request detail and turnaround report screenshots; the decision-clock table by plan type
+  (CMS-0057-F); the patient side with the voice agent; a five-physician cost example labelled
+  "an example, not a result"; FAQ; early-access call to action to `/#contact`.
+- Copy rules followed: "early access" and "in development", never "available"; no price;
+  AuthPulse tracks and never submits, decides or appeals; every screenshot captioned "Sample
+  data" (invented practice, patients and plan names); the clock table says it is not legal
+  advice.
+- Screenshots `public/images/authpulse-{requests,detail,report,patient}.png` captured at 1440
+  wide from the AuthPulse prototype.
+- `index.html`: an "AuthPulse" link in the top menu (also on `pricing.html`), and the "Prior
+  authorization status" card links to `/authpulse` ("Add-on, early
+  access"). `pricing.html`: an "Add-on · Early access" block before the FAQ, no price.
+- Owner saw the two evidence screenshots blurred and squeezed. Cause: images kept their height
+  attribute while CSS shrank the width. Fixed with `height: auto`; the two evidence shots now
+  stack full width; all four screenshots recaptured at 2x (2880 wide, 1.5 MB together).
+- Owner edits: the FAQ heading "What AuthPulse does, and doesn't." now runs full width on one
+  line (`.section-head.stacked`). The intake answer no longer implies every request is typed in
+  by hand: early access takes manual entry or a spreadsheet such as an EHR prior auth report;
+  electronic EHR and plan connections are scoped per practice.
+- Checked in a local browser at 1440 and 390 wide. Not committed or deployed. No sitemap exists
+  in `public/` to update.
+
+
 ## 2026-11-14
 
 - Owner decision: an answered call is now an inbound call in which the caller replies to the agent at least once. A call that ends without a caller reply is not a call and is not billed. This replaces the "lasts more than 10 seconds" rule from the 2026-11-13 entry below. Changed in three places in [pricing.html](../public/pricing.html): the call-band notes, the "What counts as an answered call?" FAQ, and its JSON-LD copy.
