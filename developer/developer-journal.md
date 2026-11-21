@@ -1,5 +1,24 @@
 # Developer Journal
 
+## 2026-11-21 - Sitemap and SEO pass
+
+- Sitemap (`worker.js`, generated, not a file): added `/authpulse`; every entry now has
+  `lastmod`, `changefreq` and `priority` per the ByteStreams SEO standard (home 1.0, content
+  0.8, legal 0.3). `lastmod` values are set by hand in `SITEMAP_PAGES`; update them when a page
+  changes. robots.txt already pointed at the sitemap.
+- Audited all six indexable pages against the ByteStreams on-page checklist and fixed every gap:
+  - Descriptions rewritten to 140-160 characters (home and pricing were 185, AuthPulse 176,
+    the legal pages 76-128).
+  - AuthPulse title shortened to 57 characters.
+  - Keywords (6-10) added to home, pricing, HIPAA, privacy and terms.
+  - Open Graph and Twitter tags completed on every page, `twitter:card` set to
+    `summary_large_image`, and `og:image`/`twitter:image` added.
+  - Two 1200x630 share images: `images/og-site.png` (site-wide) and `images/og-authpulse.png`.
+  - `WebPage` JSON-LD added to HIPAA, privacy and terms. All JSON-LD parses.
+- Not changed: body copy rules (keyword in the first paragraph under the H1, keyword in an H2).
+  Those are copy edits for the owner.
+
+
 ## 2026-11-21
 
 - New page `public/authpulse.html` (served at `/authpulse`) for DialTone.Med AuthPulse, the prior
