@@ -1,5 +1,28 @@
 # Developer Journal
 
+## 2026-11-23 - Pricing restructure
+
+- Owner decision: customers come first; gross margin under 80% is acceptable and the VC route may
+  be dropped. Prompted by questions from prospects (7 replies to a 200-address email).
+- Competitor review: $999 for 750 calls ($1.33/call) is high next to SMB AI receptionists
+  ($130-450 a month at this volume), about level with or below enterprise healthcare AI (about
+  $1,250-1,500 per provider per month), and 30-40% of human answering services. Weave charges no
+  fee on text-to-pay beyond card processing.
+- Bands: new $549 entry band up to 375 calls; $999 kept for 376-750; each further 750 now adds
+  $600, not $900 (3,000 calls: $2,799, was $3,699; 7,500: $6,399, was $9,099).
+- Removed the 1.5% platform fee on link payments; the practice still pays card fees. Updated the
+  pricing page, its JSON-LD and meta descriptions, both brochures, and the pricing `lastmod`.
+- Calculator: added front-desk cost per hour (default $24.37) and shows staff phone time in
+  dollars, the matching call band price, and collections without the fee. Lost new patients are
+  no longer rounded (1.8, not 2), so lifetime revenue moves smoothly; that row is no longer
+  highlighted, and the method note says link collections are mostly faster, not extra, money.
+- New two-page pricing sheet, `docs/brochures/DialToneMed_Pricing.md` (PDF built with the shared
+  template): every band, what is included, example practice sizes on the 750-calls-per-physician
+  planning estimate, and what to plan for. Rebuilt the general practice and pharmacy PDFs.
+- Not updated: the investor deck and `create-investor-deck.js` still show the old bands and fee.
+- Open risk: the 75% margin assumes 90-second calls at about $0.30 each. At 3-4 minute calls the
+  upper bands could fall well below that; measure call length in Phase 1.
+
 ## 2026-11-21 - Sitemap and SEO pass
 
 - Sitemap (`worker.js`, generated, not a file): added `/authpulse`; every entry now has

@@ -167,7 +167,7 @@ function handleSecurityTxt() {
 // home 1.0, content pages 0.8, legal pages 0.3. 404.html is never listed.
 const SITEMAP_PAGES = [
   { path: '/', lastmod: '2026-11-21', changefreq: 'weekly', priority: '1.0' },
-  { path: '/pricing', lastmod: '2026-11-21', changefreq: 'monthly', priority: '0.8' },
+  { path: '/pricing', lastmod: '2026-11-23', changefreq: 'monthly', priority: '0.8' },
   { path: '/authpulse', lastmod: '2026-11-21', changefreq: 'monthly', priority: '0.8' },
   { path: '/hipaa', lastmod: '2026-11-14', changefreq: 'yearly', priority: '0.3' },
   { path: '/privacy', lastmod: '2026-11-14', changefreq: 'yearly', priority: '0.3' },
