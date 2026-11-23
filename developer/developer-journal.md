@@ -1,5 +1,34 @@
 # Developer Journal
 
+## 2026-11-23 - Pricing restructure
+
+- Owner decision: customers come first; gross margin under 80% is acceptable and the VC route may
+  be dropped. Prompted by questions from prospects (7 replies to a 200-address email).
+- Competitor review: $999 for 750 calls ($1.33/call) is high next to SMB AI receptionists
+  ($130-450 a month at this volume), about level with or below enterprise healthcare AI (about
+  $1,250-1,500 per provider per month), and 30-40% of human answering services. Weave charges no
+  fee on text-to-pay beyond card processing.
+- Bands: new $549 entry band up to 375 calls; $999 kept for 376-750; each further 750 now adds
+  $600, not $900 (3,000 calls: $2,799, was $3,699; 7,500: $6,399, was $9,099).
+- Removed the 1.5% platform fee on link payments; the practice still pays card fees. Updated the
+  pricing page, its JSON-LD and meta descriptions, both brochures, and the pricing `lastmod`.
+- Calculator: added front-desk cost per hour (default $24.37) and shows staff phone time in
+  dollars, the matching call band price, and collections without the fee. Lost new patients are
+  no longer rounded (1.8, not 2), so lifetime revenue moves smoothly; that row is no longer
+  highlighted, and the method note says link collections are mostly faster, not extra, money.
+- New two-page pricing sheet, `docs/brochures/DialToneMed_Pricing.md` (PDF built with the shared
+  template): every band, what is included, example practice sizes on the 750-calls-per-physician
+  planning estimate, and what to plan for. Rebuilt the general practice and pharmacy PDFs.
+- Investor deck (`docs/DialToneMed_Rock_Health_First_Pass.pptx`, edited in the XML; PDF
+  re-exported to `docs/DialToneMed_Seed_Deck_Nov_2026.pdf`): slide 10 shows the $549, $999,
+  $1,599 and $2,799 bands, no payment fee, and 65%+ margin at every band ceiling (was 75%+; the
+  7,500-call band at $6,399 is 65% at $0.30 a call). Slide 11 second-band TAM is $1.6B (was
+  $1.9B, 85,000 x $1,599 x 12). Slide 14 Series A ARR is ~$240k-$575k (was $680k), and the
+  Series A margin gate is lowered to 65%+ (was 70%+) to match slide 10, at the owner's request.
+  Left as is: `create-investor-deck.js`, already stale.
+- Open risk: the 75% margin assumes 90-second calls at about $0.30 each. At 3-4 minute calls the
+  upper bands could fall well below that; measure call length in Phase 1.
+
 ## 2026-11-21 - Sitemap and SEO pass
 
 - Sitemap (`worker.js`, generated, not a file): added `/authpulse`; every entry now has
@@ -17,7 +46,6 @@
   - `WebPage` JSON-LD added to HIPAA, privacy and terms. All JSON-LD parses.
 - Not changed: body copy rules (keyword in the first paragraph under the H1, keyword in an H2).
   Those are copy edits for the owner.
-
 
 ## 2026-11-21
 
@@ -50,6 +78,28 @@
 - Checked in a local browser at 1440 and 390 wide. Not committed or deployed. No sitemap exists
   in `public/` to update.
 
+## 2026-11-16
+
+- Final review of `docs/DialToneMed_Rock_Health_First_Pass.pptx` before the Rock Health Capital submission, then fixes applied directly to the .pptx, not through the generator. The pre-review file is kept as `docs/DialToneMed_Rock_Health_First_Pass_pre_review_backup.pptx`. The submission PDF is `docs/DialToneMed_Seed_Deck_Nov_2026.pdf`: 15 pages, 1.3MB, exported with the snap LibreOffice (the form asks for 10-15 pages, PDF, 20MB max).
+- `developer/create-investor-deck.js` is now out of date. It has no screenshots slide (slide 7 was added to the .pptx by hand) and none of the changes below, so regenerating from it would lose them. Port them before using it again.
+- Owner decisions: cut the closing slide; the address and phone number in the slide 7 email screenshot are synthetic and stay; staff time per answered call is 4 minutes, matching the pricing calculator (the 8 minutes behind "$3.25" came from an unsourced line in `docs/dialtonemed_buyer_universe.md`); 85,000 practices stays; the slide 12 vertical axis is relabelled.
+- Changes by slide:
+  - All: footer reads "CONFIDENTIAL // NOVEMBER 2026" instead of "INVESTOR DRAFT". Closing slide removed; its contact line moved to the founder card on slide 15.
+  - 1: "Two design partners lined up"; panel label "WORKFLOW MODEL" (was "LIVE").
+  - 2: CallRail caption dated "Jan 2025" (was "2025 call data"); stat captions moved up off the footer.
+  - 3: the Rock Health line uses the report's own four headings (founder edge, scaling to own, hands-on delivery, network effects).
+  - 5: insurance card says live eligibility checks are gated.
+  - 6, 9, 13: titles shortened to one line; they wrapped into the kicker and subtitle. Slide 6 footnote no longer names the app repo, and its implemented list is one colour.
+  - 7: captions in Inter at readable contrast, subtitle added, section label "PRODUCT PROOF", descriptive alt text.
+  - 9: buying table uses the roles in the Rock Health piece and is scoped to larger groups and pharmacies, because slide 11 says small groups skip enterprise procurement (the scoping is my choice). The footnote attributes only the three questions; the four steps are ours.
+  - 10: "~$1.60 of staff time (4 min)"; the footnote says $0.0052 is Telnyx Voice API plus SIP trunking and that 4 minutes is assumed.
+  - 11: 85,000 is labelled a company estimate. The AMA survey and IQVIA do not publish practice counts by size; the footnote now cites the 88,925 physician-owned practices of all sizes in the PAI-Avalere analysis of IQVIA OneKey (January 2026) as the ceiling.
+  - 12: vertical axis is now health systems to independent practices. Weave moved down, Parakeet up to mid, Hello Patient right (it acquired Converse Health in September 2026), Zocdoc Zo recoloured as practice voice AI. New title: "Multi-workflow depth for the independent practice."
+  - 14: Q3 2027 milestone is "Integrations: priority EHR / PM integrations" (was "Production ... + compliance", which read as compliance after go-live); the subtitle gives month 15 for the Series A process instead of "18 months plus a 6-month buffer" (both my wording).
+  - 15: footnote cut to "Advisor named on request."
+- External check, sources opened 2026-11-16: both Rock Health citations are exact; Vapi's HIPAA add-on is $2,000/month; Drug Channels gives 1,910 accredited specialty pharmacy locations at end of 2025; all eleven named competitors still operate under the same names and none is in Rock Health Capital's listed portfolio.
+- Started customer collateral in `docs/brochures/`, in the format of the DialTone.Menu kit (`dialtone_sm`): Pandoc Markdown sources built with XeLaTeX through `dialtone-med-marketing.tex` and `pdf-masthead.lua`; the build command is in the .tex header. Three two-page sheets: specialty pharmacy, general practice, and security and data handling. Copy follows the live site and the HIPAA and privacy pages: no pilot or Phase 1, no completion-rate figure, no "EMR stays the authority" or "system of record" wording. Deliberate differences from the site: the insurance row says staff review the submitted details, because the app runs no eligibility check yet; the pharmacy sheet says the refill decision "stays with your team"; the security sheet says "practices and pharmacies" and "customers" where the reviewed HIPAA page says "practices". Not built: a tri-fold, pricing and feature matrices, competitor comparison sheets.
+- Left as is: the 75% margin on slide 10 against the 70% Series A gate on slide 14; slide 9 says Phase 1 chooses the first market while slide 11 sizes practices as the wedge; the slide 7 screenshots show raw values (an ISO timestamp, an invoice ID, "End Time Unavailable") that need new screenshots to fix.
 
 ## 2026-11-14
 
