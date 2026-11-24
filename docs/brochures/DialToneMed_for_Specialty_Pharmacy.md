@@ -28,12 +28,12 @@ Source: URAC 2025 Specialty Pharmacy Performance Measurement report, aggregate 2
 
 | Request                    | Said on the call                              | Sent by secure link                                      | Left for your staff                                |
 | ---------------------- | ------------------------ | ---------------------------- | -------------------------- |
-| Prior authorization status | Status only, never the drug or procedure      | What each request is for, its dates, and the next step   | Nothing. No status call to return.                 |
+| Prior authorization status | Status only, never the drug or procedure      | What each request is for, its dates, and the next step   | Nothing. Status comes from AuthPulse (add-on). |
 | Refill request             | The request, taken in the patient's own words | Nothing needed                                           | One request to review. The decision stays with your team. |
 | Billing and payment        | No dollar amounts                             | The balance and card payment                             | Nothing. The patient gets a receipt by text and email. |
 | Insurance update           | An identity check and the offer of a link     | Carrier, member ID, and group number, typed by the patient | The submitted details to review                    |
 
-Appointments are included too: patients book, reschedule, or cancel from the same kind of link.
+Appointments are included too: patients book, reschedule, or cancel from the same kind of link. Prior authorization status is read from AuthPulse, our prior auth tracker: every request your pharmacy is waiting on, its federal deadline, and flags for late and unexplained denials. \$0.50 per tracked request (\$499 minimum a month), 20% off with DialTone.Med; in early access.
 
 ## What happens to patient data
 

@@ -1,5 +1,76 @@
 # Developer Journal
 
+## 2026-11-23 - AuthPulse pricing, audience and functionality on every surface
+
+- Owner: "All surfaces should be updated. Including the brochures and deck. If any other
+  functionality, pricing options are stale update." Owner decisions the same day:
+  - Prior authorization status by phone stays in every plan but reads from AuthPulse, an add-on
+    at 20% off with any plan. "No feature tiers" no longer covers it.
+  - Show AuthPulse's full price list publicly, replacing the "no price" rule from 2026-11-21.
+  - Add one AuthPulse slide to the current investor deck; financial slides unchanged.
+- AuthPulse facts used (from the `authpulse` repo, owner decisions of 2026-11-23): for practices,
+  practice groups, billing companies and specialty pharmacies. $59 a month per prescriber ($149
+  minimum per site); $0.50 per tracked request ($499 monthly minimum) for pharmacies and billing
+  companies; 20% off with DialTone.Med; packet-and-fax assistant from $99 a month per site;
+  payer prior authorization APIs from $49 a month per site from 2027; direct EHR integration
+  quoted. Manual entry, spreadsheet upload and scheduled EHR report import are included. It does
+  not submit electronically. Change texts go out for approved, denied, more information needed
+  and appeal decided. The "from" on the two upgrades reflects that those figures were approximate.
+- Owner, later the same day: the full AuthPulse price list lives on the pricing page; the
+  AuthPulse page states the two main prices and links to it ("to be consistent"). The ByteStreams
+  tools page shows no price.
+- `public/authpulse.html`: new Pricing section with the two main prices and a "See full pricing"
+  link to `/pricing#authpulse` (nav "Pricing" points there too); audience line in
+  the hero; FAQ answers for submission (fax upgrade), intake (file import included, payer APIs
+  and EHR integration as upgrades), the voice agent (which changes send a text; status read
+  from AuthPulse), cost; new FAQ "Who is it for?"; call to action names pharmacies and billing
+  teams. Meta description (157 characters) and JSON-LD (audience, two offers) updated.
+- `public/pricing.html`: meta description (160 characters), JSON-LD and FAQ answers say prior
+  auth status comes from AuthPulse; staff track prior authorizations in AuthPulse, not the
+  console; "Prior authorization status, read from AuthPulse (add-on, 20% off)" in the included
+  list; the AuthPulse block holds the full AuthPulse price table (six rows) with the table styles
+  copied from the AuthPulse page.
+- `public/index.html`: the prior auth card's link says status comes from AuthPulse, 20% off.
+- Brochures rebuilt, each still two pages: AuthPulse (pricing table; does and does not do; the
+  worked example condensed to two sentences and the closing note folded into the lead line to
+  stay on two pages), pricing sheet (no-feature-tiers line, included list, AuthPulse price),
+  general practice and specialty pharmacy (prior auth row and an AuthPulse sentence with the
+  price for each audience).
+- Sitemap `lastmod` for `/` set to 2026-11-23.
+- Investor deck `docs/DialToneMed_Rock_Health_First_Pass.pptx`: new slide 8, "Every prior auth, on
+  the clock.", built from slide 7's XML (same layout, fonts and footer): audience, the federal
+  timeframe panel, the three prices, "no electronic submission; never decides or appeals" with the
+  fax upgrade, early access with the specialty pharmacy design partner, and the requests
+  screenshot (sample data). Old slides 8 to 15 are now 9 to 16; slide numbers are fields and the
+  two in-text slide references still hold. Financial slides unchanged. PDF re-exported to
+  `docs/DialToneMed_Seed_Deck_Nov_2026.pdf` with the snap LibreOffice (the system `soffice` is
+  missing libreglo.so): 16 pages. The Rock Health form asked for 10 to 15 pages.
+- Not changed: `privacy.html`, `hipaa.html` and `terms.html` still describe DialTone.Med holding
+  prior authorization statuses. That stays true until the voice platform reads from AuthPulse
+  (its W5.10); changing legal pages is the owner's call under the 2026-11-15 rule.
+  `developer/create-investor-deck.js` remains stale.
+
+## 2026-11-23 - AuthPulse deadline table corrected
+
+- The AuthPulse page and brochure said commercial and employer plans and all drug requests had no
+  federal timeframe. AuthPulse verified the rules against the regulation text on 2026-11-23
+  (its `prototype/src/rules.ts`, roadmap P1) and found federal timeframes for most of them.
+- `public/authpulse.html` and `docs/brochures/DialToneMed_AuthPulse.md`: the table now has five
+  rows. Medicare Advantage, Medicaid and CHIP items and services (7 calendar days, 72 hours; CHIP
+  may follow state law); Part D and Part B drugs (72 hours, 24 hours); Medicaid outpatient drugs
+  (24 hours); employer, individual and exchange plans (15 days, 72 hours, medical and drug); and
+  grandfathered plans or unknown type (none shown). Each row cites its rule; the source note says
+  some rules allow an extension and that the table is not legal advice.
+- Screenshots `public/images/authpulse-{requests,detail,report}.png` and the brochure's requests
+  image retaken at 2x from the corrected prototype. The report shot is now 800 tall (was 700) to
+  show all eight sample plans; its `height` attribute changed to match. The requests alt text says
+  "due soon" (the prototype's new label). The patient view is unchanged.
+- Brochure PDF rebuilt; table column widths rebalanced so the times do not wrap. Still two pages.
+- Sitemap `lastmod` for `/authpulse` set to 2026-11-23.
+- Not changed: the "no price" copy rule and "Pricing is not set" on the page and brochure, though
+  AuthPulse pricing was decided on 2026-11-23 (its README). Showing it is the owner's call.
+- On branch `fix/authpulse-federal-timeframes`; not committed.
+
 ## 2026-11-23 - Pricing restructure
 
 - Owner decision: customers come first; gross margin under 80% is acceptable and the VC route may
