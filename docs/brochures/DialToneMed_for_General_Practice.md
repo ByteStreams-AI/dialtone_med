@@ -33,8 +33,10 @@ Survey and vendor data, not measured rates for small practices. Sources: MGMA an
 | Appointment                | An identity check and the offer of a link | Open times, with booking, rescheduling, and cancelling | Nothing. The change appears in the patient record. |
 | Billing and payment        | No dollar amounts        | The balance and card payment | Nothing. The patient gets a receipt by text and email. |
 | Refill request             | The request, taken in the patient's own words | Nothing needed | One request to review. The decision stays with the prescriber. |
-| Prior authorization status | Status only, never the drug or procedure | What each request is for, its dates, and the next step | Nothing. No status call to return. |
+| Prior authorization status | Status only, never the drug or procedure | What each request is for, its dates, and the next step | Nothing. Status comes from AuthPulse (add-on). |
 | Insurance update           | An identity check and the offer of a link | Carrier, member ID, and group number, typed by the patient | The submitted details to review |
+
+Prior authorization status is read from AuthPulse, our prior auth tracker: every request your practice is waiting on, its federal deadline, and flags for late and unexplained denials. \$59 a month per prescriber, 20% off with DialTone.Med; in early access.
 
 ```{=latex}
 \newpage

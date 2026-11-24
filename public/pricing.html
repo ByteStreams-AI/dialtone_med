@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Healthcare Phone Agent Pricing | DialTone.Med</title>
-  <meta name="description" content="One DialTone.Med plan per location, priced by answered calls from $549 a month. Appointments, billing, refills, prior auth status and insurance included.">
+  <meta name="description" content="One DialTone.Med plan per location, priced by answered calls from $549 a month. Appointments, billing, refills and insurance included; prior auth via AuthPulse.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dialtone.med/pricing">
   <meta name="keywords" content="healthcare phone agent pricing, medical answering service cost, AI receptionist pricing for practices, per-call pricing for medical practices, specialty pharmacy phone automation pricing, DialTone.Med pricing">
@@ -15,11 +15,11 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="DialTone.Med">
   <meta property="og:title" content="Healthcare Phone Agent Pricing | DialTone.Med">
-  <meta property="og:description" content="One DialTone.Med plan per location, priced by answered calls from $549 a month. Appointments, billing, refills, prior auth status and insurance included.">
+  <meta property="og:description" content="One DialTone.Med plan per location, priced by answered calls from $549 a month. Appointments, billing, refills and insurance included; prior auth via AuthPulse.">
   <meta property="og:url" content="https://dialtone.med/pricing">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Healthcare Phone Agent Pricing | DialTone.Med">
-  <meta name="twitter:description" content="One DialTone.Med plan per location, priced by answered calls from $549 a month. Appointments, billing, refills, prior auth status and insurance included.">
+  <meta name="twitter:description" content="One DialTone.Med plan per location, priced by answered calls from $549 a month. Appointments, billing, refills and insurance included; prior auth via AuthPulse.">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -30,7 +30,7 @@
         "name": "DialTone.Med healthcare phone agent",
         "url": "https://dialtone.med/pricing",
         "provider": { "@type": "Organization", "name": "DialTone.Med", "url": "https://dialtone.med/" },
-        "description": "A healthcare agent that answers patient calls and texts secure links for appointments, billing, refill requests, prior authorization status, and insurance verification, in one plan priced by answered calls.",
+        "description": "A healthcare agent that answers patient calls and texts secure links for appointments, billing, refill requests, prior authorization status (with AuthPulse), and insurance verification, in one plan priced by answered calls.",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "DialTone.Med call bands",
@@ -56,7 +56,7 @@
           {
             "@type": "Question",
             "name": "What does the plan include?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Every band includes the full product: a branded voice agent that answers each call, verifies the caller, and texts a secure link for appointments, billing and payment, prior authorization status, and insurance verification. Refill requests are queued for staff. Calls are recorded and tagged by type, and staff work from one console." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Every band includes the full product: a branded voice agent that answers each call, verifies the caller, and texts a secure link for appointments, billing and payment, and insurance verification. Refill requests are queued for staff. Prior authorization status by phone reads from AuthPulse, which is 20% off with any plan. Calls are recorded and tagged by type, and staff work from one console." }
           },
           {
             "@type": "Question",
@@ -76,7 +76,7 @@
           {
             "@type": "Question",
             "name": "Do we need an integration to start?",
-            "acceptedAnswer": { "@type": "Answer", "text": "No. You keep your existing phone numbers, and your staff load balances and prior authorization statuses and manage the calendar in the DialTone.Med console. EMR and EHR connection is scoped to your practice and quoted separately." }
+            "acceptedAnswer": { "@type": "Answer", "text": "No. You keep your existing phone numbers, and your staff load balances and manage the calendar in the DialTone.Med console, and track prior authorizations in AuthPulse. EMR and EHR connection is scoped to your practice and quoted separately." }
           },
           {
             "@type": "Question",
@@ -198,6 +198,14 @@
     @media (max-width: 900px) { .plans { grid-template-columns: 1fr; } .plan { min-height: auto; } }
     @media (max-width: 760px) { .container { width: min(100% - 32px, 1180px); } .nav-links { display: none; } .hero { padding: 58px 0; } .hero-grid, .section-head, .calculator, .guardrail-grid, .faq-item { grid-template-columns: 1fr; gap: 26px; } .hero-side { border-left: 0; border-top: 1px solid var(--line); padding: 20px 0 0; } .calculator-controls { border-right: 0; border-bottom: 1px solid var(--line); } .calculator-controls, .calculator-results { padding: 23px; } }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    .rules { width: 100%; border-collapse: collapse; border: 1px solid var(--line); background: rgba(22,34,41,0.92); }
+    .rules th, .rules td { padding: 16px 18px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+    .rules th { color: var(--muted); font: 700 11px var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+    .rules td { color: #d7e7e5; font-size: 14px; }
+    .rules td.time { color: var(--white); font: 700 15px var(--font-mono); white-space: nowrap; }
+    .rules td.none { color: var(--muted); font: 500 14px var(--font-mono); }
+    .source-note { margin: 18px 0 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    @media (max-width: 760px) { .rules { display: block; overflow-x: auto; } }
   </style>
 </head>
 <body>
@@ -222,7 +230,7 @@
     </div></section>
 
     <section class="section" id="plans" aria-labelledby="plans-title"><div class="container"><div class="section-head"><div><p class="eyebrow">One plan</p><h2 id="plans-title">Everything included. Priced by answered calls.</h2></div><p>No feature tiers and no per-provider fees. Each location pays for the band its call volume falls in.</p></div><div class="plans">
-      <article class="plan plan-featured"><p class="plan-tag">Included in every band</p><h3>The full front desk agent</h3><p class="plan-intro">Requests finished, not just calls answered. A branded agent answers every call, verifies the caller, and the secure texted link completes the request.</p><p class="feature-label">Capabilities</p><ul class="features"><li>Custom branding and every call answered</li><li>Caller identity verification</li><li>Appointments: review, book, reschedule, and cancel</li><li>Billing review and payment by text, with no card numbers read to staff</li><li>Refill requests queued for staff</li><li>Prior authorization status</li><li>Insurance verification</li><li>Text messages, with all calls recorded and tagged by type</li><li>Staff console and caregiver access</li></ul><a class="button" href="/#contact">Talk to our team</a></article>
+      <article class="plan plan-featured"><p class="plan-tag">Included in every band</p><h3>The full front desk agent</h3><p class="plan-intro">Requests finished, not just calls answered. A branded agent answers every call, verifies the caller, and the secure texted link completes the request.</p><p class="feature-label">Capabilities</p><ul class="features"><li>Custom branding and every call answered</li><li>Caller identity verification</li><li>Appointments: review, book, reschedule, and cancel</li><li>Billing review and payment by text, with no card numbers read to staff</li><li>Refill requests queued for staff</li><li>Prior authorization status, read from AuthPulse (add-on, 20% off)</li><li>Insurance verification</li><li>Text messages, with all calls recorded and tagged by type</li><li>Staff console and caregiver access</li></ul><a class="button" href="/#contact">Talk to our team</a></article>
       <article class="plan"><p class="plan-tag">Per location, per month</p><h3>Call bands</h3><p class="plan-intro">$549 covers up to 375 answered calls and $999 up to 750. Each further 750 adds $600.</p>
         <table class="bands">
           <thead><tr><th scope="col">Answered calls per month</th><th scope="col">Price</th></tr></thead>
@@ -244,14 +252,28 @@
         <ul class="band-notes"><li>An answered call is an inbound call with at least one caller reply. Hang-ups and calls without a reply are not counted.</li><li>Your band is set on a three-month average, so one busy month does not move you up.</li><li>Patients can pay the moment the link arrives, with no statement to mail. DialTone.Med adds no fee to those payments; the practice pays only the card transaction fees.</li></ul><a class="button button-outline" href="/#contact">Request a quote</a></article>
     </div></div></section>
 
-    <section class="section" id="authpulse" aria-labelledby="authpulse-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Add-on &middot; Early access</p><h2 id="authpulse-title">DialTone.Med AuthPulse</h2></div><p>A prior authorization tracker for your staff: every request, when each plan's answer is due, and flags for late, expiring and unexplained denials. Works alone or with the voice agent. In development; pricing is not set yet.</p></div><a class="button button-outline" href="/authpulse">See AuthPulse</a></div></section>
+    <section class="section" id="authpulse" aria-labelledby="authpulse-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Add-on &middot; Early access</p><h2 id="authpulse-title">DialTone.Med AuthPulse</h2></div><p>A prior authorization tracker for your staff: every request, when each plan's answer is due, and flags for late, expiring and unexplained denials. The voice agent reads prior authorization status from it. Priced by prescriber for practices, or by request for pharmacies and billing companies. In development.</p></div>
+      <table class="rules">
+        <thead><tr><th scope="col">For</th><th scope="col">Price</th><th scope="col">Details</th></tr></thead>
+        <tbody>
+          <tr><td>Practices and practice groups</td><td class="time">$59 a month</td><td>Per prescriber. $149 minimum per site</td></tr>
+          <tr><td>Specialty pharmacies and billing companies</td><td class="time">$0.50 a request</td><td>Per request tracked in the month. $499 monthly minimum</td></tr>
+          <tr><td>With a DialTone.Med plan</td><td class="time">20% off</td><td>The tracker, when added to any DialTone.Med plan. The voice agent reads prior authorization status from it</td></tr>
+          <tr><td>Packet-and-fax assistant</td><td class="time">From $99 a month</td><td>Per site, with a page allowance. AuthPulse builds the packet, sends the fax, and the delivery receipt starts the clock</td></tr>
+          <tr><td>Payer prior authorization APIs</td><td class="time">From $49 a month</td><td>Per site, from 2027, as plans open their APIs</td></tr>
+          <tr><td>Direct EHR integration</td><td class="none">Quoted</td><td>One-time setup and a monthly fee, per EHR vendor</td></tr>
+        </tbody>
+      </table>
+      <p class="source-note">Early-access terms are agreed with each customer. Companies that want AuthPulse adapted and run for them can license it through ByteStreams consulting, with an implementation fee.</p>
+      <p style="margin-top: 28px;"><a class="button button-outline" href="/authpulse">See AuthPulse</a></p>
+    </div></section>
 
     <section class="section" id="faq" aria-labelledby="faq-title"><div class="container"><div class="section-head"><div><p class="eyebrow">Pricing FAQ</p><h2 id="faq-title">How the plan and bands work.</h2></div><p>One plan, one rule for volume, and no features held back.</p></div><div class="faq-list">
-      <article class="faq-item"><h3>What does the plan include?</h3><p>Every band includes the full product: a branded voice agent that answers each call, verifies the caller, and texts a secure link for appointments, billing and payment, prior authorization status, and insurance verification. Refill requests are queued for staff. Calls are recorded and tagged by type, and staff work from one console.</p></article>
+      <article class="faq-item"><h3>What does the plan include?</h3><p>Every band includes the full product: a branded voice agent that answers each call, verifies the caller, and texts a secure link for appointments, billing and payment, and insurance verification. Refill requests are queued for staff. Prior authorization status by phone reads from AuthPulse, which is 20% off with any plan. Calls are recorded and tagged by type, and staff work from one console.</p></article>
       <article class="faq-item"><h3>What counts as an answered call?</h3><p>An inbound call with at least one caller reply. Hang-ups and calls without at least one reply are not counted. Text messages sent during a call are included.</p></article>
       <article class="faq-item"><h3>What happens if our call volume changes?</h3><p>Your band is set on a three-month average of answered calls, so one busy month does not move you up. Above 750 calls, each band of 750 adds $600 a month.</p></article>
       <article class="faq-item"><h3>Is there a fee on patient payments?</h3><p>No. DialTone.Med adds no fee to patient payments made through the texted link, in any call band. The practice pays the card transaction fees, as it would for any card payment.</p></article>
-      <article class="faq-item"><h3>Do we need an integration to start?</h3><p>No. You keep your existing phone numbers, and your staff load balances and prior authorization statuses and manage the calendar in the DialTone.Med console. EMR and EHR connection is scoped to your practice and quoted separately.</p></article>
+      <article class="faq-item"><h3>Do we need an integration to start?</h3><p>No. You keep your existing phone numbers, and your staff load balances and manage the calendar in the DialTone.Med console, and track prior authorizations in AuthPulse. EMR and EHR connection is scoped to your practice and quoted separately.</p></article>
       <article class="faq-item"><h3>How is a multi-location group priced?</h3><p>Each location has its own plan and band. Groups, and locations above 7,500 answered calls a month, receive a quote.</p></article>
     </div></div></section>
 

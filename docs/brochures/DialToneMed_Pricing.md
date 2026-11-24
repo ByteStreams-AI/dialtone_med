@@ -18,7 +18,7 @@ header-includes:
 
 DialTone.Med answers every patient call, verifies the caller, and texts a secure link that finishes the request. Every location gets the full product. The only thing that changes the price is how many calls are answered.
 
-- **No feature tiers.** Appointments, billing and payment, refill requests, prior authorization status, and insurance updates are in every band.
+- **No feature tiers.** Appointments, billing and payment, refill requests, and insurance updates are in every band. Prior authorization status by phone reads from AuthPulse, an add-on.
 - **No per-provider or per-seat fees.** Add a physician or a staff member and the price stays the same until your call volume moves to the next band.
 - **No fee on patient payments.** DialTone.Med adds nothing to payments made through the texted link. The practice pays only the card transaction fees.
 
@@ -54,7 +54,7 @@ DialTone.Med answers every patient call, verifies the caller, and texts a secure
 - Appointments: review, book, reschedule, and cancel
 - Billing review and payment by text, with no card numbers read to staff
 - Refill requests queued for staff, with the decision left to the prescriber or pharmacist
-- Prior authorization status
+- Prior authorization status by phone, read from AuthPulse (add-on, below)
 - Insurance updates, typed by the patient and reviewed by staff
 - Text messages, with every call recorded and tagged by type
 - Staff console and caregiver access
@@ -76,7 +76,8 @@ Planning estimates of about 750 answered calls per physician per month, derived 
 ## What else to plan for
 
 - **EMR and EHR connection** is scoped to your practice and quoted separately.
-- **You do not need an integration to start.** You keep your phone numbers, and staff load balances and prior authorization statuses and manage the calendar in the DialTone.Med console.
+- **You do not need an integration to start.** You keep your phone numbers, and staff load balances and manage the calendar in the DialTone.Med console.
+- **AuthPulse**, the prior authorization tracker, is \$59 a month per prescriber (\$149 minimum per site), 20% off with any DialTone.Med plan. Staff track every request and its federal deadline there, and the voice agent reads status from it. In early access; see [dialtone.med/authpulse](https://dialtone.med/authpulse).
 - **Multi-location groups** have a plan and band for each location, or receive a quote for the group.
 
 ::: cta
